@@ -9,26 +9,25 @@ export default function Values() {
   const t = translations[language];
 
   const icons = [
-    <ShieldCheck className="w-8 h-8 text-secondary-container" />,
-    <Handshake className="w-8 h-8 text-secondary-container" />,
-    <Star className="w-8 h-8 text-secondary-container" />,
-    <TrendingUp className="w-8 h-8 text-secondary-container" />
+    <ShieldCheck className="w-7 h-7 text-primary" />,
+    <Handshake className="w-7 h-7 text-primary" />,
+    <Star className="w-7 h-7 text-primary" />,
+    <TrendingUp className="w-7 h-7 text-primary" />,
   ];
 
   const valuesList = t.values.list.map((val, idx) => ({
     ...val,
     icon: icons[idx],
-    highlight: idx >= 2 // Excellence and Succeed have thick borders
   }));
 
   return (
     <section className="py-24 bg-primary relative overflow-hidden text-white" id="values">
-      {/* Background SVG Grid Pattern - Ultra Lightweight & Zero network cost */}
-      <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0">
+      {/* Background SVG Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none z-0">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -36,8 +35,9 @@ export default function Values() {
       </div>
 
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
-        {/* Section Title */}
-        <div className="text-center mb-20">
+
+        {/* Section Header */}
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,59 +51,56 @@ export default function Values() {
             whileInView={{ width: '80px' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 bg-secondary-container mx-auto mt-4 rounded-full"
+            className="h-1 bg-secondary-container mx-auto mt-5 rounded-full"
           />
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-layer">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {valuesList.map((val, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -8 }}
-              className={`p-8 rounded-xl bg-white/10 backdrop-blur-md shadow-lg transition-all duration-300 ${
-                val.highlight
-                  ? 'border-2 border-secondary-container scale-[1.01]'
-                  : 'border border-white/20'
-              }`}
+              transition={{ duration: 0.45, delay: idx * 0.1, ease: 'easeOut' }}
+              whileHover={{ scale: 1.02 }}
+              className="flex flex-col bg-white border border-white/20 rounded-2xl p-7 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default"
             >
-              {/* Icon Container */}
-              <div className="mb-6 inline-block bg-white/10 p-3 rounded-lg">
+              {/* Icon */}
+              <div className="mb-5 inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/15 rounded-xl">
                 {val.icon}
               </div>
 
-              {/* Title & Description */}
-              <h3 className="font-extrabold text-lg mb-3 flex flex-wrap items-center gap-2">
+              {/* Title */}
+              <h3 className="font-extrabold text-base text-primary mb-3 leading-snug">
                 {val.title}
-                {val.highlight && (
-                  <span className="text-[10px] bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
-                    Core
-                  </span>
-                )}
               </h3>
-              <p className="text-sm text-white/80 leading-relaxed font-light">
+
+              {/* Thin accent line */}
+              <div className="w-8 h-0.5 bg-secondary rounded-full mb-4" />
+
+              {/* Description */}
+              <p className="text-sm text-gray-600 leading-relaxed font-normal flex-grow">
                 {val.desc}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Quote Statement */}
+        {/* Bottom Quote */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 text-center"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-20 flex justify-center"
         >
-          <p className="text-xl md:text-3xl italic font-semibold text-secondary-container tracking-wide leading-relaxed">
+          <p className="text-xl md:text-2xl italic font-semibold text-secondary-container tracking-wide leading-relaxed text-center max-w-3xl">
             &quot;{t.values.slogan}&quot;
           </p>
         </motion.div>
+
       </div>
     </section>
   );

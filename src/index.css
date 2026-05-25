@@ -11,6 +11,11 @@
   body {
     @apply bg-background text-on-background antialiased;
   }
+
+  /* Semua teks deskripsi rata kiri dan kanan */
+  p {
+    text-align: justify;
+  }
 }
 
 /* Glassmorphism Cards */

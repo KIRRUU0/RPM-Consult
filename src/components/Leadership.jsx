@@ -7,6 +7,7 @@ import { translations } from '../utils/translations';
 export default function Leadership() {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
+  const [expanded, setExpanded] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -417,6 +418,11 @@ export default function Leadership() {
     ? team
     : team.filter(person => person.category === activeTab);
 
+  const displayLimit = 8;
+  const displayedTeam = (activeTab === 'all' && !expanded)
+    ? filteredTeam.slice(0, displayLimit)
+    : filteredTeam;
+
   return (
     <section className="py-24 bg-surface-container-low overflow-hidden" id="leadership">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
@@ -440,7 +446,10 @@ export default function Leadership() {
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setActiveTab(cat.id)}
+              onClick={() => {
+                setActiveTab(cat.id);
+                setExpanded(false);
+              }}
               className={`px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === cat.id
                   ? 'bg-primary text-white shadow-md shadow-primary/20 scale-105'
@@ -453,22 +462,18 @@ export default function Leadership() {
         </div>
 
         {/* Team Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           <AnimatePresence mode="popLayout">
-            {filteredTeam.map((person) => (
+            {displayedTeam.map((person) => (
               <motion.div
                 key={person.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                whileHover={{ y: -8 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ type: 'tween', ease: 'easeOut', duration: 0.25, layout: { type: 'tween', ease: 'easeOut', duration: 0.25 } }}
                 onClick={() => setSelectedPerson(person)}
-                className="bg-white rounded-xl overflow-hidden border border-primary/5 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group h-full"
+                className="bg-white rounded-xl overflow-hidden border border-primary/5 hover:border-primary/20 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group h-full"
               >
                 {/* Photo Area */}
                 <div className="relative pt-[100%] w-full bg-gray-100 overflow-hidden border-b border-primary/5">
@@ -523,7 +528,21 @@ export default function Leadership() {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
+
+        {/* Show More / Show Less Button */}
+        {activeTab === 'all' && filteredTeam.length > displayLimit && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="px-6 py-3 rounded-lg font-bold text-xs md:text-sm bg-primary hover:bg-primary-container text-white shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+            >
+              {expanded 
+                ? (language === 'id' ? 'Tampilkan Lebih Sedikit' : 'Show Less') 
+                : (language === 'id' ? 'Lihat Semua Profesional' : 'View All Professionals')}
+            </button>
+          </div>
+        )}
 
         {/* Detailed Biography Modal Popup */}
         <AnimatePresence>

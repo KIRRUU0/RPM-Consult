@@ -32,6 +32,18 @@ export default function Header() {
     { name: t.nav.contact, href: '#contact' },
   ];
 
+  // Smooth scroll handler for mobile nav — closes menu then scrolls to section
+  const handleMobileNavClick = (e, href) => {
+    e.preventDefault();
+    setIsOpen(false);
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 320);
+  };
+
   const portalLinks = [
     { name: 'Control Panel', href: 'http://www.rakapradiptamahawira.com/cpanel', icon: <Monitor className="w-4 h-4 text-secondary" /> },
     { name: 'WebMail 1 (IP)', href: 'http://103.229.73.24/webmail/', icon: <Mail className="w-4 h-4 text-primary" /> },
@@ -162,13 +174,13 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden w-full bg-white border-t border-gray-100 mt-2 px-6 py-4 space-y-4 shadow-inner"
           >
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="font-semibold text-base text-gray-600 hover:text-primary py-1 transition-colors"
+                  onClick={(e) => handleMobileNavClick(e, link.href)}
+                  className="font-semibold text-base text-gray-700 hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer"
                 >
                   {link.name}
                 </a>
@@ -198,8 +210,8 @@ export default function Header() {
             <div className="pt-2">
               <a
                 href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="block text-center bg-primary text-white py-3 rounded-md font-semibold text-sm shadow-md"
+                onClick={(e) => handleMobileNavClick(e, '#contact')}
+                className="block text-center bg-primary text-white py-3 rounded-md font-semibold text-sm shadow-md hover:bg-primary-container transition-colors"
               >
                 {t.nav.getStarted}
               </a>

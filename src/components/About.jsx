@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, animate } from 'framer-motion';
-import { Eye, Rocket, Award, ArrowRight } from 'lucide-react';
+import { motion, useInView, animate, AnimatePresence } from 'framer-motion';
+import { Eye, Rocket, Award, ArrowRight, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 
@@ -26,6 +26,7 @@ function Counter({ from = 0, to, duration = 2 }) {
 export default function About() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [activeAccordion, setActiveAccordion] = useState('vision');
 
   return (
     <section className="py-24 bg-surface-container-low overflow-hidden" id="about">
@@ -104,41 +105,78 @@ export default function About() {
               </p>
             </div>
 
-            {/* Vision & Mission Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-              {/* Vision Card */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="flex gap-4 p-5 rounded-xl bg-white border border-primary/5 shadow-sm transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0 text-white shadow-md shadow-primary/10">
-                  <Eye className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary mb-1">{t.about.visionTitle}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed font-normal">
-                    {t.about.visionDesc}
-                  </p>
-                </div>
-              </motion.div>
+            {/* Accordion Dropdowns for Vision & Mission */}
+            <div className="space-y-4 pt-2">
+              
+              {/* Vision Dropdown */}
+              <div className="border border-primary/10 rounded-xl overflow-hidden bg-white shadow-sm transition-all duration-300">
+                <button
+                  onClick={() => setActiveAccordion(activeAccordion === 'vision' ? null : 'vision')}
+                  className="w-full flex items-center justify-between p-5 text-left font-bold text-primary hover:bg-primary/5 transition-colors cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Eye className="w-5 h-5" />
+                    </div>
+                    <span className="text-base font-extrabold">{t.about.visionTitle}</span>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${activeAccordion === 'vision' ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {activeAccordion === 'vision' && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    >
+                      <div className="px-5 pb-5 pt-1 text-sm text-gray-600 leading-relaxed font-normal border-t border-gray-50/50">
+                        {t.about.visionDesc}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
-              {/* Mission Card */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="flex gap-4 p-5 rounded-xl bg-white border border-primary/5 shadow-sm transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0 text-white shadow-md shadow-secondary/10">
-                  <Rocket className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary mb-1">{t.about.missionTitle}</h4>
-                  <ul className="text-xs text-gray-500 leading-relaxed list-decimal pl-4 space-y-1 font-normal">
-                    {t.about.missionItems.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
+              {/* Mission Dropdown */}
+              <div className="border border-primary/10 rounded-xl overflow-hidden bg-white shadow-sm transition-all duration-300">
+                <button
+                  onClick={() => setActiveAccordion(activeAccordion === 'mission' ? null : 'mission')}
+                  className="w-full flex items-center justify-between p-5 text-left font-bold text-primary hover:bg-primary/5 transition-colors cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Rocket className="w-5 h-5" />
+                    </div>
+                    <span className="text-base font-extrabold">{t.about.missionTitle}</span>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${activeAccordion === 'mission' ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {activeAccordion === 'mission' && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    >
+                      <div className="px-5 pb-5 pt-2 border-t border-gray-50/50">
+                        <ul className="space-y-3 text-sm text-gray-600 font-normal">
+                          {t.about.missionItems.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2.5">
+                              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
             </div>
 
             <div className="pt-4">

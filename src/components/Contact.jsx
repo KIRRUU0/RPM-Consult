@@ -166,56 +166,56 @@ export default function Contact() {
             </AnimatePresence>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 
                 {/* Full Name */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                    {t.contact.formLabels.name}
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className={`w-full bg-gray-50 border rounded-md py-3 px-4 outline-none text-sm transition-all focus:ring-2 focus:ring-primary/20 ${
-                      errors.name ? 'border-error focus:border-error' : 'border-gray-200 focus:border-primary'
-                    }`}
-                    placeholder={t.contact.formPlaceholders.name}
-                  />
-                  {errors.name && <p className="text-xs text-error font-medium">{errors.name}</p>}
+                <div className="space-y-1">
+                  <div className="input-group">
+                    <input
+                      required
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      className={`custom-input ${errors.name ? 'border-error' : ''}`}
+                      autoComplete="off"
+                    />
+                    <label className="user-label">{t.contact.formLabels.name}</label>
+                  </div>
+                  {errors.name && <p className="text-xs text-error font-medium pl-1">{errors.name}</p>}
                 </div>
 
                 {/* Email Address */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                    {t.contact.formLabels.email}
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`w-full bg-gray-50 border rounded-md py-3 px-4 outline-none text-sm transition-all focus:ring-2 focus:ring-primary/20 ${
-                      errors.email ? 'border-error focus:border-error' : 'border-gray-200 focus:border-primary'
-                    }`}
-                    placeholder={t.contact.formPlaceholders.email}
-                  />
-                  {errors.email && <p className="text-xs text-error font-medium">{errors.email}</p>}
+                <div className="space-y-1">
+                  <div className="input-group">
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder=" "
+                      className={`custom-input ${errors.email ? 'border-error' : ''}`}
+                      autoComplete="off"
+                    />
+                    <label className="user-label">{t.contact.formLabels.email}</label>
+                  </div>
+                  {errors.email && <p className="text-xs text-error font-medium pl-1">{errors.email}</p>}
                 </div>
 
               </div>
 
               {/* Service Selection */}
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-bold uppercase tracking-wider text-gray-500 pl-1">
                   {t.contact.formLabels.service}
                 </label>
                 <select
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-md py-3 px-4 outline-none text-sm focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-medium text-gray-700 cursor-pointer"
+                  className="w-full bg-transparent border border-outline-variant focus:border-primary rounded-lg py-[0.85rem] px-4 outline-none text-sm transition-all font-medium text-gray-700 cursor-pointer"
                 >
                   {services.map((svc) => (
                     <option key={svc} value={svc}>
@@ -226,21 +226,20 @@ export default function Contact() {
               </div>
 
               {/* Message */}
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                  {t.contact.formLabels.message}
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows="4"
-                  className={`w-full bg-gray-50 border rounded-md py-3 px-4 outline-none text-sm resize-none transition-all focus:ring-2 focus:ring-primary/20 ${
-                    errors.message ? 'border-error focus:border-error' : 'border-gray-200 focus:border-primary'
-                  }`}
-                  placeholder={t.contact.formPlaceholders.message}
-                />
-                {errors.message && <p className="text-xs text-error font-medium">{errors.message}</p>}
+              <div className="space-y-1">
+                <div className="input-group">
+                  <textarea
+                    required
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="4"
+                    placeholder=" "
+                    className={`custom-input resize-none h-32 ${errors.message ? 'border-error' : ''}`}
+                  />
+                  <label className="user-label">{t.contact.formLabels.message}</label>
+                </div>
+                {errors.message && <p className="text-xs text-error font-medium pl-1">{errors.message}</p>}
               </div>
 
               {/* Submit Button */}

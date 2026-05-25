@@ -22,16 +22,19 @@ export const translations = {
       badge: 'Tentang Perusahaan Kami',
       titleText: 'Merancang Solusi Strategis untuk',
       titleAccent: 'Pertumbuhan Masa Depan',
-      philosophy: 'Secara filosofis, "Raka" berarti gigih, bijaksana, berpengaruh, dan kuat, "Pradipta" berarti cahaya terang, dan "Mahawira" berarti pahlawan besar.',
-      desc: 'PT Raka Pradipta Mahawira ("RPM Consult") didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, serta memiliki visi dan misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan sebagai penyedia solusi Hukum, Pajak & Bisnis tepercaya.',
+      philosophy: 'Secara filosofis, \"Raka\" berarti gigih, bijaksana, berpengaruh, dan kuat, \"Pradipta\" berarti cahaya terang, dan \"Mahawira\" berarti pahlawan besar.',
+      desc1: 'PT Raka Pradipta Mahawira (\"RPM Consult\") didirikan dan didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, dan memiliki visi serta misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan.',
+      desc2: 'RPM Consult adalah salah satu perusahaan yang memenuhi syarat dan berlisensi dalam \"Solusi Hukum, Pajak & Bisnis\". Para ahlinya memiliki pengalaman 6 hingga 28 tahun di bidang Hukum, Pajak, Akuntansi & Solusi Bisnis. Para ahlinya terus memberikan solusi terbaik bagi Klien dan para pemangku kepentingan terkait.',
+      desc3: 'Di RPM Consult, kami membantu Klien mengatasi tantangan baru dan beradaptasi dalam lingkungan yang berubah dengan cepat. Dengan kerja kolaboratif, menciptakan wawasan, menggabungkan pengalaman nyata dan teknologi, kami menghadirkan kepercayaan diri dan kontribusi positif.',
+      slogan: 'Untuk masa depan yang lebih baik, bagi semua',
       visionTitle: 'Visi Kami',
       visionDesc: 'Menjadi mitra terbaik bagi para pemangku kepentingan dengan memberikan layanan profesional untuk solusi hukum, pajak, dan bisnis yang komprehensif, sekaligus menyediakan lingkungan kerja yang menyenangkan untuk memberdayakan kontribusi positif.',
       missionTitle: 'Misi Kami',
       missionItems: [
         'Berkomitmen dalam memberikan upaya terbaik untuk hasil yang diinginkan.',
-        'Memperjuangkan keunggulan dalam pemikiran strategis serta layanan personal.',
-        'Meningkatkan upaya kolaboratif dan keunikan dalam layanan.',
-        'Menjaga sinergi dan kontribusi optimal kepada pemangku kepentingan.'
+        'Memperjuangkan keunggulan dalam pemikiran strategis, layanan yang berkualitas dan personal.',
+        'Meningkatkan upaya kolaboratif dan keunikan dalam penyediaan layanan.',
+        'Menjaga sinergi, hubungan jangka panjang, dan kontribusi optimal kepada para pemangku kepentingan.'
       ],
       yearsBadge: 'Tahun Pengalaman',
       learnMore: 'Pelajari Lebih Lanjut Tentang Tim Kami'
@@ -69,14 +72,15 @@ export const translations = {
             'Penggabungan & Pengambilalihan (Merger & Acquisition)',
             'Konsultasi Hukum dan Pajak (Legal And Tax Consulting)'
           ],
+          specialIntro: 'Sebagai Wajib Pajak, mungkin terdapat risiko dalam memenuhi kewajiban perpajakan, yaitu Sengketa Pajak. Sengketa Pajak dapat berakhir di Pengadilan Pajak, Pengadilan Negeri, atau bahkan Mahkamah Agung. Di RPM Consult, kami akan memberikan upaya terbaik dalam membela posisi Klien dalam Sengketa Pajak dan hasil terbaik bagi para Pemangku Kepentingan.',
           specialSolutions: [
             {
               name: 'Tax Litigation (Litigasi Pajak)',
-              desc: 'Sebagian besar sengketa berawal dari Pemeriksaan Pajak. Wajib Pajak memiliki hak untuk menyelesaikan kasus melalui keberatan dan banding pajak atau bahkan peninjauan kembali ke Mahkamah Agung.\n\nDi RPM Consult, kami akan mendampingi Klien selama proses verifikasi keberatan dan proses persidangan banding, membela posisi Klien dengan memberikan argumen pembelaan dan bukti terbaik berdasarkan hukum perpajakan. Memaksimalkan peluang Klien memenangkan kasus adalah tujuan akhir kami.'
+              desc: 'Sengketa pajak berpotensi terjadi di era bisnis yang berkembang pesat dengan berbagai model transaksi. Sebagian besar sengketa berujung pada Pemeriksaan Pajak. Wajib Pajak memiliki hak untuk menyelesaikan kasus melalui keberatan dan banding pajak atau bahkan peninjauan kembali ke Mahkamah Agung. Di RPM Consult, kami akan membantu Klien meninjau dan menyimpulkan peluang terbaik untuk menangani keberatan dan banding. Kami juga akan mendampingi Klien selama proses verifikasi keberatan dan proses persidangan banding, membela posisi Klien dengan argumen dan bukti pembelaan terbaik. Kami percaya bahwa cara terbaik untuk menyelesaikan kasus adalah Klien, bersama RPM Consult, secara tekun dan sepenuhnya siap untuk persidangan dan penutupan. Menggabungkan pengalaman, wawasan, dan presentasi yang kuat sesuai hukum akan memberikan keunggulan dalam sebagian besar kasus. Memaksimalkan peluang Klien untuk memenangkan kasus adalah tujuan akhir kami.'
             },
             {
               name: 'Audit For Preliminary Evidence (Bukti Permulaan / Bukper)',
-              desc: 'Audit pajak tingkat tinggi dengan risiko sanksi tindak pidana perpajakan tertinggi bagi Wajib Pajak. Begitu menghadapi audit ini, tim berpengalaman kami akan bekerja kolaboratif menyusun argumen hukum terbaik, menyajikan bukti pembelaan penting, serta merancang jalan keluar terbaik guna menghindari risiko sanksi pidana perpajakan bagi Klien.'
+              desc: 'Audit ini adalah pemeriksaan pajak tingkat lebih tinggi dengan risiko sanksi pidana pajak tertinggi bagi Wajib Pajak. Begitu kami dalam posisi untuk menangani audit ini, kami akan memberikan jalan yang baik dan solusi bagi Klien. Kami percaya bahwa kolaborasi antara tim berpengalaman kami dan Klien untuk mengembangkan argumen terbaik berdasarkan hukum, informasi kunci, dan bukti pembelaan dalam kasus, akan menghasilkan penyelesaian audit yang baik dan menghindari risiko tertinggi sanksi pidana pajak bagi Klien. Kami akan memaksimalkan hasil terbaik bagi para pemangku kepentingan.'
             }
           ]
         },
@@ -167,20 +171,49 @@ export const translations = {
       list: [
         {
           title: 'Integrity (Integritas)',
-          desc: 'Dapat diandalkan dan bertanggung jawab. Transparan dan tepercaya. Menerapkan etika bisnis tinggi dalam setiap tindakan.'
+          points: [
+            'Dapat diandalkan dan bertanggung jawab.',
+            'Transparan dan tepercaya.',
+            'Etika bisnis dalam setiap tindakan.'
+          ]
         },
         {
           title: 'Respect (Saling Menghormati)',
-          desc: 'Membangun kepercayaan dan saling menghormati. Penuh pertimbangan terhadap perbedaan, keberagaman, serta keadilan.'
+          points: [
+            'Kepercayaan dan saling menghormati.',
+            'Mempertimbangkan perbedaan.',
+            'Saling memahami, pandangan positif, dan keadilan.'
+          ]
         },
         {
           title: 'Excellence (Keunggulan)',
-          desc: 'Terus fokus pada kualitas terbaik. Tepat waktu, presisi, dan sangat efektif dalam penyampaian seluruh solusi layanan kami.'
+          points: [
+            'Terus fokus pada kualitas.',
+            'Tepat waktu dan efektif dalam penyampaian layanan.',
+            'Upaya terbaik untuk solusi yang diinginkan.'
+          ]
         },
         {
           title: 'Succeed (Kesuksesan)',
-          desc: 'Kolaborasi erat untuk membangun hubungan kerja yang kuat. Berkomitmen pada pencapaian profesional dan kesuksesan bersama.'
+          points: [
+            'Kolaborasi untuk hubungan yang kuat.',
+            'Pencapaian profesional.',
+            'Merangkul kesuksesan.'
+          ]
         }
+      ]
+    },
+    clients: {
+      badge: 'Mitra Terpercaya',
+      titleLine1: 'Klien Kami yang',
+      titleLine2: 'Puas Bekerja Sama',
+      desc: 'Klien perlu mengetahui fakta untuk melihat permasalahan dengan jelas. Kami memberikan saran terbaik berdasarkan pengetahuan komprehensif kami untuk membantu klien mengelola isu perpajakan dan hukum mereka.',
+      tagline: '"Hard Facts. Clear Solutions." — Solusi terbukti untuk setiap tantangan bisnis Anda.',
+      cta: 'Mulai Konsultasi',
+      stats: [
+        { value: '55+', label: 'Klien Terpercaya' },
+        { value: '10+', label: 'Tahun Pengalaman' },
+        { value: '98%', label: 'Tingkat Kepuasan' }
       ]
     },
     contact: {
@@ -247,16 +280,19 @@ export const translations = {
       badge: 'About Our Firm',
       titleText: 'Crafting Strategic Solutions for',
       titleAccent: 'Future Growth',
-      philosophy: 'Philosophically, "Raka" signifies persistence, wisdom, influence, and strength, "Pradipta" represents a bright light, and "Mahawira" means a great hero.',
-      desc: 'PT Raka Pradipta Mahawira ("RPM Consult") was established by individuals driven by chivalrous values, positive influence, creativity, innovation, and a noble vision to deliver a positive impact to all stakeholders as a trusted Legal, Tax & Business partner.',
+      philosophy: 'Philosophically, \"Raka\" signifies persistence, wise, influential and powerful, \"Pradipta\" means bright light, and \"Mahawira\" means great hero.',
+      desc1: 'PT Raka Pradipta Mahawira (\"RPM Consult\") was founded and established by person who are chivalrous, have a positive influence, creative, innovative, and have a noble vision and mission in order to provide a positive impact to all stakeholders.',
+      desc2: 'RPM Consult is one of the qualified and licensed company in \"Legal, Tax & Business Solutions\". Its experts are having 6 to 28 years of experience in Legal, Tax, Accounting & Business solutions. Its experts are continuously delivering best solutions to the Clients and related stakeholders.',
+      desc3: 'At RPM Consult, we help Clients overcome new challenges and adapt in fast changing environment. By collaborative working, creating insights, combining real experience and technology, we deliver confidence and positive contributions.',
+      slogan: 'For better future, for all',
       visionTitle: 'Our Vision',
-      visionDesc: 'To be the best partner for stakeholders by providing professional services for comprehensive legal, tax, and business solutions, while providing a pleasant work environment to empower positive contributions.',
+      visionDesc: 'To be the best partner to stakeholders by rendering professional services for comprehensive legal, tax and business solutions, while providing enjoyable working environment to empower positive contribution.',
       missionTitle: 'Our Mission',
       missionItems: [
-        'Committed to giving the best efforts for the desired results.',
-        'Striving for excellence in our strategic thinking, as well as quality and personal services.',
-        'Increasing collaborative efforts and uniqueness in providing services.',
-        'Maintaining synergy, long-term relationships, and optimal contributions to stakeholders.'
+        'Committed in giving best efforts for desired results.',
+        'Strive excellence in our strategic thinking, qualified and personalized service.',
+        'Enhance collaborative efforts and uniqueness in providing services.',
+        'Maintain synergy, long term relationship and optimum contribution to the stakeholders.'
       ],
       yearsBadge: 'Years of Experience',
       learnMore: 'Learn More About Our Team'
@@ -294,14 +330,15 @@ export const translations = {
             'Merger & Acquisition Tax Advisory',
             'Legal And Tax Consulting'
           ],
+          specialIntro: 'As a Taxpayer, there might be a risk in fulfilling tax obligations, that is Tax Disputes. Tax dispute could be end up in Tax Court, District Court or even in Supreme Court. In RPM Consult, we will provide best efforts in defending Client\'s position in Tax Disputes and best results for the Stakeholders.',
           specialSolutions: [
             {
               name: 'Tax Litigation',
-              desc: 'Tax disputes often arise from tax audits. Taxpayers have rights to resolve disputes through objection and appeal processes, up to judicial review in the Supreme Court.\n\nAt RPM Consult, we assist clients in evaluating the best paths for objections and appeals. We represent clients during verification and hearings, defending their position with robust legal arguments and evidence.'
+              desc: 'Tax disputes potentially occur in the recent era of business and varies model of transactions. Most of the disputes resulted in Tax Audit. Taxpayers are having rights in solving the cases through objection and tax appeal or even judicial review to supreme court. In RPM Consult, we will help Clients to review and conclude best chances to deal with objection and appeal. We will also assist Clients during verification process in objection and trial process in appeal, defending Client\'s position by providing best defending arguments and evidence. We believe that the very best way to settle a case is that our Clients, along with RPM Consult, is diligently and totally prepared for trials and closing. Combining proven experiences, insights and strong presentation as per the Laws will give advantage for most cases. Maximizing the chance for the Clients to win the case would be our ultimate goal.'
             },
             {
-              name: 'Audit For Preliminary Evidence (Bukper)',
-              desc: 'A higher-level tax audit involving potential tax criminal sanctions. When facing a preliminary evidence audit, our experienced team works collaboratively with clients to build strong legal defense arguments and protect stakeholders from severe penal risks.'
+              name: 'Audit For Preliminary Evidence',
+              desc: 'This Audit is a higher level of tax audit with the highest risk of tax crime penalties for Taxpayer. Once we are in a condition to deal with this audit we will provide a good way and solution for the Clients. We believe that collaboration between our experienced team and Client to develop best arguments based on the Laws, key informations and defending evidence in the case, would result in good settlement of the audit and avoid the highest risk of tax crime penalty for the Clients. We would maximize best results for the stakeholders.'
             }
           ]
         },
@@ -387,25 +424,54 @@ export const translations = {
       }
     },
     values: {
-      title: 'Our Core Values',
+      title: 'Core Values',
       slogan: 'Proven result speaks louder than words',
       list: [
         {
           title: 'Integrity',
-          desc: 'Reliable and accountable. Transparent and trustworthy. Business ethics in all our actions.'
+          points: [
+            'Reliable and accountable.',
+            'Transparent and trustworthy.',
+            'Business ethics in actions.'
+          ]
         },
         {
           title: 'Respect',
-          desc: 'Trust and mutual respect. Being deeply considerate of differences, diversity, and fairness.'
+          points: [
+            'Trust and mutual respect.',
+            'Being considerate of differences.',
+            'Understanding each other, positive outlook, and fairness.'
+          ]
         },
         {
           title: 'Excellence',
-          desc: 'Continuously focus on quality. Timely, precise, and highly effective in all service deliverables.'
+          points: [
+            'Continuously focus on quality.',
+            "Timely and effective in service's deliverables.",
+            'Best efforts for desired solutions.'
+          ]
         },
         {
           title: 'Succeed',
-          desc: 'Collaboration for strong relationships. Dedicated to professional achievements and shared success.'
+          points: [
+            'Collaboration for strong relationship.',
+            'Professional achievements.',
+            'Embrace for success.'
+          ]
         }
+      ]
+    },
+    clients: {
+      badge: 'Trusted Partners',
+      titleLine1: 'Our Satisfied',
+      titleLine2: 'Clients',
+      desc: 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax and legal issues.',
+      tagline: '"Hard Facts. Clear Solutions." — Proven results for every business challenge.',
+      cta: 'Get Started',
+      stats: [
+        { value: '55+', label: 'Trusted Clients' },
+        { value: '10+', label: 'Years of Experience' },
+        { value: '98%', label: 'Satisfaction Rate' }
       ]
     },
     contact: {

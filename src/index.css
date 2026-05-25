@@ -183,3 +183,32 @@ html.lenis body {
   color: #006b2c; /* primary green */
   font-weight: 700;
 }
+
+/* ============================
+   Clients Marquee Animations
+   ============================ */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+@keyframes marquee-right {
+  0%   { transform: translateX(-33.3333%); }
+  100% { transform: translateX(0); }
+}
+
+.clients-marquee-left {
+  animation: marquee-left 40s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee-right {
+  animation: marquee-right 36s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee-left:hover,
+.clients-marquee-right:hover {
+  animation-play-state: paused;
+}
+

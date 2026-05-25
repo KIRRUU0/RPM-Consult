@@ -145,6 +145,11 @@ export default function Services() {
                         <ShieldAlert className="w-5 h-5 text-secondary shrink-0" />
                         <span>{t.services.specialTitle}</span>
                       </h4>
+                      {selectedService.specialIntro && (
+                        <p className="text-sm text-gray-600 leading-relaxed font-normal bg-surface-container-low rounded-xl px-4 py-3 border border-secondary/10">
+                          {selectedService.specialIntro}
+                        </p>
+                      )}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {selectedService.specialSolutions.map((sol, index) => (
                           <div key={index} className="bg-surface-container-low p-5 rounded-xl border border-secondary/10 space-y-2">

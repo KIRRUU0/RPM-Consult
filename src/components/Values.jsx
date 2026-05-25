@@ -80,10 +80,17 @@ export default function Values() {
               {/* Thin accent line */}
               <div className="w-8 h-0.5 bg-secondary rounded-full mb-4" />
 
-              {/* Description */}
-              <p className="text-sm text-gray-600 leading-relaxed font-normal flex-grow">
-                {val.desc}
-              </p>
+              {/* Bullet Points */}
+              <ul className="space-y-2 flex-grow">
+                {val.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600 leading-snug font-normal">
+                    <div className="mt-0.5 w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <svg className="w-2.5 h-2.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

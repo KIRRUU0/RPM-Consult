@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Values from './components/Values';
+import Clients from './components/Clients';
 import Leadership from './components/Leadership';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -35,6 +36,7 @@ function MainApp() {
         <Leadership />
         <About />
         <Values />
+        <Clients />
         <Contact />
       </main>
       <Footer />

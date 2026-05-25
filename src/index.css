@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-on-background antialiased;
+  }
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 107, 44, 0.08);
+}
+
+.glass-card-dark {
+  background: rgba(25, 28, 27, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f4f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #006b2c;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f863b;
+}
+
+/* Custom Animations and Utilities */
+.text-gradient {
+  background: linear-gradient(to right, #006b2c, #835400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(to right, #006b2c, #0f863b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* From Uiverse.io by cssbuttons-io - Adapted for RPM Consult Theme */
+.uiverse-btn {
+  --color: #ffffff; /* White to match Contact Expert */
+  font-family: inherit;
+  display: inline-block;
+  padding: 1rem 2rem; /* Sizing equivalent to py-4 px-8 */
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s, border-color 0.5s, transform 0.3s;
+  z-index: 1;
+  font-size: 16px; /* Matches Contact Expert font size */
+  border-radius: 0.5rem; /* Matches rounded-md (8px) */
+  font-weight: 700; /* Matches font-bold */
+  color: var(--color);
+  background: transparent;
+}
+
+.uiverse-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #006b2c; /* Fills with Primary Green on hover */
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.uiverse-btn:hover {
+  color: #ffffff;
+  border-color: #006b2c; /* Matches filled background */
+}
+
+.uiverse-btn:hover:before {
+  top: -80px;
+  left: -30px;
+}
+
+.uiverse-btn:active:before {
+  background: #005320; /* Darker green on active press */
+  transition: background 0s;
+}
+
+.uiverse-btn:hover {
+  transform: scale(1.03);
+}
+
+.uiverse-btn:active {
+  transform: scale(0.98);
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+
+

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RPM Consult - Solusi Pajak &amp; Bisnis Terpercaya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --easing: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(38, 148, 71, 0.1);
+            transition: transform 0.4s var(--easing), box-shadow 0.4s var(--easing);
+        }
+
+        .bento-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(38, 148, 71, 0.15);
+        }
+
+        .text-gradient-green {
+            background: linear-gradient(to right, #269447, #1b6b33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animation States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--easing), transform 0.8s var(--easing);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease-in-out;
+                transform: none !important;
+            }
+            .bento-hover:hover, .hover-lift:hover {
+                transform: none !important;
+            }
+            .parallax-element {
+                transform: none !important;
+            }
+        }
+
+        .parallax-bg {
+            transition: transform 0.1s ease-out;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing), background-color 0.3s var(--easing);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s var(--easing), transform 0.6s var(--easing);
+        }
+
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#006b2c", "primary-container": "#0f863b", "on-primary": "#ffffff", secondary: "#835400", "secondary-container": "#fcab28", "on-secondary": "#ffffff", tertiary: "#2c683b", background: "#f8faf8", surface: "#f8faf8", "on-background": "#191c1b", "on-surface": "#191c1b", outline: "#6e7a6d", "surface-container": "#eceeec", "surface-container-low": "#f2f4f2", "on-tertiary-fixed": "#00210a", "outline-variant": "#becabb", "inverse-surface": "#2e3130", "on-error": "#ffffff", "error-container": "#ffdad6", "inverse-on-surface": "#eff1ef", "on-primary-fixed": "#002109", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "surface-bright": "#f8faf8", "inverse-primary": "#73dc86", "surface-container-high": "#e6e9e7", "tertiary-fixed-dim": "#96d59f", "surface-variant": "#e1e3e1", "surface-container-lowest": "#ffffff", "on-primary-container": "#f7fff2", "on-tertiary-container": "#f7fff3", "on-secondary-container": "#694300", "on-tertiary-fixed-variant": "#135128", "primary-fixed": "#8ff99f", "surface-tint": "#006e2d", "secondary-fixed-dim": "#ffb957", "on-secondary-fixed": "#2a1800", "surface-dim": "#d8dad9", "tertiary-container": "#468152", "on-secondary-fixed-variant": "#643f00", error: "#ba1a1a", "on-primary-fixed-variant": "#005320", "surface-container-highest": "#e1e3e1", "on-error-container": "#93000a", "tertiary-fixed": "#b1f2b9", "on-surface-variant": "#3f4a3e", "primary-fixed-dim": "#73dc86"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-mobile": "16px", unit: "8px", "margin-desktop": "80px", "container-max": "1280px", gutter: "24px"}, fontFamily: {sans: ["Hanken Grotesk", "sans-serif"], "body-md": ["Hanken Grotesk"], "headline-xl": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "700"}], "headline-xl": ["64px", {lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "800"}], "headline-lg": ["40px", {lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "800"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "700"}]}}}};</script>
+</head>
+<body class="bg-background text-on-background font-sans selection:bg-primary selection:text-white overflow-x-hidden">
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 transition-all duration-500 border-b border-primary/5">
+<nav class="flex justify-between items-center px-4 md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="RPM Consult Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"/>
+<div class="hidden sm:block">
+<span class="block font-bold text-lg leading-none text-primary uppercase">RPM Consult</span>
+<span class="text-[10px] text-gray-500 uppercase tracking-tighter">Raka Pradipta Mahawira</span>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-8">
+<a class="font-label-lg text-primary border-b-2 border-primary pb-1 transition-all duration-300" href="#services">Services</a>
+<a class="font-label-lg text-gray-600 hover:text-primary transition-all duration-300" href="#expertise">Expertise</a>
+<a class="font-label-lg text-gray-600 hover:text-primary transition-all duration-300" href="#about">About Us</a>
+<a class="font-label-lg text-gray-600 hover:text-primary transition-all duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-label-lg hover:bg-opacity-90 hover:scale-105 active:scale-95 transition-all shadow-sm">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-on-background">
+<!-- Full Page Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Modern Business District" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HOISwjyTZd1P04JQYd9QVk2loYnDxxFt8Tdq6kwD7whbGYA5WVAWVt7udp9SasLkYFjQ6_gThJjk6H0vfJ5-rLrQurr035yEhY2De5zy6HF7saYjPjfw6KcUxVSlNKzqSPmZV-oeNHjZ3EPQy-Xli0-FVTWfdKWktqWzrZlsTVyBmMF29LHB8n_4cKLOv0CcA0eXgio2lx2B9RrdEx1MBOizYveSRkPbhRNeTR6RLYW2b-Wx9xXKPERTlGzEy1CUemm_LoZ7qrw"/>
+<!-- Dark Overlay for legibility -->
+<div class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
+</div>
+<!-- Parallax shapes moved to z-10 -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/20 -skew-x-12 transform translate-x-1/2 z-10 parallax-bg opacity-30" id="hero-shape"></div>
+<div class="relative z-20 max-w-container-max mx-auto px-4 md:px-margin-desktop w-full text-center lg:text-left">
+<div class="max-w-3xl space-y-8 py-12 reveal" data-delay="0">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-on-secondary font-label-lg text-xs md:text-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                Professional Legal, Tax &amp; Business Solutions
+            </div>
+<h1 class="font-headline-xl text-4xl md:text-6xl lg:text-headline-xl text-white leading-tight">
+                Solusi Pajak &amp; <br/><span class="text-primary-fixed">Bisnis Terpercaya</span>
+</h1>
+<p class="font-body-lg text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0">
+                Empowering organizations through precise financial leadership and strategic legal oversight. We deliver confidence through real experience and technology.
+            </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<button class="bg-primary text-white px-8 py-4 rounded-lg font-bold shadow-lg shadow-primary/20 hover:scale-105 hover:shadow-xl active:scale-95 transition-all duration-300">Our Solutions</button>
+<button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300">Contact Expert</button>
+</div>
+<div class="pt-8 border-t border-white/20">
+<p class="italic text-xl text-secondary font-semibold">"For better future, for all"</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden" id="about">
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop"><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+<div class="lg:col-span-5 relative reveal" data-delay="100">
+<div class="relative z-10">
+<img alt="Professional Office Environment" class="rounded-2xl shadow-2xl w-full h-[600px] object-cover border border-primary/10" src="https://lh3.googleusercontent.com/aida/ADBb0ugfbNml8ljVCIUuKgzC-fqi3eoL6EspAlf2zpuMlMQV4UjxJpeSfEBhNzqnGvnP-dMyj1dHTbD-LwMdjI74wNTiOsUZhDalz2nw0cbNibZTBscrV1GuV9QUnGGxQX5sselptp5KDdUneME83-jpa5vMFgk-1mkbTQS2jNzO1L4sDuj7nAaQkYZib9GRXHgljfmjrYGCG_kaZNVDjFTd3TK0gj3vqL64qzRCZiCEEM8M6XubEaQxRag-H9Y"/>
+<div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-2xl shadow-xl border border-primary/5 hidden md:block hover-lift">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary font-bold">workspace_premium</span>
+</div>
+<div>
+<p class="text-primary font-bold text-2xl leading-none">28+</p>
+<p class="text-gray-500 text-sm">Years of Excellence</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-6 -left-6 bg-secondary w-24 h-24 rounded-2xl -z-10 opacity-20"></div>
+</div>
+<div class="lg:col-span-7 space-y-8 reveal" data-delay="200">
+<div class="space-y-4">
+<span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">About Our Firm</span>
+<h2 class="font-headline-lg text-primary text-4xl lg:text-5xl leading-tight">Crafting Strategic Solutions for <span class="text-secondary">Future Growth</span></h2>
+<div class="h-1.5 w-24 bg-secondary rounded-full"></div>
+</div>
+<div class="space-y-6">
+<p class="text-lg text-gray-700 leading-relaxed">
+        Philosophically, <span class="font-bold text-primary">"Raka"</span> signifies persistence and wisdom, while <span class="font-bold text-primary">"Pradipta"</span> represents a bright light, guiding our mission as <span class="font-bold text-primary">"Mahawira"</span>—great heroes in the corporate landscape.
+      </p>
+<p class="text-gray-600 leading-relaxed">
+        RPM Consult was established by individuals driven by chivalrous values and a noble vision. We are a licensed powerhouse in Legal, Tax, and Business Solutions, dedicated to delivering a positive impact to all stakeholders through innovation and technology.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-container">
+<div class="flex gap-4 p-4 rounded-xl bg-white border border-primary/5 shadow-sm stagger-item">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">visibility</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Our Vision</h4>
+<p class="text-xs text-gray-500">To be the leading light in strategic financial and legal consultancy.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl bg-white border border-primary/5 shadow-sm stagger-item">
+<div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Our Mission</h4>
+<p class="text-xs text-gray-500">Empowering organizations with precise leadership and real-world expertise.</p>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
+        Learn More About Our Team
+        <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div></div>
+</section>
+<!-- Core Services Section -->
+<section class="py-24 bg-white" id="services">
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+<div class="text-center mb-16 space-y-4 reveal">
+<h2 class="font-headline-lg text-primary">Core Services</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions tailored to navigate complex legal and financial landscapes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-container">
+<!-- Tax Services -->
+<div class="glass-card p-8 rounded-xl space-y-6 bento-hover stagger-item">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline-md text-primary mb-4">Tax Services</h3>
+<ul class="text-sm space-y-2 text-gray-600">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Compliance</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Advisory</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Diagnostic Review</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Transfer Pricing</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Litigation</li>
+</ul>
+</div>
+</div>
+<!-- Accounting Services -->
+<div class="glass-card p-8 rounded-xl space-y-6 bento-hover stagger-item">
+<div class="w-14 h-14 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">monitoring</span>
+</div>
+<div>
+<h3 class="font-headline-md text-primary mb-4">Accounting</h3>
+<ul class="text-sm space-y-2 text-gray-600">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Bookkeeping</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Financial Reporting</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Consolidation</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Management Reporting</li>
+</ul>
+</div>
+</div>
+<!-- Legal Services -->
+<div class="glass-card p-8 rounded-xl space-y-6 bento-hover stagger-item">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">gavel</span>
+</div>
+<div>
+<h3 class="font-headline-md text-primary mb-4">Legal Services</h3>
+<ul class="text-sm space-y-2 text-gray-600">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Risk Assessment</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Advisory &amp; Compliance</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Dispute Resolution</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Company Establishment</li>
+</ul>
+</div>
+</div>
+<!-- HR Consulting -->
+<div class="glass-card p-8 rounded-xl space-y-6 bento-hover stagger-item">
+<div class="w-14 h-14 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<div>
+<h3 class="font-headline-md text-primary mb-4">HR Consulting</h3>
+<ul class="text-sm space-y-2 text-gray-600">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Strategy Planning</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Talent Management</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Organizational Design</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Policy Development</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values Section -->
+<section class="py-24 bg-primary relative overflow-hidden text-white">
+<div class="absolute inset-0 opacity-20 parallax-bg" id="values-bg">
+<img alt="Abstract Business Pattern" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMqqlOF0GkHqE0foACEEVDm5_4VusI08upBjAta_U3J745ThFwtPygXQNAeKv76iMUI8VADOGHkJM_VIau_O1WZ80o5cmdVno7fOB6qXwQZhMPLICkNpcsasK-698DTS4Zj0LYOTkhVBXbMrkeGOQ4aD1Ve_zL8doMbyDtfKC4zMuimTDEq4CEB9_lcnpcbOvevPSddOARhbymIM3mCHtkzt-Z4AHndckqDdVs8IMSP2k3Uw0gIRAWE7oncABXfr6kQ4Uv2NvqDxs"/>
+</div>
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-white">Our Core Values</h2>
+<div class="h-1 w-20 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-container">
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/15 hover-lift stagger-item">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">verified_user</span>
+<h4 class="font-bold text-xl mb-2">Integrity</h4>
+<p class="text-sm text-white/80">Reliable and accountable. Transparent and trustworthy. Business ethics in actions.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/15 hover-lift stagger-item">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">handshake</span>
+<h4 class="font-bold text-xl mb-2">Respect</h4>
+<p class="text-sm text-white/80">Trust and mutual respect. Being considerate of differences and fairness.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/15 hover-lift stagger-item">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">stars</span>
+<h4 class="font-bold text-xl mb-2">Excellence</h4>
+<p class="text-sm text-white/80">Continuously focus on quality. Timely and effective in service deliverables.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:bg-white/15 hover-lift stagger-item">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">trending_up</span>
+<h4 class="font-bold text-xl mb-2">Succeed</h4>
+<p class="text-sm text-white/80">Collaboration for strong relationship. Professional achievements and success.</p>
+</div>
+</div>
+<div class="mt-16 text-center reveal" data-delay="400">
+<p class="text-2xl md:text-3xl italic font-semibold text-secondary">"Proven result speaks louder than words."</p>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-24 bg-white" id="expertise">
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+<div class="text-center mb-16 space-y-4 reveal">
+<h2 class="font-headline-lg text-primary">Executive Leadership</h2>
+<p class="text-gray-600">Guided by decades of collective expertise and strategic vision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto stagger-container">
+<div class="text-center space-y-6 p-8 rounded-2xl bg-surface-container-low hover:bg-primary-container transition-all duration-500 stagger-item hover-lift">
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+<img alt="Agus Priyatna" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZ9v5w1mDVEL7xOAK7tSeFEV2zIc3GgahaqP5Nb5_SlMdGZ-R5eoHJstdsXqM7IaeMnP4MIwQlo5SXWIWltO67DkeoayhvcLR5-qH_tS0JvHeKkCXFMAIePjlRJSoT_ZTbq4ZPRZp1v9haE7B08OxDC_tl96Tj-428L00Ak8Vr-ohAJneIwQ4JUyngpfEocu8iV6AsoxqxeEfqzzz8J7W_xKaQJNb8pfSEW3drxrJRtQeAHbDOD0c0Bv4fNWsKbYtVyevphK4uqc"/>
+</div>
+<div>
+<h3 class="font-headline-md text-primary">Agus Priyatna</h3>
+<p class="text-secondary font-bold text-sm tracking-widest uppercase">Tax Director</p>
+<p class="text-gray-600 mt-4 text-sm">Over 25 years of specialized experience in corporate tax litigation, advisory, and compliance.</p>
+</div>
+</div>
+<div class="text-center space-y-6 p-8 rounded-2xl bg-surface-container-low hover:bg-primary-container transition-all duration-500 stagger-item hover-lift">
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+<img alt="Jason Lathianza" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjmKzoL-XjENRRAqHdTJ8TJQ3hGGi0_o0CWoNsVOWHsUvUj0i8wikCwX0TA2fuMYAuZRf4P32Y3GWQMVXyVya5kOUeuzlnaRgKkdM7mua8OwRXpdC79smZPjgy9YNh-zFxc_AkYAZyePgrAK7hpIvB_WCqVgjYg8MWOY3va0iHCD_rP6uoXYInzuEYSkWHHxlcCFVWRa0wU5Zkdd0AYg6GYojbx-DHSfpXdQL7WxtzlD_SFrR7Dy7B8DtnXS1dDW7Wp8BrY-yjCo8"/>
+</div>
+<div>
+<h3 class="font-headline-md text-primary">Jason Lathianza</h3>
+<p class="text-secondary font-bold text-sm tracking-widest uppercase">Legal Director</p>
+<p class="text-gray-600 mt-4 text-sm">Expert in corporate law frameworks, dispute resolution, and driving organizational growth through ethical governance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Locations -->
+<section class="py-24 bg-surface-container-low" id="contact">
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="space-y-12 reveal">
+<div>
+<h2 class="font-headline-lg text-primary mb-4">Get In Touch</h2>
+<p class="text-gray-600">Our doors are always open for strategic conversations. Reach out to our team of experts today.</p>
+</div>
+<div class="space-y-8 stagger-container">
+<div class="flex gap-5 stagger-item hover-lift">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg">PIK 2 Office</h4>
+<p class="text-gray-600 text-sm leading-relaxed">PIK 2 Soho Manhattan Hoek No. 5, Lt. 3 Salembaran Jati, Kosambi, Tangerang, Banten 15214</p>
+</div>
+</div>
+<div class="flex gap-5 stagger-item hover-lift">
+<div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-on-secondary">corporate_fare</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg">Alam Sutera Office</h4>
+<p class="text-gray-600 text-sm leading-relaxed">Ruko The Prominence Blok 38D No. 49-50, Jl. Jalur Sutera Boulevard - Alam Sutera, Tangerang, Banten 15143</p>
+</div>
+</div>
+<div class="flex gap-5 stagger-item hover-lift">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg">Communication</h4>
+<p class="text-gray-600 text-sm">raka_pm@rpm-consult.com</p>
+<p class="text-gray-600 text-sm">0812 8686 6654</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-primary/5 reveal" data-delay="300">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700">Full Name</label>
+<input class="w-full bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 outline-none transition-all duration-300" placeholder="Enter your name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700">Email Address</label>
+<input class="w-full bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 outline-none transition-all duration-300" placeholder="your@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700">Service Category</label>
+<select class="w-full bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 outline-none transition-all duration-300">
+<option>Tax Services</option>
+<option>Accounting &amp; Audit</option>
+<option>Legal Consultation</option>
+<option>HR Consulting</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700">Your Message</label>
+<textarea class="w-full bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 outline-none transition-all duration-300 resize-none" placeholder="Describe your inquiry..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-lg hover:bg-opacity-90 hover:scale-[1.02] active:scale-95 transition-all duration-300">Send Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-on-background text-white pt-16 pb-8 px-4 md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<img alt="RPM Logo" class="h-10 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"/>
+<span class="font-bold text-xl uppercase tracking-wider">RPM Consult</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">
+                PT Raka Pradipta Mahawira provides professional Legal, Tax &amp; Business Solutions with expert leadership and chivalrous values.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined text-sm">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Services</h4>
+<ul class="space-y-3 text-white/70 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Tax Litigation &amp; Audit</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Corporate Bookkeeping</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Legal Risk Assessment</a></li>
+<li><a class="hover:text-white transition-colors" href="#">HR Strategy &amp; Planning</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Company</h4>
+<ul class="space-y-3 text-white/70 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">About Our Firm</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Expert Profiles</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Newsletter</h4>
+<p class="text-white/60 text-sm mb-4">Subscribe to receive regulatory updates.</p>
+<div class="flex">
+<input class="bg-white/5 border border-white/10 rounded-l-lg px-4 py-2 text-sm w-full outline-none focus:border-primary transition-colors" placeholder="Email address" type="email"/>
+<button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-opacity-90 active:scale-95 transition-all"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-white/10 text-center">
+<p class="text-white/40 text-xs">© 2024 PT Raka Pradipta Mahawira (RPM Consult). All rights reserved.</p>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Entrance Animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, delay);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Stagger items within containers
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const items = entry.target.querySelectorAll('.stagger-item');
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, index * 100);
+                });
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.stagger-container').forEach(el => staggerObserver.observe(el));
+
+    // Parallax background effects
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        const parallaxElements = [
+            { id: 'hero-shape', factor: 20 },
+            { id: 'hero-blur', factor: 40 },
+            { id: 'values-bg', factor: 10 }
+        ];
+
+        parallaxElements.forEach(item => {
+            const el = document.getElementById(item.id);
+            if (el) {
+                const moveX = (x - 0.5) * item.factor;
+                const moveY = (y - 0.5) * item.factor;
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg', 'py-0', 'bg-white/95');
+            header.classList.remove('bg-white/90');
+        } else {
+            header.classList.remove('shadow-lg', 'py-0', 'bg-white/95');
+            header.classList.add('bg-white/90');
+        }
+    });
+
+    // Simple nav active state with smooth interaction
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Only handle internal links
+            if (link.getAttribute('href').startsWith('#')) {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                    l.classList.add('text-gray-600');
+                });
+                link.classList.add('text-primary', 'border-b-2', 'border-primary');
+                link.classList.remove('text-gray-600');
+            }
+        });
+    });
+</script>
+</body></html>

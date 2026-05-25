@@ -1,62 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Handshake, Star, TrendingUp } from 'lucide-react';
+import { useLanguage } from '../utils/LanguageContext';
+import { translations } from '../utils/translations';
 
 export default function Values() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const { language } = useLanguage();
+  const t = translations[language];
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 25; // 25px max offset
-      const y = (e.clientY / window.innerHeight - 0.5) * 25;
-      setMousePos({ x, y });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const valuesList = [
-    {
-      title: 'Integrity (Integritas)',
-      icon: <ShieldCheck className="w-8 h-8 text-secondary-container" />,
-      desc: 'Dapat diandalkan dan bertanggung jawab. Transparan dan tepercaya. Menerapkan etika bisnis tinggi dalam setiap tindakan.',
-      highlight: false,
-    },
-    {
-      title: 'Respect (Saling Menghormati)',
-      icon: <Handshake className="w-8 h-8 text-secondary-container" />,
-      desc: 'Membangun kepercayaan dan saling menghormati. Penuh pertimbangan terhadap perbedaan, keberagaman, serta keadilan.',
-      highlight: false,
-    },
-    {
-      title: 'Excellence (Keunggulan)',
-      icon: <Star className="w-8 h-8 text-secondary-container" />,
-      desc: 'Terus fokus pada kualitas terbaik. Tepat waktu, presisi, dan sangat efektif dalam penyampaian seluruh solusi layanan kami.',
-      highlight: true, // Thicker accent border requested in DESIGN.md
-    },
-    {
-      title: 'Succeed (Kesuksesan)',
-      icon: <TrendingUp className="w-8 h-8 text-secondary-container" />,
-      desc: 'Kolaborasi erat untuk membangun hubungan kerja yang kuat. Berkomitmen pada pencapaian profesional dan kesuksesan bersama.',
-      highlight: true, // Thicker accent border requested in DESIGN.md
-    },
+  const icons = [
+    <ShieldCheck className="w-8 h-8 text-secondary-container" />,
+    <Handshake className="w-8 h-8 text-secondary-container" />,
+    <Star className="w-8 h-8 text-secondary-container" />,
+    <TrendingUp className="w-8 h-8 text-secondary-container" />
   ];
+
+  const valuesList = t.values.list.map((val, idx) => ({
+    ...val,
+    icon: icons[idx],
+    highlight: idx >= 2 // Excellence and Succeed have thick borders
+  }));
 
   return (
     <section className="py-24 bg-primary relative overflow-hidden text-white" id="values">
-      {/* Background Image with parallax feeling */}
-      <div 
-        style={{ 
-          transform: `translate(${mousePos.x}px, ${mousePos.y}px)`,
-          transition: 'transform 0.1s ease-out'
-        }}
-        className="absolute inset-0 opacity-15 pointer-events-none"
-      >
-        <img
-          alt="Abstract Business Pattern"
-          className="w-full h-full object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMqqlOF0GkHqE0foACEEVDm5_4VusI08upBjAta_U3J745ThFwtPygXQNAeKv76iMUI8VADOGHkJM_VIau_O1WZ80o5cmdVno7fOB6qXwQZhMPLICkNpcsasK-698DTS4Zj0LYOTkhVBXbMrkeGOQ4aD1Ve_zL8doMbyDtfKC4zMuimTDEq4CEB9_lcnpcbOvevPSddOARhbymIM3mCHtkzt-Z4AHndckqDdVs8IMSP2k3Uw0gIRAWE7oncABXfr6kQ4Uv2NvqDxs"
-        />
+      {/* Background SVG Grid Pattern - Ultra Lightweight & Zero network cost */}
+      <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
 
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
@@ -68,7 +44,7 @@ export default function Values() {
             viewport={{ once: true }}
             className="font-extrabold text-white text-3xl md:text-4xl lg:text-5xl"
           >
-            Nilai-Nilai Utama Kami
+            {t.values.title}
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -80,7 +56,7 @@ export default function Values() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-layer">
           {valuesList.map((val, idx) => (
             <motion.div
               key={idx}
@@ -91,7 +67,7 @@ export default function Values() {
               whileHover={{ y: -8 }}
               className={`p-8 rounded-xl bg-white/10 backdrop-blur-md shadow-lg transition-all duration-300 ${
                 val.highlight
-                  ? 'border-2 border-secondary-container'
+                  ? 'border-2 border-secondary-container scale-[1.01]'
                   : 'border border-white/20'
               }`}
             >
@@ -125,10 +101,7 @@ export default function Values() {
           className="mt-20 text-center"
         >
           <p className="text-xl md:text-3xl italic font-semibold text-secondary-container tracking-wide leading-relaxed">
-            &quot;Proven result speaks louder than words.&quot;
-          </p>
-          <p className="text-xs text-white/50 uppercase tracking-widest mt-2">
-            Hasil yang terbukti berbicara lebih keras daripada kata-kata
+            &quot;{t.values.slogan}&quot;
           </p>
         </motion.div>
       </div>

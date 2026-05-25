@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Linkedin, Globe, Shield, Send, Check } from 'lucide-react';
+import { useLanguage } from '../utils/LanguageContext';
+import { translations } from '../utils/translations';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -35,7 +39,7 @@ export default function Footer() {
             <span className="font-extrabold text-xl uppercase tracking-wider text-white">RPM Consult</span>
           </a>
           <p className="text-white/60 text-sm leading-relaxed">
-            PT Raka Pradipta Mahawira (RPM Consult) menyediakan layanan profesional terintegrasi untuk Solusi Hukum, Pajak &amp; Bisnis.
+            {t.footer.desc}
           </p>
           <div className="text-white/70 text-sm space-y-2 pt-2">
             <p><strong>Email:</strong> <a href="mailto:raka_pm@rpm-consult.com" className="hover:text-white transition-colors">raka_pm@rpm-consult.com</a></p>
@@ -69,17 +73,17 @@ export default function Footer() {
         {/* Column 2: Kantor Kami (Our Offices) */}
         <div className="space-y-6">
           <h4 className="font-bold text-secondary-container mb-2 uppercase tracking-widest text-xs">
-            Kantor Kami
+            {t.footer.officesTitle}
           </h4>
           <div className="space-y-4 text-white/70 text-sm">
             <div className="space-y-1">
-              <p className="font-bold text-white text-xs uppercase tracking-wider">Kantor PIK 2 (Pusat)</p>
+              <p className="font-bold text-white text-xs uppercase tracking-wider">{t.footer.office1}</p>
               <p className="text-xs leading-relaxed text-white/60">
                 PIK 2 Soho Manhattan Hoek No. 5, Lt. 3, Salembaran Jati, Kosambi, Tangerang, Banten 15214
               </p>
             </div>
             <div className="space-y-1">
-              <p className="font-bold text-white text-xs uppercase tracking-wider">Kantor Alam Sutera</p>
+              <p className="font-bold text-white text-xs uppercase tracking-wider">{t.footer.office2}</p>
               <p className="text-xs leading-relaxed text-white/60">
                 Ruko The Prominence Blok 38D No. 49-50, Jl. Jalur Sutera Boulevard - Alam Sutera, Tangerang, Banten 15143
               </p>
@@ -90,7 +94,7 @@ export default function Footer() {
         {/* Column 3: Portals & cPanel */}
         <div>
           <h4 className="font-bold text-secondary-container mb-6 uppercase tracking-widest text-xs">
-            Staff &amp; Domain Portals
+            {t.footer.portalsTitle}
           </h4>
           <ul className="space-y-3.5 text-white/70 text-sm">
             {portalLinks.map((portal) => (
@@ -107,12 +111,12 @@ export default function Footer() {
             ))}
             <li className="pt-2 border-t border-white/5 mt-2">
               <a className="hover:text-white transition-colors" href="#about">
-                About Our Firm
+                {t.nav.about}
               </a>
             </li>
             <li>
               <a className="hover:text-white transition-colors" href="#leadership">
-                Expert Profiles
+                {t.nav.leadership}
               </a>
             </li>
           </ul>
@@ -121,10 +125,10 @@ export default function Footer() {
         {/* Column 4: Newsletter */}
         <div className="space-y-4">
           <h4 className="font-bold text-secondary-container mb-6 uppercase tracking-widest text-xs">
-            Newsletter
+            {t.footer.newsletterTitle}
           </h4>
-          <p className="text-white/60 text-sm">
-            Subscribe to receive tax regulation updates and consulting news digests.
+          <p className="text-white/60 text-sm leading-relaxed">
+            {t.footer.newsletterDesc}
           </p>
           
           <form onSubmit={handleSubscribe} className="flex relative">
@@ -135,19 +139,19 @@ export default function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               disabled={subscribed}
               className="bg-white/5 border border-white/10 rounded-l-md px-4 py-3 text-sm w-full outline-none focus:border-primary transition-colors text-white disabled:opacity-50"
-              placeholder="Email address"
+              placeholder={t.footer.newsletterPlaceholder}
             />
             <button
               type="submit"
               disabled={subscribed}
-              className="bg-primary hover:bg-primary-container disabled:bg-primary/55 px-4 rounded-r-md transition-all flex items-center justify-center shrink-0 w-12 text-white"
+              className="bg-primary hover:bg-primary-container disabled:bg-primary/55 px-4 rounded-r-md transition-all flex items-center justify-center shrink-0 w-12 text-white cursor-pointer"
             >
               {subscribed ? <Check className="w-5 h-5 text-white" /> : <Send className="w-4 h-4" />}
             </button>
           </form>
           {subscribed && (
             <p className="text-xs text-secondary-container font-semibold animate-pulse">
-              Subscribed successfully! Thank you.
+              {t.footer.newsletterSuccess}
             </p>
           )}
         </div>
@@ -156,7 +160,7 @@ export default function Footer() {
 
       {/* Footer Bottom copyright */}
       <div className="max-w-container-max mx-auto mt-16 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
-        <p>© 2026 PT Raka Pradipta Mahawira (RPM Consult). All rights reserved.</p>
+        <p>© 2026 PT Raka Pradipta Mahawira (RPM Consult). {t.footer.copyright}</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white/70 transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-white/70 transition-colors">Terms of Service</a>

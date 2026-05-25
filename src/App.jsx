@@ -5,6 +5,7 @@ import { LanguageProvider } from './utils/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import VisionMission from './components/VisionMission';
 import Services from './components/Services';
 import Values from './components/Values';
 import Clients from './components/Clients';
@@ -35,6 +36,7 @@ function MainApp() {
         <Services />
         <Leadership />
         <About />
+        <VisionMission />
         <Values />
         <Clients />
         <Contact />

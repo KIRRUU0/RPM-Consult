@@ -17,27 +17,27 @@ export default function Values() {
 
   const valuesList = [
     {
-      title: 'Integrity',
+      title: 'Integrity (Integritas)',
       icon: <ShieldCheck className="w-8 h-8 text-secondary-container" />,
-      desc: 'Reliable and accountable. Transparent and trustworthy. Business ethics in all our actions.',
+      desc: 'Dapat diandalkan dan bertanggung jawab. Transparan dan tepercaya. Menerapkan etika bisnis tinggi dalam setiap tindakan.',
       highlight: false,
     },
     {
-      title: 'Respect',
+      title: 'Respect (Saling Menghormati)',
       icon: <Handshake className="w-8 h-8 text-secondary-container" />,
-      desc: 'Trust and mutual respect. Being deeply considerate of differences, diversity, and fairness.',
+      desc: 'Membangun kepercayaan dan saling menghormati. Penuh pertimbangan terhadap perbedaan, keberagaman, serta keadilan.',
       highlight: false,
     },
     {
-      title: 'Excellence',
+      title: 'Excellence (Keunggulan)',
       icon: <Star className="w-8 h-8 text-secondary-container" />,
-      desc: 'Continuously focus on quality. Timely, precise, and highly effective in all service deliverables.',
+      desc: 'Terus fokus pada kualitas terbaik. Tepat waktu, presisi, dan sangat efektif dalam penyampaian seluruh solusi layanan kami.',
       highlight: true, // Thicker accent border requested in DESIGN.md
     },
     {
-      title: 'Succeed',
+      title: 'Succeed (Kesuksesan)',
       icon: <TrendingUp className="w-8 h-8 text-secondary-container" />,
-      desc: 'Collaboration for strong relationships. Dedicated to professional achievements and shared success.',
+      desc: 'Kolaborasi erat untuk membangun hubungan kerja yang kuat. Berkomitmen pada pencapaian profesional dan kesuksesan bersama.',
       highlight: true, // Thicker accent border requested in DESIGN.md
     },
   ];
@@ -68,7 +68,7 @@ export default function Values() {
             viewport={{ once: true }}
             className="font-extrabold text-white text-3xl md:text-4xl lg:text-5xl"
           >
-            Our Core Values
+            Nilai-Nilai Utama Kami
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -101,7 +101,7 @@ export default function Values() {
               </div>
 
               {/* Title & Description */}
-              <h3 className="font-extrabold text-xl mb-3 flex items-center gap-2">
+              <h3 className="font-extrabold text-lg mb-3 flex flex-wrap items-center gap-2">
                 {val.title}
                 {val.highlight && (
                   <span className="text-[10px] bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
@@ -126,6 +126,9 @@ export default function Values() {
         >
           <p className="text-xl md:text-3xl italic font-semibold text-secondary-container tracking-wide leading-relaxed">
             &quot;Proven result speaks louder than words.&quot;
+          </p>
+          <p className="text-xs text-white/50 uppercase tracking-widest mt-2">
+            Hasil yang terbukti berbicara lebih keras daripada kata-kata
           </p>
         </motion.div>
       </div>

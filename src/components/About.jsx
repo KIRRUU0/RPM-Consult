@@ -80,20 +80,20 @@ export default function About() {
           >
             <div className="space-y-4">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">
-                About Our Firm
+                Tentang Perusahaan Kami
               </span>
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight">
-                Crafting Strategic Solutions for <span className="text-secondary">Future Growth</span>
+                Merancang Solusi Strategis untuk <span className="text-secondary">Pertumbuhan Masa Depan</span>
               </h2>
               <div className="h-1.5 w-24 bg-secondary rounded-full" />
             </div>
 
             <div className="space-y-6">
               <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                Philosophically, <span className="font-bold text-primary">&quot;Raka&quot;</span> signifies persistence and wisdom, while <span className="font-bold text-primary">&quot;Pradipta&quot;</span> represents a bright light, guiding our mission as <span className="font-bold text-primary">&quot;Mahawira&quot;</span>—great heroes in the corporate landscape.
+                Secara filosofis, <span className="font-bold text-primary">&quot;Raka&quot;</span> berarti gigih, bijaksana, berpengaruh, dan kuat, <span className="font-bold text-primary">&quot;Pradipta&quot;</span> berarti cahaya terang, dan <span className="font-bold text-primary">&quot;Mahawira&quot;</span> berarti pahlawan besar.
               </p>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                RPM Consult was established by individuals driven by chivalrous values and a noble vision. We are a licensed powerhouse in Legal, Tax, and Business Solutions, dedicated to delivering a positive impact to all stakeholders through innovation and technology.
+                PT Raka Pradipta Mahawira (&quot;RPM Consult&quot;) didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, serta memiliki visi dan misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan sebagai penyedia solusi Hukum, Pajak &amp; Bisnis tepercaya.
               </p>
             </div>
 
@@ -108,9 +108,9 @@ export default function About() {
                   <Eye className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-1">Our Vision</h4>
+                  <h4 className="font-bold text-primary mb-1">Visi Kami</h4>
                   <p className="text-xs text-gray-500 leading-relaxed">
-                    To be the leading light in strategic financial and legal consultancy, creating lasting value.
+                    Menjadi mitra terbaik bagi para pemangku kepentingan dengan memberikan layanan profesional untuk solusi hukum, pajak, dan bisnis yang komprehensif, sekaligus menyediakan lingkungan kerja yang menyenangkan untuk memberdayakan kontribusi positif.
                   </p>
                 </div>
               </motion.div>
@@ -124,10 +124,13 @@ export default function About() {
                   <Rocket className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-1">Our Mission</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    Empowering organizations with precise leadership, technology, and real-world expertise.
-                  </p>
+                  <h4 className="font-bold text-primary mb-1">Misi Kami</h4>
+                  <ul className="text-xs text-gray-500 leading-relaxed list-decimal pl-4 space-y-1">
+                    <li>Berkomitmen dalam memberikan upaya terbaik untuk hasil yang diinginkan.</li>
+                    <li>Memperjuangkan keunggulan dalam pemikiran strategis serta layanan personal.</li>
+                    <li>Meningkatkan upaya kolaboratif dan keunikan dalam layanan.</li>
+                    <li>Menjaga sinergi dan kontribusi optimal kepada pemangku kepentingan.</li>
+                  </ul>
                 </div>
               </motion.div>
             </div>
@@ -137,7 +140,7 @@ export default function About() {
                 href="#leadership"
                 className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
               >
-                Learn More About Our Team
+                Pelajari Lebih Lanjut Tentang Tim Kami
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>

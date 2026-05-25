@@ -35,8 +35,12 @@ export default function Footer() {
             <span className="font-extrabold text-xl uppercase tracking-wider text-white">RPM Consult</span>
           </a>
           <p className="text-white/60 text-sm leading-relaxed">
-            PT Raka Pradipta Mahawira provides professional Legal, Tax &amp; Business Solutions with expert leadership and chivalrous values.
+            PT Raka Pradipta Mahawira (RPM Consult) menyediakan layanan profesional terintegrasi untuk Solusi Hukum, Pajak &amp; Bisnis.
           </p>
+          <div className="text-white/70 text-sm space-y-2 pt-2">
+            <p><strong>Email:</strong> <a href="mailto:raka_pm@rpm-consult.com" className="hover:text-white transition-colors">raka_pm@rpm-consult.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+6281286866654" className="hover:text-white transition-colors">0812 8686 6654</a></p>
+          </div>
           <div className="flex gap-4 pt-2">
             <a
               href="#"
@@ -62,33 +66,25 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Services List */}
-        <div>
-          <h4 className="font-bold text-secondary-container mb-6 uppercase tracking-widest text-xs">
-            Services
+        {/* Column 2: Kantor Kami (Our Offices) */}
+        <div className="space-y-6">
+          <h4 className="font-bold text-secondary-container mb-2 uppercase tracking-widest text-xs">
+            Kantor Kami
           </h4>
-          <ul className="space-y-3.5 text-white/70 text-sm">
-            <li>
-              <a className="hover:text-white transition-colors" href="#services">
-                Tax Litigation &amp; Audit
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-white transition-colors" href="#services">
-                Corporate Bookkeeping
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-white transition-colors" href="#services">
-                Legal Risk Assessment
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-white transition-colors" href="#services">
-                HR Strategy &amp; Planning
-              </a>
-            </li>
-          </ul>
+          <div className="space-y-4 text-white/70 text-sm">
+            <div className="space-y-1">
+              <p className="font-bold text-white text-xs uppercase tracking-wider">Kantor PIK 2 (Pusat)</p>
+              <p className="text-xs leading-relaxed text-white/60">
+                PIK 2 Soho Manhattan Hoek No. 5, Lt. 3, Salembaran Jati, Kosambi, Tangerang, Banten 15214
+              </p>
+            </div>
+            <div className="space-y-1">
+              <p className="font-bold text-white text-xs uppercase tracking-wider">Kantor Alam Sutera</p>
+              <p className="text-xs leading-relaxed text-white/60">
+                Ruko The Prominence Blok 38D No. 49-50, Jl. Jalur Sutera Boulevard - Alam Sutera, Tangerang, Banten 15143
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Column 3: Portals & cPanel */}

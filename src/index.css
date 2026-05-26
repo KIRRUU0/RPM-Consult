@@ -12,8 +12,8 @@
     @apply bg-background text-on-background antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif !important;
   }
 
   /* Semua teks deskripsi rata kiri dan kanan */

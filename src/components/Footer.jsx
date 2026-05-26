@@ -30,12 +30,14 @@ export default function Footer() {
         {/* Column 1: Info & Brand */}
         <div className="space-y-6">
           <a href="#" className="flex items-center gap-3">
-            <img
-              alt="RPM Logo"
-              className="h-10 w-auto brightness-0 invert"
-              src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"
-              onError={(e) => { e.target.style.display = 'none'; }}
-            />
+            <div className="bg-white p-1 rounded-lg flex items-center justify-center h-10 w-10 shrink-0 shadow-sm">
+              <img
+                alt="RPM Logo"
+                className="h-full w-full object-contain"
+                src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+            </div>
             <span className="font-extrabold text-xl uppercase tracking-wider text-white">RPM Consult</span>
           </a>
           <p className="text-white/60 text-sm leading-relaxed">
@@ -72,7 +74,7 @@ export default function Footer() {
 
         {/* Column 2: Kantor Kami (Our Offices) */}
         <div className="space-y-6">
-          <h4 className="font-bold text-secondary-container mb-2 uppercase tracking-widest text-xs">
+          <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
             {t.footer.officesTitle}
           </h4>
           <div className="space-y-4 text-white/70 text-sm">
@@ -92,8 +94,8 @@ export default function Footer() {
         </div>
 
         {/* Column 3: Portals & cPanel */}
-        <div>
-          <h4 className="font-bold text-secondary-container mb-6 uppercase tracking-widest text-xs">
+        <div className="space-y-6">
+          <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
             {t.footer.portalsTitle}
           </h4>
           <ul className="space-y-3.5 text-white/70 text-sm">
@@ -123,37 +125,39 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Newsletter */}
-        <div className="space-y-4">
-          <h4 className="font-bold text-secondary-container mb-6 uppercase tracking-widest text-xs">
+        <div className="space-y-6">
+          <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
             {t.footer.newsletterTitle}
           </h4>
-          <p className="text-white/60 text-sm leading-relaxed">
-            {t.footer.newsletterDesc}
-          </p>
-          
-          <form onSubmit={handleSubscribe} className="flex relative">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={subscribed}
-              className="bg-white/5 border border-white/10 rounded-l-md px-4 py-3 text-sm w-full outline-none focus:border-primary transition-colors text-white disabled:opacity-50"
-              placeholder={t.footer.newsletterPlaceholder}
-            />
-            <button
-              type="submit"
-              disabled={subscribed}
-              className="bg-primary hover:bg-primary-container disabled:bg-primary/55 px-4 rounded-r-md transition-all flex items-center justify-center shrink-0 w-12 text-white cursor-pointer"
-            >
-              {subscribed ? <Check className="w-5 h-5 text-white" /> : <Send className="w-4 h-4" />}
-            </button>
-          </form>
-          {subscribed && (
-            <p className="text-xs text-secondary-container font-semibold animate-pulse">
-              {t.footer.newsletterSuccess}
+          <div className="space-y-4">
+            <p className="text-white/60 text-sm leading-relaxed">
+              {t.footer.newsletterDesc}
             </p>
-          )}
+            
+            <form onSubmit={handleSubscribe} className="flex relative">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={subscribed}
+                className="bg-white/5 border border-white/10 rounded-l-md px-4 py-3 text-sm w-full outline-none focus:border-primary transition-colors text-white disabled:opacity-50"
+                placeholder={t.footer.newsletterPlaceholder}
+              />
+              <button
+                type="submit"
+                disabled={subscribed}
+                className="bg-primary hover:bg-primary-container disabled:bg-primary/55 px-4 rounded-r-md transition-all flex items-center justify-center shrink-0 w-12 text-white cursor-pointer"
+              >
+                {subscribed ? <Check className="w-5 h-5 text-white" /> : <Send className="w-4 h-4" />}
+              </button>
+            </form>
+            {subscribed && (
+              <p className="text-xs text-secondary-container font-semibold animate-pulse">
+                {t.footer.newsletterSuccess}
+              </p>
+            )}
+          </div>
         </div>
 
       </div>

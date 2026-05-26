@@ -44,7 +44,7 @@ export default function About() {
               <img
                 alt="Professional Office Environment"
                 className="rounded-xl shadow-2xl w-full h-[450px] md:h-[550px] object-cover border border-primary/10"
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+                src="https://i.pinimg.com/1200x/da/ac/18/daac1808b8b429c45a514e636bf0b6f3.jpg"
                 onError={(e) => { 
                   e.target.src = 'https://lh3.googleusercontent.com/aida/ADBb0ugfbNml8ljVCIUuKgzC-fqi3eoL6EspAlf2zpuMlMQV4UjxJpeSfEBhNzqnGvnP-dMyj1dHTbD-LwMdjI74wNTiOsUZhDalz2nw0cbNibZTBscrV1GuV9QUnGGxQX5sselptp5KDdUneME83-jpa5vMFgk-1mkbTQS2jNzO1L4sDuj7nAaQkYZib9GRXHgljfmjrYGCG_kaZNVDjFTd3TK0gj3vqL64qzRCZiCEEM8M6XubEaQxRag-H9Y'; 
                 }}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gavel, ShieldAlert, ChevronDown } from 'lucide-react';
+import specialSolutionsImg from '../assets/special_solutions.png';
 
 const solutions = [
   {
@@ -101,39 +102,57 @@ export default function SpecialSolutions() {
       </div>
 
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Title + Accordions */}
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight uppercase mb-4">
+                Our Special Solutions
+              </h2>
+              <div className="h-1.5 w-24 bg-secondary rounded-full mb-6" />
 
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight uppercase mb-4">
-            Our Special Solutions
-          </h2>
-          <div className="h-1.5 w-24 bg-secondary rounded-full mb-6" />
+              {/* Intro paragraph */}
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed text-left">
+                As a Taxpayer, there might be a risk in fulfilling tax obligations, that is Tax Disputes. Tax dispute could be end up in Tax Court, District Court or even in Supreme Court. In RPM Consult, we will provide best efforts in defending Client's position in Tax Disputes and best results for the Stakeholders.
+              </p>
+            </motion.div>
 
-          {/* Intro paragraph */}
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-4xl">
-            As a Taxpayer, there might be a risk in fulfilling tax obligations, that is Tax Disputes. Tax dispute could be end up in Tax Court, District Court or even in Supreme Court. In RPM Consult, we will provide best efforts in defending Client's position in Tax Disputes and best results for the Stakeholders.
-          </p>
-        </motion.div>
+            {/* Accordion List */}
+            <div className="space-y-4">
+              {solutions.map((sol, idx) => (
+                <AccordionItem
+                  key={sol.id}
+                  sol={sol}
+                  idx={idx}
+                  isOpen={openId === sol.id}
+                  onToggle={() => handleToggle(sol.id)}
+                />
+              ))}
+            </div>
+          </div>
 
-        {/* Accordion — 2 columns side by side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-          {solutions.map((sol, idx) => (
-            <AccordionItem
-              key={sol.id}
-              sol={sol}
-              idx={idx}
-              isOpen={openId === sol.id}
-              onToggle={() => handleToggle(sol.id)}
+          {/* Right Column: Abstract Minimalist Graphic */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5"
+          >
+            <img 
+              src="https://i.pinimg.com/736x/0b/2e/24/0b2e24b42a490a794c4ccbbe0a143ab2.jpg"
+              alt="Our Special Solutions Graphic" 
+              className="rounded-2xl w-full h-[400px] md:h-[480px] object-cover shadow-xl border border-primary/10"
             />
-          ))}
-        </div>
+          </motion.div>
 
+        </div>
       </div>
     </section>
   );

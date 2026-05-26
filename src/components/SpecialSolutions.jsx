@@ -105,7 +105,7 @@ export default function SpecialSolutions() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Title + Accordions */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ export default function SpecialSolutions() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 order-1 lg:order-2"
           >
             <img 
               src="https://i.pinimg.com/736x/0b/2e/24/0b2e24b42a490a794c4ccbbe0a143ab2.jpg"

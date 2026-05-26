@@ -1,22 +1,11 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 
 const LanguageContext = createContext();
 
+// Language is locked to English only
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem('rpm_lang') || 'id';
-  });
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => {
-      const next = prev === 'id' ? 'en' : 'id';
-      localStorage.setItem('rpm_lang', next);
-      return next;
-    });
-  };
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage }}>
+    <LanguageContext.Provider value={{ language: 'en', setLanguage: () => {}, toggleLanguage: () => {} }}>
       {children}
     </LanguageContext.Provider>
   );

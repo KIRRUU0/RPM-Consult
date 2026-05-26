@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 bg-surface-container-low" id="contact">
+    <section className="py-24 bg-surface-container-low scroll-mt-20" id="contact">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -71,13 +71,11 @@ export default function Contact() {
             className="space-y-12"
           >
             <div className="space-y-4">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">
-                {t.contact.badge}
-              </span>
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl">
                 {t.contact.title}
               </h2>
-              <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed">
+              <div className="h-1.5 w-24 bg-secondary rounded-full" />
+              <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed pt-2">
                 {t.contact.desc}
               </p>
             </div>

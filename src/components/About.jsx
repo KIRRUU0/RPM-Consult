@@ -28,7 +28,7 @@ export default function About() {
   const t = translations[language];
 
   return (
-    <section className="py-24 bg-surface-container-low overflow-hidden" id="about">
+    <section className="py-24 bg-surface-container-low overflow-hidden scroll-mt-20" id="about">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
@@ -86,11 +86,8 @@ export default function About() {
             className="lg:col-span-7 space-y-8"
           >
             <div className="space-y-4">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">
-                {t.about.badge}
-              </span>
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight">
-                {t.about.titleText} <span className="text-secondary">{t.about.titleAccent}</span>
+                About Us
               </h2>
               <div className="h-1.5 w-24 bg-secondary rounded-full" />
             </div>
@@ -119,15 +116,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex items-center gap-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl px-6 py-5 border border-primary/10"
+              className="flex justify-center"
             >
-              {/* Opening quote */}
-              <span className="text-6xl leading-none font-serif text-secondary select-none" style={{ lineHeight: 0.8, marginTop: '4px' }}>&ldquo;</span>
-              <p className="text-lg md:text-xl font-bold text-on-background italic leading-snug flex-1">
-                {t.about.slogan}
-              </p>
-              {/* Closing quote */}
-              <span className="text-6xl leading-none font-serif text-secondary select-none self-end" style={{ lineHeight: 0.8, marginBottom: '4px' }}>&rdquo;</span>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/8 to-secondary/8 rounded-xl px-5 py-3 border border-primary/15">
+                <span className="text-3xl leading-none font-serif text-secondary select-none">&ldquo;</span>
+                <p className="text-base md:text-lg font-bold text-on-background italic leading-snug">
+                  {t.about.slogan}
+                </p>
+                <span className="text-3xl leading-none font-serif text-secondary select-none">&rdquo;</span>
+              </div>
             </motion.div>
 
             <div className="pt-2">

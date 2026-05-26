@@ -22,104 +22,118 @@ export const translations = {
       badge: 'Tentang Perusahaan Kami',
       titleText: 'Merancang Solusi Strategis untuk',
       titleAccent: 'Pertumbuhan Masa Depan',
-      philosophy: 'Secara filosofis, \"Raka\" berarti gigih, bijaksana, berpengaruh, dan kuat, \"Pradipta\" berarti cahaya terang, dan \"Mahawira\" berarti pahlawan besar.',
-      desc1: 'PT Raka Pradipta Mahawira (\"RPM Consult\") didirikan dan didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, dan memiliki visi serta misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan.',
-      desc2: 'RPM Consult adalah salah satu perusahaan yang memenuhi syarat dan berlisensi dalam \"Solusi Hukum, Pajak & Bisnis\". Para ahlinya memiliki pengalaman 6 hingga 28 tahun di bidang Hukum, Pajak, Akuntansi & Solusi Bisnis. Para ahlinya terus memberikan solusi terbaik bagi Klien dan para pemangku kepentingan terkait.',
-      desc3: 'Di RPM Consult, kami membantu Klien mengatasi tantangan baru dan beradaptasi dalam lingkungan yang berubah dengan cepat. Dengan kerja kolaboratif, menciptakan wawasan, menggabungkan pengalaman nyata dan teknologi, kami menghadirkan kepercayaan diri dan kontribusi positif.',
+      philosophy: 'Secara filosofis, "Raka" berarti gigih, bijaksana, berpengaruh, dan kuat, "Pradipta" berarti cahaya terang, dan "Mahawira" berarti pahlawan besar.',
+      desc: 'PT Raka Pradipta Mahawira ("RPM Consult") didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, serta memiliki visi dan misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan sebagai penyedia solusi Hukum, Pajak & Bisnis tepercaya.',
+      desc1: 'PT Raka Pradipta Mahawira ("RPM Consult") didirikan oleh orang-orang yang berjiwa ksatria, memiliki pengaruh positif, kreatif, inovatif, serta memiliki visi dan misi yang mulia untuk memberikan dampak positif bagi seluruh pemangku kepentingan sebagai penyedia solusi Hukum, Pajak & Bisnis tepercaya.',
+      desc2: 'Kami memberikan layanan terintegrasi yang mencakup Hukum, Pajak, Akuntansi, dan Konsultasi SDM — dirancang untuk membantu klien menavigasi kompleksitas regulasi bisnis modern dengan solusi yang tepat, efisien, dan beretika tinggi.',
+      desc3: 'Dengan tim profesional berpengalaman dan komitmen terhadap keunggulan, RPM Consult siap menjadi mitra strategis jangka panjang yang memberikan nilai nyata bagi setiap pemangku kepentingan.',
       slogan: 'Untuk masa depan yang lebih baik, bagi semua',
       visionTitle: 'Visi Kami',
       visionDesc: 'Menjadi mitra terbaik bagi para pemangku kepentingan dengan memberikan layanan profesional untuk solusi hukum, pajak, dan bisnis yang komprehensif, sekaligus menyediakan lingkungan kerja yang menyenangkan untuk memberdayakan kontribusi positif.',
       missionTitle: 'Misi Kami',
       missionItems: [
         'Berkomitmen dalam memberikan upaya terbaik untuk hasil yang diinginkan.',
-        'Memperjuangkan keunggulan dalam pemikiran strategis, layanan yang berkualitas dan personal.',
-        'Meningkatkan upaya kolaboratif dan keunikan dalam penyediaan layanan.',
-        'Menjaga sinergi, hubungan jangka panjang, dan kontribusi optimal kepada para pemangku kepentingan.'
+        'Memperjuangkan keunggulan dalam pemikiran strategis serta layanan personal.',
+        'Meningkatkan upaya kolaboratif dan keunikan dalam layanan.',
+        'Menjaga sinergi dan kontribusi optimal kepada pemangku kepentingan.'
       ],
       yearsBadge: 'Tahun Pengalaman',
       learnMore: 'Pelajari Lebih Lanjut Tentang Tim Kami'
     },
     services: {
-      badge: 'Solusi Kami',
-      title: 'Layanan Komprehensif',
-      desc: 'Kami menyediakan solusi yang terintegrasi di bidang Hukum, Pajak, Akuntansi, dan Bisnis untuk membantu Anda beradaptasi dalam lingkungan bisnis yang berubah cepat.',
-      detailBtn: 'Detail Layanan',
+      badge: 'Solusi Komprehensif Kami',
+      title: 'Our Comprehensive Solutions',
+      desc: 'Kami menyediakan solusi terintegrasi di bidang Hukum, Pajak, Akuntansi, dan Bisnis untuk membantu Anda beradaptasi di lingkungan bisnis yang terus berkembang dan semakin kompleks.',
+      detailBtn: 'Pelajari Lebih Lanjut',
       closeBtn: 'Tutup',
       consultBtn: 'Konsultasi Sekarang',
       descTitle: 'Deskripsi Layanan',
-      specialTitle: 'Solusi Khusus Perpajakan (Special Solutions)',
-      scopeTitle: 'Cakupan Layanan Kami (Our Scopes)',
+      specialTitle: 'Solusi Khusus Perpajakan',
+      scopeTitle: 'Cakupan Layanan Kami',
+      subSectionTitle: 'Area Layanan Utama',
       list: [
         {
           id: 1,
-          title: 'Layanan Pajak (Tax Services)',
-          shortDesc: 'Solusi kepatuhan dan litigasi perpajakan yang komprehensif, mulai dari urusan pajak domestik hingga transaksi internasional.',
+          title: 'Layanan Pajak (Tax Service)',
+          shortDesc: 'Solusi kepatuhan dan litigasi perpajakan yang komprehensif, mencakup urusan pajak domestik hingga transaksi internasional.',
           highlights: [
             'Kepatuhan Pajak (Tax Compliance)',
             'Harga Transfer (Transfer Pricing)',
             'Audit & Litigasi Pajak'
           ],
-          details: 'Saat ini, bisnis tidak hanya berurusan dengan aturan pajak domestik, tetapi juga aturan pajak internasional. Setiap bisnis, baik perusahaan maupun perorangan, harus mematuhi aturan pajak yang semakin kompleks.\n\nKonsultan pajak kami memiliki pengalaman dan pengetahuan mendalam tentang regulasi perpajakan lokal maupun internasional untuk memastikan bisnis Anda mematuhi peraturan yang selalu berubah secara efisien.',
+          details: 'Saat ini, bisnis tidak hanya berurusan dengan aturan pajak domestik, tetapi juga aturan pajak internasional. Setiap bisnis, baik perusahaan maupun perorangan, harus mematuhi aturan pajak yang semakin kompleks. Banyak permasalahan perpajakan yang harus ditangani, mulai dari kepatuhan pajak hingga sengketa pajak.\n\nKonsultan pajak kami memiliki pengalaman dan pengetahuan mendalam tentang peraturan perpajakan lokal maupun internasional untuk memastikan bisnis Anda mematuhi regulasi yang terus berubah secara efisien.',
           scopes: [
             'Kepatuhan Pajak (Tax Compliance)',
             'Penasihat Pajak (Tax Advisory)',
             'Peninjauan Diagnostik Pajak (Tax Diagnostic Review)',
             'Uji Tuntas Pajak (Tax Due Diligence)',
-            'Fasilitas Pajak (misal: tax holiday)',
+            'Fasilitas Pajak (mis. tax holiday)',
             'Harga Transfer (Transfer Pricing)',
             'Pendampingan Pemeriksaan Pajak (Tax Audit assistance)',
             'Sengketa Pajak dan Litigasi (Tax Dispute and Litigation)',
             'Penggabungan & Pengambilalihan (Merger & Acquisition)',
             'Konsultasi Hukum dan Pajak (Legal And Tax Consulting)'
           ],
-          specialIntro: 'Sebagai Wajib Pajak, mungkin terdapat risiko dalam memenuhi kewajiban perpajakan, yaitu Sengketa Pajak. Sengketa Pajak dapat berakhir di Pengadilan Pajak, Pengadilan Negeri, atau bahkan Mahkamah Agung. Di RPM Consult, kami akan memberikan upaya terbaik dalam membela posisi Klien dalam Sengketa Pajak dan hasil terbaik bagi para Pemangku Kepentingan.',
           specialSolutions: [
             {
               name: 'Tax Litigation (Litigasi Pajak)',
-              desc: 'Sengketa pajak berpotensi terjadi di era bisnis yang berkembang pesat dengan berbagai model transaksi. Sebagian besar sengketa berujung pada Pemeriksaan Pajak. Wajib Pajak memiliki hak untuk menyelesaikan kasus melalui keberatan dan banding pajak atau bahkan peninjauan kembali ke Mahkamah Agung. Di RPM Consult, kami akan membantu Klien meninjau dan menyimpulkan peluang terbaik untuk menangani keberatan dan banding. Kami juga akan mendampingi Klien selama proses verifikasi keberatan dan proses persidangan banding, membela posisi Klien dengan argumen dan bukti pembelaan terbaik. Kami percaya bahwa cara terbaik untuk menyelesaikan kasus adalah Klien, bersama RPM Consult, secara tekun dan sepenuhnya siap untuk persidangan dan penutupan. Menggabungkan pengalaman, wawasan, dan presentasi yang kuat sesuai hukum akan memberikan keunggulan dalam sebagian besar kasus. Memaksimalkan peluang Klien untuk memenangkan kasus adalah tujuan akhir kami.'
+              desc: 'Sebagian besar sengketa berawal dari Pemeriksaan Pajak. Wajib Pajak memiliki hak untuk menyelesaikan kasus melalui keberatan dan banding pajak atau bahkan peninjauan kembali ke Mahkamah Agung.\n\nDi RPM Consult, kami akan mendampingi Klien selama proses verifikasi keberatan dan proses persidangan banding, membela posisi Klien dengan memberikan argumen pembelaan dan bukti terbaik berdasarkan hukum perpajakan. Memaksimalkan peluang Klien memenangkan kasus adalah tujuan akhir kami.'
             },
             {
               name: 'Audit For Preliminary Evidence (Bukti Permulaan / Bukper)',
-              desc: 'Audit ini adalah pemeriksaan pajak tingkat lebih tinggi dengan risiko sanksi pidana pajak tertinggi bagi Wajib Pajak. Begitu kami dalam posisi untuk menangani audit ini, kami akan memberikan jalan yang baik dan solusi bagi Klien. Kami percaya bahwa kolaborasi antara tim berpengalaman kami dan Klien untuk mengembangkan argumen terbaik berdasarkan hukum, informasi kunci, dan bukti pembelaan dalam kasus, akan menghasilkan penyelesaian audit yang baik dan menghindari risiko tertinggi sanksi pidana pajak bagi Klien. Kami akan memaksimalkan hasil terbaik bagi para pemangku kepentingan.'
+              desc: 'Audit pajak tingkat tinggi dengan risiko sanksi tindak pidana perpajakan tertinggi bagi Wajib Pajak. Begitu menghadapi audit ini, tim berpengalaman kami akan bekerja kolaboratif menyusun argumen hukum terbaik, menyajikan bukti pembelaan penting, serta merancang jalan keluar terbaik guna menghindari risiko sanksi pidana perpajakan bagi Klien.'
             }
           ]
         },
         {
           id: 2,
-          title: 'Layanan Hukum (Legal Services)',
-          shortDesc: 'Solusi hukum praktis berwawasan ke depan untuk navigasi regulasi, transaksi bisnis, pendirian perusahaan, dan manajemen risiko hukum.',
+          title: 'Layanan Hukum (Legal Service)',
+          shortDesc: 'Solusi hukum berwawasan ke depan untuk navigasi regulasi, pendirian perusahaan, dan manajemen risiko hukum yang komprehensif.',
           highlights: [
-            'Legal Risk Assessment',
+            'Legal Risk Assessment & Management',
             'Pendirian Perusahaan (Set-Up)',
             'Dispute Resolution'
           ],
-          details: 'Dalam lingkungan bisnis yang bergerak cepat, RPM Consult menyediakan solusi hukum berwawasan ke depan yang membantu Anda melangkah dengan kejelasan, keyakinan, dan kecepatan. Kami membantu menyusun transaksi, menavigasi kerangka peraturan, serta merancang strategi hukum praktis untuk mendukung pertumbuhan bisnis berkelanjutan di Indonesia.',
+          details: 'Dalam lingkungan bisnis yang bergerak cepat, RPM Consult menyediakan solusi hukum berwawasan ke depan yang membantu Anda melangkah dengan kejelasan, keyakinan, dan kecepatan. Kami memahami bisnis Anda, mengantisipasi perkembangan regulasi dan pasar, serta memanfaatkan teknologi untuk menghadirkan strategi hukum praktis yang mendukung pertumbuhan berkelanjutan.\n\nKami bekerja bersama Anda sebagai penasihat tepercaya, memadukan keahlian hukum dengan wawasan komersial yang kuat untuk menghadapi tantangan kompleks di sepanjang siklus bisnis dan transaksi Anda. Pendekatan kami responsif, berorientasi solusi, dan selaras dengan tujuan strategis Anda.\n\nDari penyusunan dan pengelolaan transaksi hingga navigasi kerangka hukum dan regulasi yang terus berkembang, RPM Consult menghadirkan dukungan hukum menyeluruh yang disesuaikan dengan kebutuhan bisnis di Indonesia. Komitmen kami melampaui keunggulan teknis — kami mengutamakan klien dan menjunjung standar etika tertinggi.',
+          subSections: [
+            {
+              title: 'Legal Risk Assessment & Management',
+              desc: 'RPM Consult membantu bisnis tetap selangkah lebih maju dari risiko hukum melalui pendekatan proaktif dan terstruktur dalam identifikasi dan penilaian risiko. Kami menanamkan kesadaran risiko hukum dalam organisasi Anda, menetapkan akuntabilitas yang jelas, dan merancang sistem praktis yang mendukung pengambilan keputusan lebih cerdas, tata kelola lebih kuat, dan nilai bisnis yang berkelanjutan.'
+            },
+            {
+              title: 'Legal Advisory & Compliance',
+              desc: 'RPM Consult membantu bisnis mengambil keputusan yang percaya diri sekaligus tetap patuh terhadap hukum dan regulasi yang berlaku. Layanan penasihat hukum kami memberikan panduan praktis dalam penyusunan transaksi, penyusunan dan peninjauan kontrak, serta memastikan perjanjian bersifat legal dan seimbang secara komersial. Dilengkapi dengan dukungan kepatuhan yang kuat, kami menerjemahkan persyaratan hukum menjadi kebijakan yang jelas, pelatihan efektif, dan pemantauan berkelanjutan.'
+            }
+          ],
           scopes: [
-            'Penilaian & Manajemen Risiko Hukum (Legal Risk Assessment & Management)',
-            'Konsultasi & Kepatuhan Hukum (Legal Advisory & Compliance)',
-            'Layanan Konsultasi Bundling Hukum & Pajak (Legal & Tax Bundling)',
-            'Uji Tuntas & Peninjauan Diagnostik Hukum (Legal Due Diligence & Diagnostic Review)',
-            'Penyelesaian Perselisihan (Dispute Resolution)',
-            'Kepatuhan Hukum & Peraturan Klien (Client Law & Regulations Compliance)',
-            'Memberi Masukan Regulasi Baru kepada Klien',
-            'Pendirian Perusahaan & Layanan Korporat (Company Establishment & Corporate Service)',
-            'Lisensi Bisnis & Klasifikasi HS Code (Business License & Product Classification)',
-            'Kepabeanan Umum & Penasihat Perdagangan',
-            'Layanan Sertifikasi (Certification Service)',
-            'Konsultasi Pengaturan Pendirian Perusahaan (Company Set-Up Consulting)',
-            'Penilaian Kepatuhan Kepabeanan (Customs Compliance Assessment)'
+            'Legal Risk Assessment & Management',
+            'Legal Advisory & Compliance',
+            'Legal & Tax Law Bundling Consulting Service',
+            'Legal Due Diligence & Diagnostic Review',
+            'Human Resource Consulting',
+            'Dispute Resolution',
+            'Client Law & Regulations Compliance',
+            'Advising Client of New Legislation',
+            'Analytical Problem Solving',
+            'Legislative Policy',
+            'Company Establishment & Corporate Service',
+            'Business License & Product Classification (HS)',
+            'General Customs & Trade Advisory',
+            'Certification Service',
+            'Company Set-Up Consulting',
+            'Customs Compliance Assessment'
           ]
         },
         {
           id: 3,
-          title: 'Layanan Akuntansi (Accounting Services)',
-          shortDesc: 'Layanan pembukuan andal untuk pengelolaan pencatatan keuangan sesuai dengan standar akuntansi keuangan terbaru yang berlaku.',
+          title: 'Layanan Akuntansi (Accounting Service)',
+          shortDesc: 'Layanan pembukuan andal untuk pengelolaan pencatatan keuangan sesuai standar akuntansi keuangan terbaru yang berlaku.',
           highlights: [
             'Bookkeeping & Data Processing',
             'Financial Reporting',
             'Year-End Statement Prep'
           ],
-          details: 'Layanan akuntansi kami yang andal akan membantu Anda mengelola akun-akun Anda secara teratur dan transparan. Kami memastikan pembukuan dan catatan keuangan Anda sepenuhnya mengikuti standar dan peraturan akuntansi setempat yang terbaru.',
+          details: 'Layanan akuntansi kami yang andal akan membantu Anda mengelola akun-akun Anda secara teratur dan transparan. Kami memastikan pembukuan dan catatan keuangan Anda sepenuhnya mengikuti standar dan peraturan akuntansi lokal terbaru yang berlaku.',
           scopes: [
             'Pembukuan dan pemrosesan transaksi harian (Bookkeeping and transaction processing)',
             'Pelaporan keuangan bulanan (Monthly financial reporting)',
@@ -131,13 +145,23 @@ export const translations = {
         {
           id: 4,
           title: 'Konsultasi SDM (HR Consulting)',
-          shortDesc: 'Manajemen hubungan industrial, ketenagakerjaan, penyusunan peraturan perusahaan, serta mitigasi risiko perselisihan tenaga kerja.',
+          shortDesc: 'Manajemen hubungan industrial, kepatuhan kebijakan ketenagakerjaan, dan penyelesaian sengketa tenaga kerja secara efektif.',
           highlights: [
             'Industrial Relations Support',
             'Kebijakan Ketenagakerjaan',
             'Mediasi & Negosiasi Konflik'
           ],
-          details: 'Layanan Konsultasi Sumber Daya Manusia kami berfokus pada manajemen yang efektif serta penyelesaian perselisihan hubungan industrial dan ketenagakerjaan. Kami membantu pemberi kerja menavigasi konflik dengan karyawan melalui pendekatan yang strategis dan patuh hukum.',
+          details: 'RPM Consult juga menyediakan layanan Konsultasi Sumber Daya Manusia yang berfokus pada pengelolaan dan penyelesaian sengketa hubungan industrial dan ketenagakerjaan yang efektif. Kami membantu pemberi kerja dalam menavigasi konflik dengan karyawan melalui pendekatan yang strategis, sah secara hukum, dan praktis demi menjaga kelangsungan bisnis dan keharmonisan tenaga kerja.',
+          subSections: [
+            {
+              title: 'Kepatuhan Hukum & Peraturan (Law And Regulations Compliance)',
+              desc: 'RPM Consult membantu organisasi memastikan kepatuhan penuh terhadap hukum, peraturan, dan standar tata kelola internal melalui solusi kepatuhan yang terstruktur dan praktis. Kami mendukung bisnis dalam memantau perkembangan regulasi, melakukan tinjauan kepatuhan dan penilaian risiko, serta memperkuat kebijakan dan kontrol internal demi mendorong transparansi, akuntabilitas, dan tata kelola perusahaan yang baik.'
+            },
+            {
+              title: 'Penyelesaian Perselisihan (Dispute Resolution)',
+              desc: 'Layanan kami mencakup penyelesaian perselisihan melalui mediasi, negosiasi, dan konsiliasi, serta dukungan dalam penyusunan kebijakan ketenagakerjaan yang patuh, peraturan perusahaan, dan investigasi internal ketika perselisihan terjadi. Dengan penekanan kuat pada tindakan preventif dan dialog konstruktif, kami membantu organisasi meminimalkan risiko hukum dan menciptakan lingkungan kerja yang positif dan produktif.'
+            }
+          ],
           scopes: [
             'Penyelesaian perselisihan ketenagakerjaan melalui mediasi, negosiasi, dan konsiliasi',
             'Penyusunan kebijakan ketenagakerjaan yang patuh hukum',
@@ -166,54 +190,41 @@ export const translations = {
       }
     },
     values: {
-      title: 'Nilai-Nilai Utama Kami',
-      slogan: 'Hasil yang terbukti berbicara lebih keras daripada kata-kata',
+      title: 'Our Core Values',
+      slogan: 'Proven result speaks louder than words',
       list: [
         {
-          title: 'Integrity (Integritas)',
+          title: 'Integrity',
           points: [
-            'Dapat diandalkan dan bertanggung jawab.',
-            'Transparan dan tepercaya.',
-            'Etika bisnis dalam setiap tindakan.'
+            'Reliable and accountable.',
+            'Transparent and trustworthy.',
+            'Business ethics in actions.',
           ]
         },
         {
-          title: 'Respect (Saling Menghormati)',
+          title: 'Respect',
           points: [
-            'Kepercayaan dan saling menghormati.',
-            'Mempertimbangkan perbedaan.',
-            'Saling memahami, pandangan positif, dan keadilan.'
+            'Trust and mutual respect.',
+            'Being considerate of differences.',
+            'Understanding each other, positive outlook, and fairness.',
           ]
         },
         {
-          title: 'Excellence (Keunggulan)',
+          title: 'Excellence',
           points: [
-            'Terus fokus pada kualitas.',
-            'Tepat waktu dan efektif dalam penyampaian layanan.',
-            'Upaya terbaik untuk solusi yang diinginkan.'
+            'Continuously focus on quality.',
+            "Timely and effective in service's deliverables.",
+            'Best efforts for desired solutions.',
           ]
         },
         {
-          title: 'Succeed (Kesuksesan)',
+          title: 'Succeed',
           points: [
-            'Kolaborasi untuk hubungan yang kuat.',
-            'Pencapaian profesional.',
-            'Merangkul kesuksesan.'
+            'Collaboration for strong relationship.',
+            'Professional achievements.',
+            'Embrace for success.',
           ]
         }
-      ]
-    },
-    clients: {
-      badge: 'Mitra Terpercaya',
-      titleLine1: 'Klien Kami yang',
-      titleLine2: 'Puas Bekerja Sama',
-      desc: 'Klien perlu mengetahui fakta untuk melihat permasalahan dengan jelas. Kami memberikan saran terbaik berdasarkan pengetahuan komprehensif kami untuk membantu klien mengelola isu perpajakan dan hukum mereka.',
-      tagline: '"Hard Facts. Clear Solutions." — Solusi terbukti untuk setiap tantangan bisnis Anda.',
-      cta: 'Mulai Konsultasi',
-      stats: [
-        { value: '55+', label: 'Klien Terpercaya' },
-        { value: '10+', label: 'Tahun Pengalaman' },
-        { value: '98%', label: 'Tingkat Kepuasan' }
       ]
     },
     contact: {
@@ -280,104 +291,118 @@ export const translations = {
       badge: 'About Our Firm',
       titleText: 'Crafting Strategic Solutions for',
       titleAccent: 'Future Growth',
-      philosophy: 'Philosophically, \"Raka\" signifies persistence, wise, influential and powerful, \"Pradipta\" means bright light, and \"Mahawira\" means great hero.',
-      desc1: 'PT Raka Pradipta Mahawira (\"RPM Consult\") was founded and established by person who are chivalrous, have a positive influence, creative, innovative, and have a noble vision and mission in order to provide a positive impact to all stakeholders.',
-      desc2: 'RPM Consult is one of the qualified and licensed company in \"Legal, Tax & Business Solutions\". Its experts are having 6 to 28 years of experience in Legal, Tax, Accounting & Business solutions. Its experts are continuously delivering best solutions to the Clients and related stakeholders.',
-      desc3: 'At RPM Consult, we help Clients overcome new challenges and adapt in fast changing environment. By collaborative working, creating insights, combining real experience and technology, we deliver confidence and positive contributions.',
-      slogan: 'For better future, for all',
+      philosophy: 'Philosophically, "Raka" signifies persistence, wisdom, influence, and strength, "Pradipta" represents a bright light, and "Mahawira" means a great hero.',
+      desc: 'PT Raka Pradipta Mahawira ("RPM Consult") was established by individuals driven by chivalrous values, positive influence, creativity, innovation, and a noble vision to deliver a positive impact to all stakeholders as a trusted Legal, Tax & Business partner.',
+      desc1: 'PT Raka Pradipta Mahawira ("RPM Consult") was established by individuals driven by chivalrous values, positive influence, creativity, innovation, and a noble vision to deliver a positive impact to all stakeholders as a trusted Legal, Tax & Business partner.',
+      desc2: 'We provide integrated services across Law, Tax, Accounting, and HR Consulting — designed to help clients navigate the complexities of modern business regulations with precise, efficient, and ethical solutions.',
+      desc3: 'With an experienced team of professionals and an unwavering commitment to excellence, RPM Consult is ready to be a long-term strategic partner that delivers real value to every stakeholder.',
+      slogan: 'For a better future, for all',
       visionTitle: 'Our Vision',
-      visionDesc: 'To be the best partner to stakeholders by rendering professional services for comprehensive legal, tax and business solutions, while providing enjoyable working environment to empower positive contribution.',
+      visionDesc: 'To be the best partner for stakeholders by providing professional services for comprehensive legal, tax, and business solutions, while providing a pleasant work environment to empower positive contributions.',
       missionTitle: 'Our Mission',
       missionItems: [
-        'Committed in giving best efforts for desired results.',
-        'Strive excellence in our strategic thinking, qualified and personalized service.',
-        'Enhance collaborative efforts and uniqueness in providing services.',
-        'Maintain synergy, long term relationship and optimum contribution to the stakeholders.'
+        'Committed to giving the best efforts for the desired results.',
+        'Striving for excellence in our strategic thinking, as well as quality and personal services.',
+        'Increasing collaborative efforts and uniqueness in providing services.',
+        'Maintaining synergy, long-term relationships, and optimal contributions to stakeholders.'
       ],
       yearsBadge: 'Years of Experience',
       learnMore: 'Learn More About Our Team'
     },
     services: {
-      badge: 'What We Do',
-      title: 'Core Services',
-      desc: 'We provide integrated solutions in Law, Tax, Accounting, and Business to help you adapt in a fast-changing business environment.',
-      detailBtn: 'Service Details',
+      badge: 'What We Offer',
+      title: 'Our Comprehensive Solutions',
+      desc: 'We provide integrated solutions in Law, Tax, Accounting, and Business to help you navigate the complex landscape of modern business regulations.',
+      detailBtn: 'Learn More',
       closeBtn: 'Close',
       consultBtn: 'Consult Now',
-      descTitle: 'Service Description',
+      descTitle: 'Service Overview',
       specialTitle: 'Special Tax Solutions',
       scopeTitle: 'Our Service Scopes',
+      subSectionTitle: 'Key Service Areas',
       list: [
         {
           id: 1,
-          title: 'Tax Services',
-          shortDesc: 'Comprehensive tax compliance and litigation solutions, covering everything from domestic tax matters to international transactions.',
+          title: 'Tax Service',
+          shortDesc: 'Comprehensive tax compliance and litigation solutions covering domestic and international tax matters.',
           highlights: [
             'Tax Compliance',
             'Transfer Pricing Documentation',
             'Tax Audit & Litigation Support'
           ],
-          details: 'In today\'s business climate, enterprises deal with both domestic and complex international tax laws. Businesses and individuals must comply with increasingly sophisticated regulations.\n\nOur tax consultants possess deep local and international expertise to ensure your compliance with ever-changing tax codes while optimizing your tax position.',
+          details: 'Nowadays, business is not only dealing with domestic tax rules, but also international tax rules. Each business, either company or individual, must comply with increasingly complex tax rules. Many issues of taxation that should be dealt with, from tax compliance to tax disputes.\n\nOur tax consultants have the experience and knowledge of both local and international rules to ensure that you comply with ever-changing regulations.',
           scopes: [
             'Tax Compliance',
             'Tax Advisory',
             'Tax Diagnostic Review',
             'Tax Due Diligence',
-            'Tax Facilities (e.g., tax holiday)',
+            'Tax Facilities (i.e. tax holiday)',
             'Transfer Pricing',
-            'Tax Audit Assistance',
+            'Tax Audit assistance',
             'Tax Dispute and Litigation',
-            'Merger & Acquisition Tax Advisory',
+            'Merger & Acquisition',
             'Legal And Tax Consulting'
           ],
-          specialIntro: 'As a Taxpayer, there might be a risk in fulfilling tax obligations, that is Tax Disputes. Tax dispute could be end up in Tax Court, District Court or even in Supreme Court. In RPM Consult, we will provide best efforts in defending Client\'s position in Tax Disputes and best results for the Stakeholders.',
           specialSolutions: [
             {
               name: 'Tax Litigation',
-              desc: 'Tax disputes potentially occur in the recent era of business and varies model of transactions. Most of the disputes resulted in Tax Audit. Taxpayers are having rights in solving the cases through objection and tax appeal or even judicial review to supreme court. In RPM Consult, we will help Clients to review and conclude best chances to deal with objection and appeal. We will also assist Clients during verification process in objection and trial process in appeal, defending Client\'s position by providing best defending arguments and evidence. We believe that the very best way to settle a case is that our Clients, along with RPM Consult, is diligently and totally prepared for trials and closing. Combining proven experiences, insights and strong presentation as per the Laws will give advantage for most cases. Maximizing the chance for the Clients to win the case would be our ultimate goal.'
+              desc: 'Tax disputes often arise from tax audits. Taxpayers have rights to resolve disputes through objection and appeal processes, up to judicial review in the Supreme Court.\n\nAt RPM Consult, we assist clients in evaluating the best paths for objections and appeals. We represent clients during verification and hearings, defending their position with robust legal arguments and evidence. Maximizing the client\'s chances of winning is our ultimate goal.'
             },
             {
-              name: 'Audit For Preliminary Evidence',
-              desc: 'This Audit is a higher level of tax audit with the highest risk of tax crime penalties for Taxpayer. Once we are in a condition to deal with this audit we will provide a good way and solution for the Clients. We believe that collaboration between our experienced team and Client to develop best arguments based on the Laws, key informations and defending evidence in the case, would result in good settlement of the audit and avoid the highest risk of tax crime penalty for the Clients. We would maximize best results for the stakeholders.'
+              name: 'Audit For Preliminary Evidence (Bukper)',
+              desc: 'A higher-level tax audit involving potential tax criminal sanctions. When facing a preliminary evidence audit, our experienced team works collaboratively with clients to build strong legal defense arguments and protect stakeholders from severe penal risks.'
             }
           ]
         },
         {
           id: 2,
-          title: 'Legal Services',
-          shortDesc: 'Forward-looking legal solutions for regulatory navigation, corporate establishment, commercial drafting, and legal risk management.',
+          title: 'Legal Service',
+          shortDesc: 'Forward-looking legal solutions for regulatory navigation, corporate establishment, and comprehensive legal risk management.',
           highlights: [
-            'Legal Risk Assessment',
+            'Legal Risk Assessment & Management',
             'Company Set-Up & Licensing',
             'Corporate Dispute Resolution'
           ],
-          details: 'In a fast-paced business environment, RPM Consult provides forward-looking legal strategies that give you clarity, confidence, and speed. We assist in structuring transactions, navigating regulations, and securing assets to support sustainable corporate growth in Indonesia.',
+          details: 'In today\'s fast-moving business environment, RPM Consult provides forward-thinking legal solutions that help you move with clarity, confidence, and speed. We understand your business, anticipate regulatory and market developments, and leverage technology to deliver practical legal strategies that support sustainable growth.\n\nWe work alongside you as a trusted advisor, combining legal expertise with strong commercial insight to address complex challenges across the full lifecycle of your business and transactions. Our approach is responsive, solutions-driven, and aligned with your strategic objectives.\n\nFrom structuring and managing transactions to navigating evolving legal and regulatory frameworks, RPM Consult delivers seamless, end-to-end legal support tailored to your business needs in Indonesia. Our commitment goes beyond technical excellence. We put our clients first, continuously enhance the quality of our services, and uphold the highest ethical standards in everything we do.',
+          subSections: [
+            {
+              title: 'Legal Risk Assessment & Management',
+              desc: 'RPM Consult helps businesses stay ahead of legal risks through a proactive and structured approach to risk identification and assessment. We embed legal risk awareness into your organization, establish clear accountability, and design practical systems that support smarter decisions, stronger governance, and sustainable business value.'
+            },
+            {
+              title: 'Legal Advisory & Compliance',
+              desc: 'RPM Consult helps businesses make confident decisions while remaining fully compliant with applicable laws and regulations. Our legal advisory services provide practical guidance on structuring transactions, drafting and reviewing contracts, and ensuring agreements are legally sound and commercially balanced. Complemented by strong compliance support, we translate legal requirements into clear policies, effective training, and ongoing monitoring to ensure day-to-day operations align with legal and ethical standards. By integrating advisory and compliance functions, we help clients reduce legal risk, prevent violations, and protect their reputation with regulators, business partners, and stakeholders.'
+            }
+          ],
           scopes: [
             'Legal Risk Assessment & Management',
             'Legal Advisory & Compliance',
-            'Bundled Legal & Tax Consulting Service',
+            'Legal & Tax Law Bundling Consulting Service',
             'Legal Due Diligence & Diagnostic Review',
-            'Dispute Resolution (Mediation & Negotiation)',
+            'Human Resource Consulting',
+            'Dispute Resolution',
             'Client Law & Regulations Compliance',
             'Advising Client of New Legislation',
-            'Company Establishment & Corporate Services',
-            'Business Licensing & HS Code Product Classification',
+            'Analytical Problem Solving',
+            'Legislative Policy',
+            'Company Establishment & Corporate Service',
+            'Business License & Product Classification (HS)',
             'General Customs & Trade Advisory',
-            'Certification Services',
+            'Certification Service',
             'Company Set-Up Consulting',
             'Customs Compliance Assessment'
           ]
         },
         {
           id: 3,
-          title: 'Accounting Services',
+          title: 'Accounting Service',
           shortDesc: 'Reliable bookkeeping and financial statement compilation in strict compliance with the latest accounting standards.',
           highlights: [
             'Bookkeeping & Data Processing',
             'Financial Reporting',
             'Year-End Statement Prep'
           ],
-          details: 'Our reliable accounting services help you manage your accounts transparently. We ensure your books and financial records are compiled in accordance with the latest local financial accounting standards.',
+          details: 'Our reliable accounting services would help you manage your accounts. We would ensure that your books and records are following the latest local accounting regulations.',
           scopes: [
             'Bookkeeping and transaction processing',
             'Monthly financial reporting',
@@ -388,14 +413,24 @@ export const translations = {
         },
         {
           id: 4,
-          title: 'HR Consulting',
-          shortDesc: 'Industrial relations management, employment policy compliance, labor dispute resolution, and corporate regulation alignment.',
+          title: 'Human Resource Consulting',
+          shortDesc: 'Industrial relations management, employment policy compliance, labor dispute resolution, and regulatory alignment.',
           highlights: [
             'Industrial Relations Support',
             'Employment Policy Drafting',
             'Conflict Mediation & Negotiation'
           ],
-          details: 'Our HR Consulting services focus on effective management and resolution of industrial relations and employment disputes. We assist employers in resolving workplace conflicts through legal and pragmatic methods that prioritize business continuity.',
+          details: 'RPM Consult also provides Human Resource Consulting services focused on the effective management and resolution of industrial and employment disputes. We assist employers in navigating conflicts with employees through strategic, lawful, and practical approaches that prioritize business continuity and workforce harmony.',
+          subSections: [
+            {
+              title: 'Law And Regulations Compliance',
+              desc: 'RPM Consult helps organizations ensure full compliance with applicable laws, regulations, and internal governance standards through structured and practical compliance solutions. We support businesses in monitoring regulatory developments, conducting compliance reviews and risk assessments, and strengthening internal policies and controls. By promoting regulatory awareness, transparency, and accountability, we help clients mitigate legal exposure, protect their reputation, and sustain responsible business practices aligned with good corporate governance.'
+            },
+            {
+              title: 'Dispute Resolution',
+              desc: 'Our services include dispute resolution through mediation, negotiation, and conciliation, as well as support in developing compliant employment policies, drafting company regulations, and conducting internal investigations when disputes arise. With a strong emphasis on preventive measures and constructive dialogue, we help organizations minimize legal risk, ensure compliance with labor regulations, and foster a positive, productive work environment.'
+            }
+          ],
           scopes: [
             'Dispute resolution via mediation, negotiation, and conciliation',
             'Drafting legally compliant employment policies',
@@ -424,7 +459,7 @@ export const translations = {
       }
     },
     values: {
-      title: 'Core Values',
+      title: 'Our Core Values',
       slogan: 'Proven result speaks louder than words',
       list: [
         {
@@ -432,7 +467,7 @@ export const translations = {
           points: [
             'Reliable and accountable.',
             'Transparent and trustworthy.',
-            'Business ethics in actions.'
+            'Business ethics in actions.',
           ]
         },
         {
@@ -440,7 +475,7 @@ export const translations = {
           points: [
             'Trust and mutual respect.',
             'Being considerate of differences.',
-            'Understanding each other, positive outlook, and fairness.'
+            'Understanding each other, positive outlook, and fairness.',
           ]
         },
         {
@@ -448,7 +483,7 @@ export const translations = {
           points: [
             'Continuously focus on quality.',
             "Timely and effective in service's deliverables.",
-            'Best efforts for desired solutions.'
+            'Best efforts for desired solutions.',
           ]
         },
         {
@@ -456,27 +491,14 @@ export const translations = {
           points: [
             'Collaboration for strong relationship.',
             'Professional achievements.',
-            'Embrace for success.'
+            'Embrace for success.',
           ]
         }
       ]
     },
-    clients: {
-      badge: 'Trusted Partners',
-      titleLine1: 'Our Satisfied',
-      titleLine2: 'Clients',
-      desc: 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax and legal issues.',
-      tagline: '"Hard Facts. Clear Solutions." — Proven results for every business challenge.',
-      cta: 'Get Started',
-      stats: [
-        { value: '55+', label: 'Trusted Clients' },
-        { value: '10+', label: 'Years of Experience' },
-        { value: '98%', label: 'Satisfaction Rate' }
-      ]
-    },
     contact: {
       badge: 'Contact Us',
-      title: 'Get In Touch',
+      title: 'Contact us',
       desc: 'Our doors are always open for strategic conversations. Reach out to our team of experts today for consultation.',
       directCall: 'Direct Communication',
       formTitle: 'Send Inquiry',

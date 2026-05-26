@@ -5,6 +5,7 @@ import { LanguageProvider } from './utils/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import SpecialSolutions from './components/SpecialSolutions';
 import VisionMission from './components/VisionMission';
 import Services from './components/Services';
 import Values from './components/Values';
@@ -33,12 +34,13 @@ function MainApp() {
       <Header />
       <main className="flex-grow pt-20">
         <Hero />
-        <Services />
-        <Leadership />
         <About />
+        <SpecialSolutions />
         <VisionMission />
         <Values />
+        <Services />
         <Clients />
+        <Leadership />
         <Contact />
       </main>
       <Footer />

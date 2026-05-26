@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Landmark, BarChart3, Gavel, Users2, Check, X, ShieldAlert, BadgeInfo } from 'lucide-react';
+import { Landmark, BarChart3, Gavel, Users2, Check, X, ShieldAlert, BadgeInfo, BookOpen } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 
@@ -23,15 +23,12 @@ export default function Services() {
   }));
 
   return (
-    <section className="py-24 bg-white overflow-hidden" id="services">
+    <section className="py-24 bg-white overflow-hidden scroll-mt-20" id="services">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">
-            {t.services.badge}
-          </span>
-          <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight">
             {t.services.title}
           </h2>
           <div className="h-1.5 w-24 bg-secondary rounded-full mx-auto" />
@@ -137,6 +134,24 @@ export default function Services() {
                       {selectedService.details}
                     </p>
                   </div>
+
+                  {/* Sub Sections (for Legal & HR services) */}
+                  {selectedService.subSections && (
+                    <div className="space-y-4 pt-4 border-t border-gray-100">
+                      <h4 className="font-bold text-primary text-base flex items-center gap-2">
+                        <BookOpen className="w-5 h-5 text-secondary shrink-0" />
+                        <span>{t.services.subSectionTitle}</span>
+                      </h4>
+                      <div className="space-y-4">
+                        {selectedService.subSections.map((sub, idx) => (
+                          <div key={idx} className="bg-primary/5 border border-primary/10 rounded-xl p-5 space-y-2">
+                            <h5 className="font-extrabold text-sm text-primary">{sub.title}</h5>
+                            <p className="text-xs text-gray-600 leading-relaxed font-normal">{sub.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Special Solutions (for Tax litigation/Bukper) */}
                   {selectedService.specialSolutions && (

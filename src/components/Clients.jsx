@@ -1,7 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 
 // Full client list from the reference image
 const clients = [
@@ -101,15 +99,24 @@ function ClientCard({ client, index }) {
 }
 
 export default function Clients() {
-  const { language } = useLanguage();
-  const t = translations[language];
-
   // Split clients into 2 rows for staggered scrolling
   const row1 = clients.slice(0, Math.ceil(clients.length / 2));
   const row2 = clients.slice(Math.ceil(clients.length / 2));
 
+  const stats = [
+    { value: '60+', label: 'Clients Served' },
+    { value: '10+', label: 'Years of Experience' },
+    { value: '98%', label: 'Client Satisfaction Rate' },
+  ];
+
+  const title = 'OUR SATISFIED CLIENTS';
+  const subtitle = 'Hard Facts. Clear Solutions.';
+  const desc = 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax issues.';
+  const tagline = 'Ready to join our growing list of trusted partners?';
+  const cta = 'Start a Conversation';
+
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="clients">
+    <section className="py-24 bg-white relative overflow-hidden scroll-mt-20" id="clients">
 
       {/* Subtle dot pattern background */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-0">
@@ -143,7 +150,7 @@ export default function Clients() {
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
+        <div className="flex flex-col mb-12 gap-6">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -151,37 +158,28 @@ export default function Clients() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-4 border border-primary/20">
-                {t.clients.badge}
-              </span>
-              <h2 className="font-extrabold text-4xl md:text-5xl lg:text-6xl text-on-background leading-tight">
-                {t.clients.titleLine1}{' '}
-                <span className="text-gradient">{t.clients.titleLine2}</span>
+              <h2 className="font-extrabold text-4xl md:text-5xl lg:text-6xl text-primary leading-tight tracking-tight mb-4">
+                {title}
               </h2>
+              <div className="h-1.5 w-24 bg-secondary rounded-full" />
             </motion.div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="md:max-w-xs"
+            className="max-w-2xl font-normal"
           >
-            <p className="text-sm text-outline leading-relaxed text-left">
-              {t.clients.desc}
+            <p className="text-xl md:text-2xl font-extrabold text-on-background mb-3">
+              {subtitle}
+            </p>
+            <p className="text-sm md:text-base text-outline leading-relaxed">
+              {desc}
             </p>
           </motion.div>
         </div>
-
-        {/* Divider accent */}
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: '80px' }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-1 bg-primary rounded-full mb-12"
-        />
 
         {/* Stats row */}
         <motion.div
@@ -191,7 +189,7 @@ export default function Clients() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-14"
         >
-          {t.clients.stats.map((stat, idx) => (
+          {stats.map((stat, idx) => (
             <div
               key={idx}
               className="flex flex-col items-start gap-1 bg-surface-container-low rounded-2xl px-6 py-5 border border-outline-variant/40"
@@ -237,13 +235,13 @@ export default function Clients() {
           className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl px-8 py-6 border border-primary/10"
         >
           <p className="text-lg md:text-xl font-bold text-on-background text-center sm:text-left leading-snug">
-            {t.clients.tagline}
+            {tagline}
           </p>
           <a
             href="#contact"
             className="flex-none bg-primary text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-primary-container transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap"
           >
-            {t.clients.cta}
+            {cta}
           </a>
         </motion.div>
       </div>

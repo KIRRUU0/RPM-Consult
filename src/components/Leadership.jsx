@@ -424,14 +424,11 @@ export default function Leadership() {
     : filteredTeam;
 
   return (
-    <section className="py-24 bg-surface-container-low overflow-hidden" id="leadership">
+    <section className="py-24 bg-surface-container-low overflow-hidden scroll-mt-20" id="leadership">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest">
-            {t.leadership.badge}
-          </span>
           <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl">
             {t.leadership.title}
           </h2>

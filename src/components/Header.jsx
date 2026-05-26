@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Monitor, Mail, MailQuestion, ExternalLink, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Monitor, Mail, MailQuestion, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 
@@ -9,7 +9,7 @@ export default function Header() {
   const [portalOpen, setPortalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const t = translations[language];
 
   useEffect(() => {
@@ -25,11 +25,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: t.nav.services, href: '#services' },
-    { name: t.nav.leadership, href: '#leadership' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.values, href: '#values' },
-    { name: t.nav.contact, href: '#contact' },
+    { name: 'About', href: '#about' },
+    { name: 'Our Special', href: '#special-solutions' },
+    { name: 'Our Comprehensive', href: '#services' },
+    { name: 'Our Satisfied', href: '#clients' },
+    { name: 'Our Key', href: '#leadership' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   // Smooth scroll handler for mobile nav — closes menu then scrolls to section
@@ -68,11 +69,11 @@ export default function Header() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden xl:flex items-center gap-4 xl:gap-5 2xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
-              className="font-bold text-xs xl:text-sm text-gray-600 hover:text-primary relative py-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+              className="font-bold text-[11px] xl:text-xs 2xl:text-sm text-gray-600 hover:text-primary relative py-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full whitespace-nowrap"
               href={link.href}
             >
               {link.name}
@@ -81,24 +82,15 @@ export default function Header() {
         </div>
 
         {/* Action Buttons (Portal Dropdown, Language Switcher, Get Started) */}
-        <div className="hidden lg:flex items-center gap-4 relative">
+        <div className="hidden xl:flex items-center gap-3 xl:gap-4 relative shrink-0">
           
-          {/* Language Switcher Button */}
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-3 py-1.5 border border-primary/20 hover:border-primary/40 rounded-md font-bold text-xs text-primary hover:bg-primary/5 transition-all uppercase cursor-pointer"
-            title="Switch Language"
-          >
-            <Globe className="w-3.5 h-3.5" />
-            <span>{language === 'id' ? 'EN' : 'ID'}</span>
-          </button>
 
           {/* Staff Portal Dropdown */}
           <div className="relative">
             <button
               onClick={() => setPortalOpen(!portalOpen)}
               onBlur={() => setTimeout(() => setPortalOpen(false), 200)}
-              className="flex items-center gap-1.5 px-4 py-2 border border-primary/20 rounded-md font-semibold text-sm text-primary hover:bg-primary/5 transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-2 border border-primary/20 rounded-md font-semibold text-xs xl:text-sm text-primary hover:bg-primary/5 transition-all cursor-pointer whitespace-nowrap shrink-0"
             >
               {t.nav.portal}
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${portalOpen ? 'rotate-180' : ''}`} />
@@ -138,23 +130,15 @@ export default function Header() {
 
           <a
             href="#contact"
-            className="bg-primary text-white px-6 py-2 rounded-md font-semibold text-sm hover:bg-primary-container hover:scale-[1.03] active:scale-95 transition-all shadow-md shadow-primary/10"
+            className="bg-primary text-white px-4 xl:px-6 py-2 rounded-md font-semibold text-xs xl:text-sm hover:bg-primary-container hover:scale-[1.03] active:scale-95 transition-all shadow-md shadow-primary/10 whitespace-nowrap shrink-0"
           >
             {t.nav.getStarted}
           </a>
         </div>
 
         {/* Mobile Navigation Toggle & Mobile Lang Switcher */}
-        <div className="flex items-center gap-3 lg:hidden">
-          {/* Mobile Language Switcher */}
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 px-2.5 py-1 border border-primary/20 rounded font-bold text-xs text-primary hover:bg-primary/5 transition-all uppercase cursor-pointer"
-          >
-            <Globe className="w-3 h-3" />
-            <span>{language === 'id' ? 'EN' : 'ID'}</span>
-          </button>
-          
+        <div className="flex items-center gap-3 xl:hidden">
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
@@ -172,7 +156,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden w-full bg-white border-t border-gray-100 mt-2 px-6 py-4 space-y-4 shadow-inner"
+            className="xl:hidden w-full bg-white border-t border-gray-100 mt-2 px-6 py-4 space-y-4 shadow-inner"
           >
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (

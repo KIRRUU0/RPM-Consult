@@ -20,6 +20,26 @@ export default function VisionMission() {
   return (
     <section className="py-20 bg-background overflow-hidden" id="vision-mission">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl"
+          >
+            Vision &amp; Mission
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '80px' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="h-1.5 bg-secondary rounded-full mx-auto mt-4"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           
           {/* Card Visi */}

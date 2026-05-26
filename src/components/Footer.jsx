@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Linkedin, Globe, Shield, Send, Check } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
+import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -29,16 +30,12 @@ export default function Footer() {
         
         {/* Column 1: Info & Brand */}
         <div className="space-y-6">
-          <a href="#" className="flex items-center gap-3">
-            <div className="bg-white p-1 rounded-lg flex items-center justify-center h-10 w-10 shrink-0 shadow-sm">
-              <img
-                alt="RPM Logo"
-                className="h-full w-full object-contain"
-                src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"
-                onError={(e) => { e.target.style.display = 'none'; }}
-              />
-            </div>
-            <span className="font-extrabold text-xl uppercase tracking-wider text-white">RPM Consult</span>
+          <a href="#" className="inline-flex items-center group">
+            <img
+              alt="RPM Logo"
+              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
+              src={logoImg}
+            />
           </a>
           <p className="text-white/60 text-sm leading-relaxed">
             {t.footer.desc}

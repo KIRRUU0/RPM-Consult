@@ -40,7 +40,7 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
@@ -49,12 +49,42 @@ export default function Contact() {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    if (isLocalhost) {
+      // Mock submit for local development
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      }, 1500);
+      return;
+    }
+
+    try {
+      const response = await fetch('./send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert(language === 'id' ? 'Gagal mengirim pesan. Silakan coba lagi nanti.' : 'Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert(language === 'id' ? 'Terjadi kesalahan koneksi. Silakan coba lagi.' : 'A connection error occurred. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    }
   };
 
   return (

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Monitor, Mail, MailQuestion, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
+import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,18 +55,13 @@ export default function Header() {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2.5' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-primary/5`}>
       <nav className="flex justify-between items-center px-4 md:px-margin-desktop h-14 w-full max-w-container-max mx-auto">
-        {/* Brand Logo & Name */}
-        <a href="#" className="flex items-center gap-3 group">
+        {/* Brand Logo */}
+        <a href="#" className="flex items-center group">
           <img
             alt="RPM Consult Logo"
             className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida/ADBb0uiSwr79SyjRLAT_NZzZzXsMr9piRHeF_Z17e2qNHN5AXzLVNvBokxoZe1ojqf3C5LravN98jQ2xgTEoTFwnifCMOb4PRxDS0GtCDpKK0DExdQOQzLeZUx6wI81t4qqKY7gZa3sL2QsdUKRuVraVwWuu02vCcNAr527dy-gXEAdXEgcUDlS4fUYT23eYz8OgU_XnkkS9myUQXjyjvDTGMo2PmaPqfJtnLA7GOaSebcuVB7qamUnkQxXgjCY"
-            onError={(e) => { e.target.style.display = 'none'; }}
+            src={logoImg}
           />
-          <div>
-            <span className="block font-bold text-lg leading-none text-primary uppercase tracking-tight">RPM Consult</span>
-            <span className="text-[9px] text-gray-500 uppercase tracking-widest font-semibold block mt-0.5">Raka Pradipta Mahawira</span>
-          </div>
         </a>
 
         {/* Desktop Navigation Links */}

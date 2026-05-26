@@ -61,6 +61,7 @@ export default {
       },
       fontFamily: {
         sans: ["Hanken Grotesk", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
       borderRadius: {
         DEFAULT: "0.25rem", // 4px (sm in DESIGN.md is 0.25rem)

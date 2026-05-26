@@ -44,7 +44,7 @@ export default function About() {
               <img
                 alt="Professional Office Environment"
                 className="rounded-xl shadow-2xl w-full h-[450px] md:h-[550px] object-cover border border-primary/10"
-                src="https://i.pinimg.com/1200x/da/ac/18/daac1808b8b429c45a514e636bf0b6f3.jpg"
+                src="src\assets\about\Mikha.imageworks_1828.jpg"
                 onError={(e) => { 
                   e.target.src = 'https://lh3.googleusercontent.com/aida/ADBb0ugfbNml8ljVCIUuKgzC-fqi3eoL6EspAlf2zpuMlMQV4UjxJpeSfEBhNzqnGvnP-dMyj1dHTbD-LwMdjI74wNTiOsUZhDalz2nw0cbNibZTBscrV1GuV9QUnGGxQX5sselptp5KDdUneME83-jpa5vMFgk-1mkbTQS2jNzO1L4sDuj7nAaQkYZib9GRXHgljfmjrYGCG_kaZNVDjFTd3TK0gj3vqL64qzRCZiCEEM8M6XubEaQxRag-H9Y'; 
                 }}
@@ -116,14 +116,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center"
+              className="flex justify-center mt-4"
             >
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/8 to-secondary/8 rounded-xl px-5 py-3 border border-primary/15">
-                <span className="text-3xl leading-none font-serif text-secondary select-none">&ldquo;</span>
-                <p className="text-base md:text-lg font-bold text-on-background italic leading-snug">
+              <div className="flex items-center gap-2">
+                <span className="text-4xl md:text-5xl lg:text-6xl leading-none font-serif text-secondary select-none">&ldquo;</span>
+                <p className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gradient italic leading-snug text-center">
                   {t.about.slogan}
                 </p>
-                <span className="text-3xl leading-none font-serif text-secondary select-none">&rdquo;</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl leading-none font-serif text-secondary select-none">&rdquo;</span>
               </div>
             </motion.div>
 

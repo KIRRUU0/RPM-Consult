@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Mail, X, Briefcase, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
+import agusImg from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
+import jasonImg from '../assets/leadership/Jason Lathianza S.H., M.Kn..jpg';
 
 export default function Leadership() {
   const [selectedPerson, setSelectedPerson] = useState(null);
@@ -53,7 +55,7 @@ export default function Leadership() {
         id: 'Lulus dari Diploma Perpajakan-STAN Jakarta dan meraih gelar Magister Manajemen, Agus memiliki lebih dari 28 tahun pengalaman di bidang perpajakan dan akuntansi. Setelah 16 tahun berkarier di Direktorat Jenderal Pajak (DJP), Agus melanjutkan karier profesionalnya sebagai Manajer Pajak di RSM Indonesia (salah satu kantor akuntan besar di Indonesia), kemudian menjadi Tax Partner di Enforce Tax Advisory, Deputy Director di Center for Indonesia Taxation Analysis (CITA), serta pendiri dan Tax Partner di WiN Partners.\n\nSebagai pendiri dan Direktur Pajak di PT Raka Pradipta Mahawira (RPM Consult), ia berfokus memberikan layanan terbaik di bidang Kepatuhan Pajak, Pemeriksaan Pajak, Konsultasi Pajak, Perencanaan Pajak, Audit Pajak, Keberatan Pajak, Banding Pajak, dan Peninjauan Kembali di Pengadilan Pajak.',
         en: 'Graduated from Taxation Diploma-STAN Jakarta and earned a Master of Management degree, Agus has over 28 years of experience in taxation and accounting. After 16 years of career at the Directorate General of Taxes (DJP), Agus continued his professional career as a Tax Manager at RSM Indonesia, then became a Tax Partner at Enforce Tax Advisory, Deputy Director at CITA, and founder & Tax Partner at WiN Partners.\n\nAs the founder and Tax Director at RPM Consult, he focuses on delivering the best services in Tax Compliance, Tax Audit, Tax Advisory, Tax Planning, Tax Litigation, Tax Objections, Tax Appeals, and Judicial Reviews at the Tax Court.'
       },
-      img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
+      img: agusImg,
       email: 'raka_pm@rpm-consult.com',
     },
     {
@@ -76,7 +78,7 @@ export default function Leadership() {
         id: 'Direktur Hukum di PT Raka Pradipta Mahawira yang dikenal luas karena ketajaman bisnis dan keahlian hukumnya yang kuat, serta pengalamannya yang luas dalam memberikan konsultasi hukum dan regulasi untuk urusan bisnis nasional maupun internasional.\n\nIa juga berspesialisasi dalam strategi investasi asing (PMA), memastikan perlindungan komprehensif bagi kepentingan klien dan melindungi mereka dari kerugian aset finansial maupun fisik. Dengan latar belakang yang solid dan hubungan jangka panjang yang terjalin baik dengan aparat penegak hukum, otoritas keamanan, dan tokoh masyarakat, ia mampu menganalisis situasi dan potensi risiko secara sangat spesifik dan rinci.',
         en: 'Legal Director at PT Raka Pradipta Mahawira, widely known for his business acumen and strong legal expertise, as well as his extensive experience in providing legal and regulatory consultation for both national and international business affairs.\n\nHe also specializes in foreign investment strategy (PMA), ensuring comprehensive protection for client interests and shielding them from losses of financial or physical assets. With a solid background and well-established long-term relations with law enforcement, security authorities, and community leaders, he is capable of analyzing situations and potential risks in a highly specific and detailed manner.'
       },
-      img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop',
+      img: jasonImg,
       email: 'raka_pm@rpm-consult.com',
     },
     {

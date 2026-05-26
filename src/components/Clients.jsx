@@ -1,76 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-
-// Full client list from the reference image
-const clients = [
-  { name: 'Abt Associates', abbr: 'Abt' },
-  { name: 'Ascendia', abbr: 'Ascendia' },
-  { name: "Bag's City", abbr: "BAG'S CITY" },
-  { name: 'Reksa Honora Aditama', abbr: 'REKSA HONORA ADITAMA' },
-  { name: 'BWI', abbr: 'BWI' },
-  { name: 'Indonesia Mandiri Networks', abbr: 'IMN' },
-  { name: 'MTS', abbr: 'MTS' },
-  { name: 'DP', abbr: 'DP' },
-  { name: 'EMR', abbr: 'EMR' },
-  { name: 'HAS', abbr: 'HAS' },
-  { name: 'Prambanan Kencana', abbr: 'PK' },
-  { name: 'Barata Sentosa Kencana', abbr: 'BSK' },
-  { name: 'Arista Pramudya Wardhana', abbr: 'APW' },
-  { name: 'Royal Bahana Kalpena', abbr: 'ROYAL' },
-  { name: 'PT Melah Karya Integrasi', abbr: 'MKI' },
-  { name: 'Prolink', abbr: 'PROLINK' },
-  { name: 'C.D.I', abbr: 'CDI' },
-  { name: 'Angkasa Pura Airports', abbr: 'AP' },
-  { name: 'Kepoo', abbr: 'Kepoo' },
-  { name: 'KWB', abbr: 'KWB' },
-  { name: 'KNP', abbr: 'KNP' },
-  { name: 'PT Yallis Fortuna', abbr: 'YF' },
-  { name: 'All Data', abbr: 'All Data' },
-  { name: 'MPM Rent', abbr: 'MPM' },
-  { name: 'Mata Emericity', abbr: 'mata' },
-  { name: 'M.P Evans Group PLC', abbr: 'MPE' },
-  { name: 'Paseban', abbr: 'PASEBAN' },
-  { name: 'MNP', abbr: 'mnp' },
-  { name: 'Multiply', abbr: 'MULTIPLY' },
-  { name: 'PT RSUP', abbr: 'RSUP' },
-  { name: 'Premindo', abbr: 'PREMINDO' },
-  { name: 'Pronas', abbr: 'PRONAS' },
-  { name: 'Telkominfra', abbr: 'Telkominfra' },
-  { name: 'Leno Furniture', abbr: 'LENO' },
-  { name: 'EZ Load Nusa Bangkit', abbr: 'EZ LOAD' },
-  { name: 'Circle K', abbr: 'K' },
-  { name: 'Transmarco', abbr: 'Transmarco' },
-  { name: 'Radika', abbr: 'Radika' },
-  { name: 'Royal Cemerlang', abbr: 'RC' },
-  { name: 'ReConsult', abbr: 'reCOnsult' },
-  { name: 'Apari Technologies', abbr: 'apiari' },
-  { name: 'Seraphim', abbr: 'SERAPHIM' },
-  { name: 'Chalidana Group', abbr: 'CHALIDANA' },
-  { name: 'One Heart Honda', abbr: 'One HEART.' },
-  { name: 'Tower International', abbr: 'TOWER' },
-  { name: 'Terra Tota Makmur', abbr: 'RAW' },
-  { name: 'Virgin Radio', abbr: 'RADIO' },
-  { name: 'GG', abbr: 'GG' },
-  { name: 'Esco', abbr: 'ESCO' },
-  { name: 'CARS', abbr: 'CARS' },
-  { name: 'Surya Cemerlang Royalindo', abbr: 'SCR' },
-  { name: 'InJourney Airports', abbr: 'InJourney' },
-  { name: 'Integra Adi Jaya', abbr: 'IAJ' },
-  { name: 'Dwimitra', abbr: 'DWIMITRA' },
-  { name: 'Fazza Royal Yantasir Simulasi', abbr: 'FAZZA' },
-];
-
-// Color palette for logo cards
-const colorPalettes = [
-  { bg: '#e8f5ee', text: '#006b2c', border: '#006b2c22' },
-  { bg: '#fff8e8', text: '#835400', border: '#83540022' },
-  { bg: '#eef4ff', text: '#1a56db', border: '#1a56db22' },
-  { bg: '#fef3f2', text: '#c0392b', border: '#c0392b22' },
-  { bg: '#f0f4ff', text: '#4338ca', border: '#4338ca22' },
-  { bg: '#f0fdf4', text: '#15803d', border: '#15803d22' },
-  { bg: '#fdf4ff', text: '#7e22ce', border: '#7e22ce22' },
-  { bg: '#fff7ed', text: '#c2410c', border: '#c2410c22' },
-];
+import clientsStripImg from '../assets/clients_strip.png';
 
 function AnimatedCounter({ value }) {
   const [displayValue, setDisplayValue] = useState('0');
@@ -100,14 +30,13 @@ function AnimatedCounter({ value }) {
             
             if (progress < 1) {
               const currentCount = Math.floor(progress * targetNum);
-              // Add a bit of random variation to simulate a matrix-like/spinning counter
               const randomOffset = Math.floor((Math.random() - 0.5) * (targetNum * 0.15));
               const displayNum = Math.max(0, Math.min(targetNum - 1, currentCount + randomOffset));
               
               setDisplayValue(`${displayNum}${suffix}`);
               requestAnimationFrame(step);
             } else {
-              setDisplayValue(value); // Fix to target number
+              setDisplayValue(value);
             }
           };
           requestAnimationFrame(step);
@@ -126,39 +55,7 @@ function AnimatedCounter({ value }) {
   return <span ref={containerRef}>{displayValue}</span>;
 }
 
-function ClientCard({ client, index }) {
-  const palette = colorPalettes[index % colorPalettes.length];
-  return (
-    <div
-      className="flex-none mx-3 group"
-      style={{ minWidth: '140px' }}
-    >
-      <div
-        className="flex items-center justify-center rounded-xl px-4 py-3 h-16 transition-all duration-300 group-hover:scale-105 group-hover:shadow-md cursor-default select-none"
-        style={{
-          background: palette.bg,
-          border: `1.5px solid ${palette.border}`,
-        }}
-        title={client.name}
-      >
-        <span
-          className="font-extrabold text-xs tracking-wide text-center leading-tight"
-          style={{ color: palette.text, maxWidth: '110px' }}
-        >
-          {client.abbr}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export default function Clients() {
-  // Split clients into 3 rows for staggered scrolling
-  const size = Math.ceil(clients.length / 3);
-  const row1 = clients.slice(0, size);
-  const row2 = clients.slice(size, size * 2);
-  const row3 = clients.slice(size * 2);
-
   const stats = [
     { value: '60+', label: 'Clients Served' },
     { value: '10+', label: 'Years of Experience' },
@@ -260,38 +157,30 @@ export default function Clients() {
 
       </div>
 
-      {/* Infinite Marquee Rows — full bleed */}
-      <div className="relative w-full overflow-hidden mt-4 mb-2 flex flex-col gap-4">
+      {/* Infinite Scrolling Logo Strip Marquee — full bleed */}
+      <div className="relative w-full overflow-hidden mt-6 mb-16 py-6 border-y border-primary/5 bg-white flex items-center">
         {/* Fade masks on left & right */}
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, white, transparent)' }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to left, white, transparent)' }} />
 
-        {/* Row 1 — scrolls LEFT */}
-        <div className="flex clients-marquee-left-fast">
-          {[...row1, ...row1, ...row1].map((client, idx) => (
-            <ClientCard key={`r1-${idx}`} client={client} index={idx} />
-          ))}
-        </div>
-
-        {/* Row 2 — scrolls RIGHT (reverse) */}
-        <div className="flex clients-marquee-right-fast">
-          {[...row2, ...row2, ...row2].map((client, idx) => (
-            <ClientCard key={`r2-${idx}`} client={client} index={idx + 4} />
-          ))}
-        </div>
-
-        {/* Row 3 — scrolls LEFT */}
-        <div className="flex clients-marquee-left-fast-alt">
-          {[...row3, ...row3, ...row3].map((client, idx) => (
-            <ClientCard key={`r3-${idx}`} client={client} index={idx + 8} />
-          ))}
+        <div className="clients-marquee-strip flex items-center">
+          <img
+            src={clientsStripImg}
+            alt="Clients Logos Strip"
+            className="h-[90px] md:h-[108px] w-auto object-contain shrink-0 crisp-image"
+          />
+          <img
+            src={clientsStripImg}
+            alt="Clients Logos Strip"
+            className="h-[90px] md:h-[108px] w-auto object-contain shrink-0 crisp-image"
+          />
         </div>
       </div>
 
       {/* Bottom tagline */}
-      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10 mt-14">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}

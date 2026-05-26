@@ -12,6 +12,10 @@
     @apply bg-background text-on-background antialiased;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
   /* Semua teks deskripsi rata kiri dan kanan */
   p {
     text-align: justify;
@@ -185,36 +189,26 @@ html.lenis body {
 }
 
 /* ============================
-   Clients Marquee Animations
+   Clients Marquee Animations (Continuous Logo Strip)
    ============================ */
-@keyframes marquee-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+@keyframes marquee-strip {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
-@keyframes marquee-right {
-  0%   { transform: translateX(-33.3333%); }
-  100% { transform: translateX(0); }
-}
-
-.clients-marquee-left-fast {
-  animation: marquee-left 25s linear infinite;
+.clients-marquee-strip {
+  display: flex;
+  width: max-content;
+  animation: marquee-strip 40s linear infinite;
   will-change: transform;
 }
 
-.clients-marquee-right-fast {
-  animation: marquee-right 20s linear infinite;
-  will-change: transform;
-}
-
-.clients-marquee-left-fast-alt {
-  animation: marquee-left 28s linear infinite;
-  will-change: transform;
-}
-
-.clients-marquee-left-fast:hover,
-.clients-marquee-right-fast:hover,
-.clients-marquee-left-fast-alt:hover {
+.clients-marquee-strip:hover {
   animation-play-state: paused;
+}
+
+.crisp-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 

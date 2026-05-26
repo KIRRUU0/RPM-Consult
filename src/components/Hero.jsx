@@ -29,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 1.8, ease: 'easeOut' }}
           alt="Modern Business District"
           className="w-full h-full object-cover"
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
+          src="src/assets/hero/PHOTO-2026-02-20-13-20-03.jpg"
           onError={(e) => { 
             e.target.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0HOISwjyTZd1P04JQYd9QVk2loYnDxxFt8Tdq6kwD7whbGYA5WVAWVt7udp9SasLkYFjQ6_gThJjk6H0vfJ5-rLrQurr035yEhY2De5zy6HF7saYjPjfw6KcUxVSlNKzqSPmZV-oeNHjZ3EPQy-Xli0-FVTWfdKWktqWzrZlsTVyBmMF29LHB8n_4cKLOv0CcA0eXgio2lx2B9RrdEx1MBOizYveSRkPbhRNeTR6RLYW2b-Wx9xXKPERTlGzEy1CUemm_LoZ7qrw'; 
           }}

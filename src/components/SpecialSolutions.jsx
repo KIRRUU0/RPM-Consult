@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gavel, ShieldAlert, ChevronDown } from 'lucide-react';
-import specialSolutionsImg from '../assets/special_solutions.png';
 
 const solutions = [
   {
@@ -146,7 +145,7 @@ export default function SpecialSolutions() {
             className="lg:col-span-5 order-1 lg:order-2"
           >
             <img 
-              src="https://i.pinimg.com/736x/0b/2e/24/0b2e24b42a490a794c4ccbbe0a143ab2.jpg"
+              src="src\assets\special\Mikha.imageworks_41412.jpg"
               alt="Our Special Solutions Graphic" 
               className="rounded-2xl w-full h-[400px] md:h-[480px] object-cover shadow-xl border border-primary/10"
             />

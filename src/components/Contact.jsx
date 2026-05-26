@@ -77,7 +77,18 @@ export default function Contact() {
         setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        alert(language === 'id' ? 'Gagal mengirim pesan. Silakan coba lagi nanti.' : 'Failed to send message. Please try again later.');
+        let errorMsg = '';
+        try {
+          const errData = await response.json();
+          errorMsg = errData.message || '';
+        } catch (e) {}
+
+        const details = `(Status: ${response.status}${errorMsg ? ' - ' + errorMsg : ''})`;
+        alert(
+          language === 'id'
+            ? `Gagal mengirim pesan. ${details}. Silakan coba lagi nanti.`
+            : `Failed to send message. ${details}. Please try again later.`
+        );
       }
     } catch (error) {
       console.error('Error submitting form:', error);

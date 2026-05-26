@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Landmark, BarChart3, Gavel, Users2, Check, X, ShieldAlert, BadgeInfo, BookOpen } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
@@ -8,6 +8,18 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
   const { language } = useLanguage();
   const t = translations[language];
+
+  // Disable background scrolling when modal is open
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedService]);
 
   // Visual layout properties mapped by ID
   const servicesMeta = [
@@ -94,14 +106,17 @@ export default function Services() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              transition={{ duration: 0.2 }}
+              data-lenis-prevent
+              className="fixed inset-0 bg-black/70 backdrop-blur-none md:backdrop-blur-sm z-50 flex items-center justify-center p-4"
               onClick={() => setSelectedService(null)}
             >
               <motion.div
-                initial={{ scale: 0.9, y: 20 }}
+                initial={{ scale: 0.95, y: 15 }}
                 animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="bg-white rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl border border-primary/10 relative max-h-[90vh] flex flex-col"
+                exit={{ scale: 0.95, y: 15 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="bg-white rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl border border-primary/10 relative max-h-[90vh] flex flex-col transform-gpu"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}

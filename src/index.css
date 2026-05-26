@@ -197,18 +197,24 @@ html.lenis body {
   100% { transform: translateX(0); }
 }
 
-.clients-marquee-left {
-  animation: marquee-left 40s linear infinite;
+.clients-marquee-left-fast {
+  animation: marquee-left 25s linear infinite;
   will-change: transform;
 }
 
-.clients-marquee-right {
-  animation: marquee-right 36s linear infinite;
+.clients-marquee-right-fast {
+  animation: marquee-right 20s linear infinite;
   will-change: transform;
 }
 
-.clients-marquee-left:hover,
-.clients-marquee-right:hover {
+.clients-marquee-left-fast-alt {
+  animation: marquee-left 28s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee-left-fast:hover,
+.clients-marquee-right-fast:hover,
+.clients-marquee-left-fast-alt:hover {
   animation-play-state: paused;
 }
 

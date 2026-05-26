@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // Full client list from the reference image
@@ -72,6 +72,60 @@ const colorPalettes = [
   { bg: '#fff7ed', text: '#c2410c', border: '#c2410c22' },
 ];
 
+function AnimatedCounter({ value }) {
+  const [displayValue, setDisplayValue] = useState('0');
+  const containerRef = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const numericMatch = value.match(/(\d+)/);
+    if (!numericMatch) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const targetNum = parseInt(numericMatch[0], 10);
+    const suffix = value.replace(numericMatch[0], '');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          let startTimestamp = null;
+          const duration = 1500; // 1.5 seconds
+
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            
+            if (progress < 1) {
+              const currentCount = Math.floor(progress * targetNum);
+              // Add a bit of random variation to simulate a matrix-like/spinning counter
+              const randomOffset = Math.floor((Math.random() - 0.5) * (targetNum * 0.15));
+              const displayNum = Math.max(0, Math.min(targetNum - 1, currentCount + randomOffset));
+              
+              setDisplayValue(`${displayNum}${suffix}`);
+              requestAnimationFrame(step);
+            } else {
+              setDisplayValue(value); // Fix to target number
+            }
+          };
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [value]);
+
+  return <span ref={containerRef}>{displayValue}</span>;
+}
+
 function ClientCard({ client, index }) {
   const palette = colorPalettes[index % colorPalettes.length];
   return (
@@ -99,9 +153,11 @@ function ClientCard({ client, index }) {
 }
 
 export default function Clients() {
-  // Split clients into 2 rows for staggered scrolling
-  const row1 = clients.slice(0, Math.ceil(clients.length / 2));
-  const row2 = clients.slice(Math.ceil(clients.length / 2));
+  // Split clients into 3 rows for staggered scrolling
+  const size = Math.ceil(clients.length / 3);
+  const row1 = clients.slice(0, size);
+  const row2 = clients.slice(size, size * 2);
+  const row3 = clients.slice(size * 2);
 
   const stats = [
     { value: '60+', label: 'Clients Served' },
@@ -194,7 +250,9 @@ export default function Clients() {
               key={idx}
               className="flex flex-col items-start gap-1 bg-surface-container-low rounded-2xl px-6 py-5 border border-outline-variant/40"
             >
-              <span className="font-extrabold text-3xl md:text-4xl text-primary">{stat.value}</span>
+              <span className="font-extrabold text-3xl md:text-4xl text-primary">
+                <AnimatedCounter value={stat.value} />
+              </span>
               <span className="text-sm text-outline font-medium leading-snug">{stat.label}</span>
             </div>
           ))}
@@ -203,7 +261,7 @@ export default function Clients() {
       </div>
 
       {/* Infinite Marquee Rows — full bleed */}
-      <div className="relative w-full overflow-hidden mt-4 mb-2">
+      <div className="relative w-full overflow-hidden mt-4 mb-2 flex flex-col gap-4">
         {/* Fade masks on left & right */}
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, white, transparent)' }} />
@@ -211,16 +269,23 @@ export default function Clients() {
           style={{ background: 'linear-gradient(to left, white, transparent)' }} />
 
         {/* Row 1 — scrolls LEFT */}
-        <div className="flex mb-4 clients-marquee-left">
+        <div className="flex clients-marquee-left-fast">
           {[...row1, ...row1, ...row1].map((client, idx) => (
             <ClientCard key={`r1-${idx}`} client={client} index={idx} />
           ))}
         </div>
 
         {/* Row 2 — scrolls RIGHT (reverse) */}
-        <div className="flex clients-marquee-right">
+        <div className="flex clients-marquee-right-fast">
           {[...row2, ...row2, ...row2].map((client, idx) => (
             <ClientCard key={`r2-${idx}`} client={client} index={idx + 4} />
+          ))}
+        </div>
+
+        {/* Row 3 — scrolls LEFT */}
+        <div className="flex clients-marquee-left-fast-alt">
+          {[...row3, ...row3, ...row3].map((client, idx) => (
+            <ClientCard key={`r3-${idx}`} client={client} index={idx + 8} />
           ))}
         </div>
       </div>

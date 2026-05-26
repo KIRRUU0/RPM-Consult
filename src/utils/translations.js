@@ -55,11 +55,11 @@ export const translations = {
         {
           id: 1,
           title: 'Layanan Pajak (Tax Service)',
-          shortDesc: 'Solusi kepatuhan dan litigasi perpajakan yang komprehensif, mencakup urusan pajak domestik hingga transaksi internasional.',
+          shortDesc: 'Solusi kepatuhan dan litigasi perpajakan komprehensif, mencakup urusan pajak domestik hingga transaksi internasional.',
           highlights: [
             'Kepatuhan Pajak (Tax Compliance)',
             'Harga Transfer (Transfer Pricing)',
-            'Audit & Litigasi Pajak'
+            'Audit & Litigasi (Tax Litigation)'
           ],
           details: 'Saat ini, bisnis tidak hanya berurusan dengan aturan pajak domestik, tetapi juga aturan pajak internasional. Setiap bisnis, baik perusahaan maupun perorangan, harus mematuhi aturan pajak yang semakin kompleks. Banyak permasalahan perpajakan yang harus ditangani, mulai dari kepatuhan pajak hingga sengketa pajak.\n\nKonsultan pajak kami memiliki pengalaman dan pengetahuan mendalam tentang peraturan perpajakan lokal maupun internasional untuk memastikan bisnis Anda mematuhi regulasi yang terus berubah secara efisien.',
           scopes: [
@@ -88,11 +88,11 @@ export const translations = {
         {
           id: 2,
           title: 'Layanan Hukum (Legal Service)',
-          shortDesc: 'Solusi hukum berwawasan ke depan untuk navigasi regulasi, pendirian perusahaan, dan manajemen risiko hukum yang komprehensif.',
+          shortDesc: 'Solusi hukum berwawasan ke depan untuk kepatuhan regulasi, pendirian perusahaan, dan manajemen risiko hukum.',
           highlights: [
-            'Legal Risk Assessment & Management',
+            'Manajemen Risiko (Risk Management)',
             'Pendirian Perusahaan (Set-Up)',
-            'Dispute Resolution'
+            'Resolusi Sengketa (Dispute Resolution)'
           ],
           details: 'Dalam lingkungan bisnis yang bergerak cepat, RPM Consult menyediakan solusi hukum berwawasan ke depan yang membantu Anda melangkah dengan kejelasan, keyakinan, dan kecepatan. Kami memahami bisnis Anda, mengantisipasi perkembangan regulasi dan pasar, serta memanfaatkan teknologi untuk menghadirkan strategi hukum praktis yang mendukung pertumbuhan berkelanjutan.\n\nKami bekerja bersama Anda sebagai penasihat tepercaya, memadukan keahlian hukum dengan wawasan komersial yang kuat untuk menghadapi tantangan kompleks di sepanjang siklus bisnis dan transaksi Anda. Pendekatan kami responsif, berorientasi solusi, dan selaras dengan tujuan strategis Anda.\n\nDari penyusunan dan pengelolaan transaksi hingga navigasi kerangka hukum dan regulasi yang terus berkembang, RPM Consult menghadirkan dukungan hukum menyeluruh yang disesuaikan dengan kebutuhan bisnis di Indonesia. Komitmen kami melampaui keunggulan teknis — kami mengutamakan klien dan menjunjung standar etika tertinggi.',
           subSections: [
@@ -127,11 +127,11 @@ export const translations = {
         {
           id: 3,
           title: 'Layanan Akuntansi (Accounting Service)',
-          shortDesc: 'Layanan pembukuan andal untuk pengelolaan pencatatan keuangan sesuai standar akuntansi keuangan terbaru yang berlaku.',
+          shortDesc: 'Layanan pembukuan andal untuk pengelolaan laporan keuangan sesuai standar akuntansi keuangan terbaru yang berlaku.',
           highlights: [
-            'Bookkeeping & Data Processing',
-            'Financial Reporting',
-            'Year-End Statement Prep'
+            'Pembukuan Keuangan (Bookkeeping)',
+            'Laporan Keuangan (Financial Report)',
+            'Laporan Akhir Tahun (Year-End)'
           ],
           details: 'Layanan akuntansi kami yang andal akan membantu Anda mengelola akun-akun Anda secara teratur dan transparan. Kami memastikan pembukuan dan catatan keuangan Anda sepenuhnya mengikuti standar dan peraturan akuntansi lokal terbaru yang berlaku.',
           scopes: [
@@ -145,11 +145,11 @@ export const translations = {
         {
           id: 4,
           title: 'Konsultasi SDM (HR Consulting)',
-          shortDesc: 'Manajemen hubungan industrial, kepatuhan kebijakan ketenagakerjaan, dan penyelesaian sengketa tenaga kerja secara efektif.',
+          shortDesc: 'Layanan manajemen hubungan industrial, kepatuhan kebijakan ketenagakerjaan, serta penyelesaian sengketa kerja.',
           highlights: [
-            'Industrial Relations Support',
-            'Kebijakan Ketenagakerjaan',
-            'Mediasi & Negosiasi Konflik'
+            'Hubungan Kerja (Industrial Relations)',
+            'Kebijakan Kerja (Employment Policy)',
+            'Mediasi Konflik (Conflict Mediation)'
           ],
           details: 'RPM Consult juga menyediakan layanan Konsultasi Sumber Daya Manusia yang berfokus pada pengelolaan dan penyelesaian sengketa hubungan industrial dan ketenagakerjaan yang efektif. Kami membantu pemberi kerja dalam menavigasi konflik dengan karyawan melalui pendekatan yang strategis, sah secara hukum, dan praktis demi menjaga kelangsungan bisnis dan keharmonisan tenaga kerja.',
           subSections: [
@@ -324,11 +324,11 @@ export const translations = {
         {
           id: 1,
           title: 'Tax Service',
-          shortDesc: 'Comprehensive tax compliance and litigation solutions covering domestic and international tax matters.',
+          shortDesc: 'Comprehensive tax compliance and litigation solutions covering domestic and international tax regulations.',
           highlights: [
-            'Tax Compliance',
-            'Transfer Pricing Documentation',
-            'Tax Audit & Litigation Support'
+            'Tax Compliance Support',
+            'Transfer Pricing Setup',
+            'Tax Audit & Litigation'
           ],
           details: 'Nowadays, business is not only dealing with domestic tax rules, but also international tax rules. Each business, either company or individual, must comply with increasingly complex tax rules. Many issues of taxation that should be dealt with, from tax compliance to tax disputes.\n\nOur tax consultants have the experience and knowledge of both local and international rules to ensure that you comply with ever-changing regulations.',
           scopes: [
@@ -357,11 +357,11 @@ export const translations = {
         {
           id: 2,
           title: 'Legal Service',
-          shortDesc: 'Forward-looking legal solutions for regulatory navigation, corporate establishment, and comprehensive legal risk management.',
+          shortDesc: 'Forward-looking legal solutions for compliance navigation, company set-up, and strategic risk management.',
           highlights: [
-            'Legal Risk Assessment & Management',
-            'Company Set-Up & Licensing',
-            'Corporate Dispute Resolution'
+            'Legal Risk Assessment',
+            'Company Set-Up Support',
+            'Dispute Resolution Law'
           ],
           details: 'In today\'s fast-moving business environment, RPM Consult provides forward-thinking legal solutions that help you move with clarity, confidence, and speed. We understand your business, anticipate regulatory and market developments, and leverage technology to deliver practical legal strategies that support sustainable growth.\n\nWe work alongside you as a trusted advisor, combining legal expertise with strong commercial insight to address complex challenges across the full lifecycle of your business and transactions. Our approach is responsive, solutions-driven, and aligned with your strategic objectives.\n\nFrom structuring and managing transactions to navigating evolving legal and regulatory frameworks, RPM Consult delivers seamless, end-to-end legal support tailored to your business needs in Indonesia. Our commitment goes beyond technical excellence. We put our clients first, continuously enhance the quality of our services, and uphold the highest ethical standards in everything we do.',
           subSections: [
@@ -396,11 +396,11 @@ export const translations = {
         {
           id: 3,
           title: 'Accounting Service',
-          shortDesc: 'Reliable bookkeeping and financial statement compilation in strict compliance with the latest accounting standards.',
+          shortDesc: 'Reliable bookkeeping and financial compilation in strict compliance with the latest accounting standards.',
           highlights: [
-            'Bookkeeping & Data Processing',
-            'Financial Reporting',
-            'Year-End Statement Prep'
+            'Bookkeeping & Recording',
+            'Financial Report Audit',
+            'Year-End Closure Prep'
           ],
           details: 'Our reliable accounting services would help you manage your accounts. We would ensure that your books and records are following the latest local accounting regulations.',
           scopes: [
@@ -414,11 +414,11 @@ export const translations = {
         {
           id: 4,
           title: 'Human Resource Consulting',
-          shortDesc: 'Industrial relations management, employment policy compliance, labor dispute resolution, and regulatory alignment.',
+          shortDesc: 'Industrial relations support, employment policy compliance, labor dispute resolution, and workforce alignment.',
           highlights: [
-            'Industrial Relations Support',
-            'Employment Policy Drafting',
-            'Conflict Mediation & Negotiation'
+            'Industrial Relations',
+            'Employment Regulations',
+            'Conflict Mediation Law'
           ],
           details: 'RPM Consult also provides Human Resource Consulting services focused on the effective management and resolution of industrial and employment disputes. We assist employers in navigating conflicts with employees through strategic, lawful, and practical approaches that prioritize business continuity and workforce harmony.',
           subSections: [

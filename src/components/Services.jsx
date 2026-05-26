@@ -50,33 +50,35 @@ export default function Services() {
               className="bg-white rounded-2xl overflow-hidden border border-primary/5 hover:border-primary/20 shadow-sm flex flex-col justify-between h-full transition-all duration-500 cursor-pointer group"
             >
               {/* Card Header with Accent Gradient */}
-              <div className={`p-8 bg-gradient-to-br ${service.gradient} border-b border-primary/5 flex flex-col items-start gap-4`}>
-                <div className={`p-3 rounded-xl ${service.iconColor} flex items-center justify-center`}>
+              <div className={`p-8 bg-gradient-to-br ${service.gradient} border-b border-primary/5 flex flex-col items-start justify-between h-[12.5rem]`}>
+                <div className={`p-3 rounded-xl ${service.iconColor} flex items-center justify-center shadow-sm`}>
                   {service.icon}
                 </div>
-                <h3 className="font-extrabold text-lg text-primary mt-2 group-hover:text-secondary transition-colors duration-300">
+                <h3 className="font-extrabold text-lg text-primary group-hover:text-secondary transition-colors duration-300 min-h-[3.5rem] flex items-end">
                   {service.title.split(' (')[0]}
                 </h3>
               </div>
 
               {/* Card Body */}
-              <div className="p-8 flex-grow flex flex-col justify-between space-y-6">
-                <p className="text-gray-600 text-sm leading-relaxed font-normal">
-                  {service.shortDesc}
-                </p>
-                
-                <ul className="space-y-3.5">
-                  {service.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-gray-500 font-medium">
-                      <div className="mt-0.5 rounded-full bg-primary/10 p-0.5 flex items-center justify-center shrink-0">
-                        <Check className="w-3 text-primary stroke-[3]" />
-                      </div>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="p-8 flex-grow flex flex-col justify-between">
+                <div className="flex-grow flex flex-col space-y-5 mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed font-normal text-left min-h-[6.5rem]">
+                    {service.shortDesc}
+                  </p>
+                  
+                  <ul className="space-y-3.5">
+                    {service.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-xs text-gray-500 font-medium">
+                        <div className="mt-0.5 rounded-full bg-primary/10 p-0.5 flex items-center justify-center shrink-0 w-4 h-4">
+                          <Check className="w-3 h-3 text-primary stroke-[3]" />
+                        </div>
+                        <span className="leading-tight text-left">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <button className="text-primary font-bold text-xs inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 pt-4 border-t border-gray-50 mt-auto cursor-pointer">
+                <button className="text-primary font-bold text-xs inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 pt-4 border-t border-gray-50 cursor-pointer">
                   {t.services.detailBtn}
                   <BadgeInfo className="w-4 h-4 text-secondary" />
                 </button>
@@ -183,11 +185,11 @@ export default function Services() {
                     <h4 className="font-bold text-primary text-base">{t.services.scopeTitle}</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                       {selectedService.scopes.map((scope, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                          <div className="mt-1 rounded-full bg-primary/10 p-0.5 flex items-center justify-center shrink-0">
+                        <div key={idx} className="flex items-start gap-2.5 text-sm text-gray-600">
+                          <div className="mt-0.5 rounded-full bg-primary/10 p-0.5 flex items-center justify-center shrink-0 w-5 h-5">
                             <Check className="w-3 h-3 text-primary stroke-[3]" />
                           </div>
-                          <span className="font-normal text-xs md:text-sm">{scope}</span>
+                          <span className="font-normal text-xs md:text-sm leading-normal">{scope}</span>
                         </div>
                       ))}
                     </div>

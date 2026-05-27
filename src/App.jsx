@@ -129,7 +129,7 @@ function MainApp() {
         className={`fixed bottom-6 right-6 z-40 bg-primary hover:bg-primary-container text-white p-3 rounded-full shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/10 flex items-center justify-center cursor-pointer ${
           showScrollTop ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-4 invisible pointer-events-none'
         }`}
-        aria-label="Kembali ke atas"
+        aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5 stroke-[2.5]" />
       </button>

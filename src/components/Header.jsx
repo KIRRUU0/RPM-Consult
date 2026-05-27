@@ -28,45 +28,35 @@ export default function Header({ activeView, navigateTo }) {
   }, []);
 
   const navLinks = [
+    { name: 'Home', viewId: 'home' },
+    { name: 'About', viewId: 'about' },
     {
-      name: language === 'id' ? 'Beranda' : 'Home',
-      viewId: 'home',
-      dropdownItems: [
-        { name: language === 'id' ? 'Nilai Utama Kami' : 'Our Core Values', elementId: 'values' },
-        { name: language === 'id' ? 'Klien Kredibel Kami' : 'Our Satisfied Clients', elementId: 'clients' },
-        { name: language === 'id' ? 'Hubungi Kami' : 'Contact Us', elementId: 'contact' }
-      ]
-    },
-    {
-      name: language === 'id' ? 'Tentang Kami' : 'About',
-      viewId: 'about',
-      dropdownItems: [
-        { name: language === 'id' ? 'Tentang Kami' : 'About Us', elementId: 'about' },
-        { name: language === 'id' ? 'Visi & Misi' : 'Vision & Mission', elementId: 'vision-mission' },
-      ]
-    },
-    {
-      name: language === 'id' ? 'Layanan' : 'Services',
+      name: 'Services',
       viewId: 'services',
-      dropdownItems: [
-        { name: language === 'id' ? 'Solusi Khusus' : 'Special Solutions', elementId: 'special-solutions' },
-        { name: language === 'id' ? 'Layanan Komprehensif' : 'Comprehensive Solutions', elementId: 'services' },
-      ]
+      hasDropdown: true
     },
-    {
-      name: language === 'id' ? 'Tim Kami' : 'Our Team',
-      viewId: 'team',
-      dropdownItems: [
-        { name: language === 'id' ? 'Tim Utama Kami' : 'Our Key Person', elementId: 'leadership' },
-      ]
-    }
+    { name: 'Our Team', viewId: 'team' }
   ];
 
-  const handleSubItemClick = (e, link, subItem) => {
+  const handleSubItemClick = (e, viewId, elementId, subItemId) => {
     e.preventDefault();
-    navigateTo(link.viewId, subItem.elementId);
+    navigateTo(viewId, elementId);
     setActiveDropdown(null);
     setIsOpen(false);
+
+    if (elementId === 'special-solutions') {
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('open-special-solutions', {
+          detail: { itemId: subItemId }
+        }));
+      }, 150);
+    } else if (elementId === 'services') {
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('open-services', {
+          detail: { itemId: subItemId }
+        }));
+      }, 150);
+    }
   };
 
   const portalLinks = [
@@ -77,7 +67,7 @@ export default function Header({ activeView, navigateTo }) {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2.5' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-primary/5`}>
-      <nav className="flex justify-between items-center px-4 md:px-margin-desktop h-14 w-full max-w-container-max mx-auto">
+      <nav className="relative flex justify-between items-center px-4 md:px-margin-desktop h-14 w-full max-w-container-max mx-auto">
         {/* Brand Logo */}
         <a
           href="#"
@@ -96,47 +86,40 @@ export default function Header({ activeView, navigateTo }) {
 
         {/* Desktop Navigation Links */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-5 2xl:gap-6">
-          {navLinks.map((link) => (
-            <div
-              key={link.name}
-              className="relative py-2"
-              onMouseEnter={() => setActiveDropdown(link.name)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
+          {navLinks.map((link) => {
+            if (link.hasDropdown) {
+              return (
+                <div
+                  key={link.name}
+                  className="py-2"
+                  onMouseEnter={() => setActiveDropdown(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button
+                    onClick={() => navigateTo(link.viewId, null)}
+                    className={`flex items-center gap-1 font-bold text-[11px] xl:text-xs 2xl:text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                      activeView === link.viewId ? 'text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 text-gray-400 group-hover:text-primary ${activeDropdown === link.name ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+                </div>
+              );
+            }
+
+            return (
               <button
+                key={link.name}
                 onClick={() => navigateTo(link.viewId, null)}
-                className={`flex items-center gap-1 font-bold text-[11px] xl:text-xs 2xl:text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                className={`font-bold text-[11px] xl:text-xs 2xl:text-sm relative py-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full whitespace-nowrap cursor-pointer ${
                   activeView === link.viewId ? 'text-primary' : 'text-gray-600 hover:text-primary'
                 }`}
               >
-                <span>{link.name}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 text-gray-400 group-hover:text-primary ${activeDropdown === link.name ? 'rotate-180 text-primary' : ''}`} />
+                {link.name}
               </button>
-
-              <AnimatePresence>
-                {activeDropdown === link.name && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.15, ease: 'easeOut' }}
-                    className="absolute left-0 mt-1 w-64 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50"
-                  >
-                    {link.dropdownItems.map((subItem) => (
-                      <a
-                        key={subItem.name}
-                        href={`#${subItem.elementId}`}
-                        onClick={(e) => handleSubItemClick(e, link, subItem)}
-                        className="block px-4 py-2.5 text-xs xl:text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors font-medium border-l-2 border-transparent hover:border-primary text-left cursor-pointer"
-                      >
-                        {subItem.name}
-                      </a>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Action Buttons (Portal Dropdown, Language Switcher, Contact button) */}
@@ -207,6 +190,92 @@ export default function Header({ activeView, navigateTo }) {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+        {/* Mega Menu Dropdown */}
+        <AnimatePresence>
+          {activeDropdown === 'Services' && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ duration: 0.18, ease: 'easeOut' }}
+              onMouseEnter={() => setActiveDropdown('Services')}
+              onMouseLeave={() => setActiveDropdown(null)}
+              className="absolute left-4 right-4 md:left-20 md:right-20 top-full mt-6 bg-white border border-gray-100 rounded-2xl shadow-2xl p-8 z-50 grid grid-cols-2 gap-12 text-left"
+            >
+              {/* Left Column: Special Solutions */}
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
+                    Special Solutions
+                  </h4>
+                  <p className="text-xs text-gray-400 leading-relaxed font-normal">
+                    Tax disputes litigation, objections, tax appeals, and audits for preliminary evidence to safeguard your business interests.
+                  </p>
+                </div>
+                <div className="h-px bg-gray-100 w-full" />
+                <div className="space-y-1.5">
+                  <a
+                    href="#special-solutions"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 1)}
+                    className="megamenu-item"
+                  >
+                    Tax Litigation
+                  </a>
+                  <a
+                    href="#special-solutions"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 2)}
+                    className="megamenu-item"
+                  >
+                    Audit For Preliminary Evidence
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Comprehensive Solutions */}
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
+                    Comprehensive Solutions
+                  </h4>
+                  <p className="text-xs text-gray-400 leading-relaxed font-normal">
+                    All-in-one corporate solutions covering tax compliance, legal advisory, accounting, and HR consulting services.
+                  </p>
+                </div>
+                <div className="h-px bg-gray-100 w-full" />
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="#services"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 1)}
+                    className="megamenu-item"
+                  >
+                    Tax Services
+                  </a>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 2)}
+                    className="megamenu-item"
+                  >
+                    Legal Services
+                  </a>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 3)}
+                    className="megamenu-item"
+                  >
+                    Accounting Services
+                  </a>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 4)}
+                    className="megamenu-item"
+                  >
+                    HR Consulting
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Mobile Menu Drawer */}
@@ -220,42 +289,104 @@ export default function Header({ activeView, navigateTo }) {
           >
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => {
-                const isDropdownOpen = mobileDropdownOpen === link.name;
+                if (link.hasDropdown) {
+                  const isDropdownOpen = mobileDropdownOpen === link.name;
+                  return (
+                    <div key={link.name} className="w-full">
+                      <button
+                        onClick={() => setMobileDropdownOpen(isDropdownOpen ? null : link.name)}
+                        className="w-full flex items-center justify-between font-semibold text-base text-gray-700 hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer text-left"
+                      >
+                        <span className={activeView === link.viewId ? 'text-primary font-bold' : ''}>{link.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : 'text-gray-400'}`} />
+                      </button>
+                      
+                      <AnimatePresence initial={false}>
+                        {isDropdownOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden bg-gray-50/50 rounded-lg mx-2 mb-2 pl-4 border-l border-gray-200"
+                          >
+                            <div className="py-2 space-y-4 pr-4">
+                              {/* Special Solutions Group */}
+                              <div className="space-y-1.5">
+                                <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider">Special Solutions</span>
+                                <div className="space-y-1 pl-2">
+                                  <a
+                                    href="#special-solutions"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 1)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    Tax Litigation
+                                  </a>
+                                  <a
+                                    href="#special-solutions"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 2)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    Audit For Preliminary Evidence
+                                  </a>
+                                </div>
+                              </div>
+
+                              {/* Comprehensive Solutions Group */}
+                              <div className="space-y-1.5">
+                                <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider">Comprehensive Solutions</span>
+                                <div className="space-y-1 pl-2">
+                                  <a
+                                    href="#services"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 1)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    Tax Services
+                                  </a>
+                                  <a
+                                    href="#services"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 2)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    Legal Services
+                                  </a>
+                                  <a
+                                    href="#services"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 3)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    Accounting Services
+                                  </a>
+                                  <a
+                                    href="#services"
+                                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 4)}
+                                    className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                                  >
+                                    HR Consulting
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
-                  <div key={link.name} className="w-full">
-                    <button
-                      onClick={() => setMobileDropdownOpen(isDropdownOpen ? null : link.name)}
-                      className="w-full flex items-center justify-between font-semibold text-base text-gray-700 hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer text-left"
-                    >
-                      <span className={activeView === link.viewId ? 'text-primary font-bold' : ''}>{link.name}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : 'text-gray-400'}`} />
-                    </button>
-                    
-                    <AnimatePresence initial={false}>
-                      {isDropdownOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="overflow-hidden bg-gray-50/50 rounded-lg mx-2 mb-2 pl-4 border-l border-gray-200"
-                        >
-                          <div className="py-2 space-y-1">
-                            {link.dropdownItems.map((subItem) => (
-                              <a
-                                key={subItem.name}
-                                href={`#${subItem.elementId}`}
-                                onClick={(e) => handleSubItemClick(e, link, subItem)}
-                                className="block py-2.5 text-sm text-gray-600 hover:text-primary transition-colors text-left"
-                              >
-                                {subItem.name}
-                              </a>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+                  <button
+                    key={link.name}
+                    onClick={() => {
+                      navigateTo(link.viewId, null);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full text-left font-semibold text-base hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer ${
+                      activeView === link.viewId ? 'text-primary font-bold bg-primary/5' : 'text-gray-700'
+                    }`}
+                  >
+                    {link.name}
+                  </button>
                 );
               })}
             </div>

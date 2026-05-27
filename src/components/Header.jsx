@@ -5,10 +5,12 @@ import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
-export default function Header() {
+export default function Header({ activeView, navigateTo }) {
   const [isOpen, setIsOpen] = useState(false);
   const [portalOpen, setPortalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const { language } = useLanguage();
   const t = translations[language];
@@ -26,24 +28,44 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Our Special', href: '#special-solutions' },
-    { name: 'Our Comprehensive', href: '#services' },
-    { name: 'Our Satisfied', href: '#clients' },
-    { name: 'Our Key', href: '#leadership' },
-    { name: 'Contact', href: '#contact' },
+    {
+      name: language === 'id' ? 'Beranda' : 'Home',
+      viewId: 'home',
+      dropdownItems: [
+        { name: language === 'id' ? 'Nilai Utama Kami' : 'Our Core Values', elementId: 'values' },
+        { name: language === 'id' ? 'Klien Kredibel Kami' : 'Our Satisfied Clients', elementId: 'clients' },
+      ]
+    },
+    {
+      name: language === 'id' ? 'Tentang Kami' : 'About',
+      viewId: 'about',
+      dropdownItems: [
+        { name: language === 'id' ? 'Tentang Kami' : 'About Us', elementId: 'about' },
+        { name: language === 'id' ? 'Visi & Misi' : 'Vision & Mission', elementId: 'vision-mission' },
+      ]
+    },
+    {
+      name: language === 'id' ? 'Layanan' : 'Services',
+      viewId: 'services',
+      dropdownItems: [
+        { name: language === 'id' ? 'Solusi Khusus' : 'Special Solutions', elementId: 'special-solutions' },
+        { name: language === 'id' ? 'Layanan Komprehensif' : 'Comprehensive Solutions', elementId: 'services' },
+      ]
+    },
+    {
+      name: language === 'id' ? 'Tim Kami' : 'Our Team',
+      viewId: 'team',
+      dropdownItems: [
+        { name: language === 'id' ? 'Tim Utama Kami' : 'Our Key Person', elementId: 'leadership' },
+      ]
+    }
   ];
 
-  // Smooth scroll handler for mobile nav — closes menu then scrolls to section
-  const handleMobileNavClick = (e, href) => {
+  const handleSubItemClick = (e, link, subItem) => {
     e.preventDefault();
+    navigateTo(link.viewId, subItem.elementId);
+    setActiveDropdown(null);
     setIsOpen(false);
-    setTimeout(() => {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 320);
   };
 
   const portalLinks = [
@@ -56,7 +78,14 @@ export default function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2.5' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-primary/5`}>
       <nav className="flex justify-between items-center px-4 md:px-margin-desktop h-14 w-full max-w-container-max mx-auto">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center group">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo('home', 'hero');
+          }}
+          className="flex items-center group"
+        >
           <img
             alt="RPM Consult Logo"
             className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
@@ -67,20 +96,51 @@ export default function Header() {
         {/* Desktop Navigation Links */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-5 2xl:gap-6">
           {navLinks.map((link) => (
-            <a
+            <div
               key={link.name}
-              className="font-bold text-[11px] xl:text-xs 2xl:text-sm text-gray-600 hover:text-primary relative py-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full whitespace-nowrap"
-              href={link.href}
+              className="relative py-2"
+              onMouseEnter={() => setActiveDropdown(link.name)}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              {link.name}
-            </a>
+              <button
+                onClick={() => navigateTo(link.viewId, null)}
+                className={`flex items-center gap-1 font-bold text-[11px] xl:text-xs 2xl:text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                  activeView === link.viewId ? 'text-primary' : 'text-gray-600 hover:text-primary'
+                }`}
+              >
+                <span>{link.name}</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 text-gray-400 group-hover:text-primary ${activeDropdown === link.name ? 'rotate-180 text-primary' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {activeDropdown === link.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className="absolute left-0 mt-1 w-64 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50"
+                  >
+                    {link.dropdownItems.map((subItem) => (
+                      <a
+                        key={subItem.name}
+                        href={`#${subItem.elementId}`}
+                        onClick={(e) => handleSubItemClick(e, link, subItem)}
+                        className="block px-4 py-2.5 text-xs xl:text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors font-medium border-l-2 border-transparent hover:border-primary text-left cursor-pointer"
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
 
-        {/* Action Buttons (Portal Dropdown, Language Switcher, Get Started) */}
+        {/* Action Buttons (Portal Dropdown, Language Switcher, Contact button) */}
         <div className="hidden xl:flex items-center gap-3 xl:gap-4 relative shrink-0">
           
-
           {/* Staff Portal Dropdown */}
           <div className="relative">
             <button
@@ -126,15 +186,18 @@ export default function Header() {
 
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo(activeView, 'contact');
+            }}
             className="bg-primary text-white px-4 xl:px-6 py-2 rounded-md font-semibold text-xs xl:text-sm hover:bg-primary-container hover:scale-[1.03] active:scale-95 transition-all shadow-md shadow-primary/10 whitespace-nowrap shrink-0"
           >
-            {t.nav.getStarted}
+            {t.nav.contact}
           </a>
         </div>
 
-        {/* Mobile Navigation Toggle & Mobile Lang Switcher */}
+        {/* Mobile Navigation Toggle */}
         <div className="flex items-center gap-3 xl:hidden">
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
@@ -155,16 +218,45 @@ export default function Header() {
             className="xl:hidden w-full bg-white border-t border-gray-100 mt-2 px-6 py-4 space-y-4 shadow-inner"
           >
             <div className="flex flex-col space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleMobileNavClick(e, link.href)}
-                  className="font-semibold text-base text-gray-700 hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isDropdownOpen = mobileDropdownOpen === link.name;
+                return (
+                  <div key={link.name} className="w-full">
+                    <button
+                      onClick={() => setMobileDropdownOpen(isDropdownOpen ? null : link.name)}
+                      className="w-full flex items-center justify-between font-semibold text-base text-gray-700 hover:text-primary hover:bg-primary/5 px-3 py-3 rounded-lg transition-all duration-200 cursor-pointer text-left"
+                    >
+                      <span className={activeView === link.viewId ? 'text-primary font-bold' : ''}>{link.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : 'text-gray-400'}`} />
+                    </button>
+                    
+                    <AnimatePresence initial={false}>
+                      {isDropdownOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden bg-gray-50/50 rounded-lg mx-2 mb-2 pl-4 border-l border-gray-200"
+                        >
+                          <div className="py-2 space-y-1">
+                            {link.dropdownItems.map((subItem) => (
+                              <a
+                                key={subItem.name}
+                                href={`#${subItem.elementId}`}
+                                onClick={(e) => handleSubItemClick(e, link, subItem)}
+                                className="block py-2.5 text-sm text-gray-600 hover:text-primary transition-colors text-left"
+                              >
+                                {subItem.name}
+                              </a>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
 
             <hr className="border-gray-100" />
@@ -190,10 +282,14 @@ export default function Header() {
             <div className="pt-2">
               <a
                 href="#contact"
-                onClick={(e) => handleMobileNavClick(e, '#contact')}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  navigateTo(activeView, 'contact');
+                }}
                 className="block text-center bg-primary text-white py-3 rounded-md font-semibold text-sm shadow-md hover:bg-primary-container transition-colors"
               >
-                {t.nav.getStarted}
+                {t.nav.contact}
               </a>
             </div>
           </motion.div>

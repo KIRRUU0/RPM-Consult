@@ -64,7 +64,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch('./send-email.php', {
+      const response = await fetch('https://rpm-consult.com/send-email.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 
 function MainApp() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeView, setActiveView] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,25 +26,105 @@ function MainApp() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Listen to hash on mount for direct URL landings
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const elementId = hash.substring(1);
+      
+      const hashToView = {
+        'hero': 'home',
+        'values': 'home',
+        'clients': 'home',
+        'about': 'about',
+        'vision-mission': 'about',
+        'special-solutions': 'services',
+        'services': 'services',
+        'leadership': 'team',
+        'contact': 'home'
+      };
+      
+      const mappedView = hashToView[elementId];
+      if (mappedView) {
+        setActiveView(mappedView);
+        setTimeout(() => {
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 300);
+      }
+    }
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateTo = (view, elementId) => {
+    if (view !== activeView) {
+      setActiveView(view);
+      
+      setTimeout(() => {
+        if (elementId) {
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, null, `#${elementId}`);
+            return;
+          }
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.history.pushState(null, null, ' ');
+      }, 100);
+    } else {
+      if (elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, null, `#${elementId}`);
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, null, ' ');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
-      <Header />
+      <Header activeView={activeView} navigateTo={navigateTo} />
       <main className="flex-grow pt-20">
-        <Hero />
-        <About />
-        <SpecialSolutions />
-        <VisionMission />
-        <Values />
-        <Services />
-        <Clients />
-        <Leadership />
-        <Contact />
+        {activeView === 'home' && (
+          <>
+            <Hero navigateTo={navigateTo} />
+            <Values />
+            <Clients />
+            <Contact />
+          </>
+        )}
+        {activeView === 'about' && (
+          <>
+            <About />
+            <VisionMission />
+            <Contact />
+          </>
+        )}
+        {activeView === 'services' && (
+          <>
+            <SpecialSolutions />
+            <Services />
+            <Contact />
+          </>
+        )}
+        {activeView === 'team' && (
+          <>
+            <Leadership />
+            <Contact />
+          </>
+        )}
       </main>
-      <Footer />
+      <Footer activeView={activeView} navigateTo={navigateTo} />
 
       {/* Floating Back-to-Top Button */}
       <button

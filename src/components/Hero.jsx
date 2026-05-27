@@ -4,7 +4,7 @@ import { ShieldCheck, Phone } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 
-export default function Hero() {
+export default function Hero({ navigateTo }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const { language } = useLanguage();
   const t = translations[language];
@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-[920px] flex items-center overflow-hidden bg-on-background">
+    <section id="hero" className="relative min-h-[90vh] md:min-h-[920px] flex items-center overflow-hidden bg-on-background">
       {/* Background Image with Zoom animation - Optimized with Unsplash primary */}
       <div className="absolute inset-0 z-0">
         <motion.img
@@ -113,12 +113,24 @@ export default function Hero() {
           >
             <a
               href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                if (navigateTo) {
+                  navigateTo('services', 'services');
+                }
+              }}
               className="uiverse-btn"
             >
               {t.hero.btnSolutions}
             </a>
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                if (navigateTo) {
+                  navigateTo('home', 'contact');
+                }
+              }}
               className="flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 hover:scale-[1.03] active:scale-98 transition-all duration-300"
             >
               <Phone className="w-4.5 h-4.5" />

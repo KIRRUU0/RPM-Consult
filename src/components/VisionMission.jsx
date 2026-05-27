@@ -18,7 +18,7 @@ export default function VisionMission() {
   ];
 
   return (
-    <section className="py-20 bg-background overflow-hidden" id="vision-mission">
+    <section className="py-20 bg-background overflow-hidden scroll-mt-20" id="vision-mission">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
 
         {/* Section Header */}

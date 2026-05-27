@@ -4,7 +4,7 @@ import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
 import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
-export default function Footer() {
+export default function Footer({ activeView, navigateTo }) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const { language } = useLanguage();
@@ -30,7 +30,14 @@ export default function Footer() {
         
         {/* Column 1: Info & Brand */}
         <div className="space-y-6">
-          <a href="#" className="inline-flex items-center group">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo('home', 'hero');
+            }}
+            className="inline-flex items-center group"
+          >
             <img
               alt="RPM Logo"
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
@@ -109,12 +116,24 @@ export default function Footer() {
               </li>
             ))}
             <li className="pt-2 border-t border-white/5 mt-2">
-              <a className="hover:text-white transition-colors" href="#about">
+              <a
+                className="hover:text-white transition-colors cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('about', 'about');
+                }}
+              >
                 {t.nav.about}
               </a>
             </li>
             <li>
-              <a className="hover:text-white transition-colors" href="#leadership">
+              <a
+                className="hover:text-white transition-colors cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('team', 'leadership');
+                }}
+              >
                 {t.nav.leadership}
               </a>
             </li>

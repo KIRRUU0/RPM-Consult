@@ -21,7 +21,7 @@ export default function Values() {
   }));
 
   return (
-    <section className="py-24 bg-primary relative overflow-hidden text-white" id="values">
+    <section className="py-24 bg-primary relative overflow-hidden text-white scroll-mt-20" id="values">
       {/* Background SVG Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none z-0">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

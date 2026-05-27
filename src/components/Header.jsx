@@ -34,6 +34,7 @@ export default function Header({ activeView, navigateTo }) {
       dropdownItems: [
         { name: language === 'id' ? 'Nilai Utama Kami' : 'Our Core Values', elementId: 'values' },
         { name: language === 'id' ? 'Klien Kredibel Kami' : 'Our Satisfied Clients', elementId: 'clients' },
+        { name: language === 'id' ? 'Hubungi Kami' : 'Contact Us', elementId: 'contact' }
       ]
     },
     {
@@ -188,7 +189,7 @@ export default function Header({ activeView, navigateTo }) {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              navigateTo(activeView, 'contact');
+              navigateTo('home', 'contact');
             }}
             className="bg-primary text-white px-4 xl:px-6 py-2 rounded-md font-semibold text-xs xl:text-sm hover:bg-primary-container hover:scale-[1.03] active:scale-95 transition-all shadow-md shadow-primary/10 whitespace-nowrap shrink-0"
           >
@@ -285,7 +286,7 @@ export default function Header({ activeView, navigateTo }) {
                 onClick={(e) => {
                   e.preventDefault();
                   setIsOpen(false);
-                  navigateTo(activeView, 'contact');
+                  navigateTo('home', 'contact');
                 }}
                 className="block text-center bg-primary text-white py-3 rounded-md font-semibold text-sm shadow-md hover:bg-primary-container transition-colors"
               >

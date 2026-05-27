@@ -107,20 +107,17 @@ function MainApp() {
           <>
             <About />
             <VisionMission />
-            <Contact />
           </>
         )}
         {activeView === 'services' && (
           <>
             <SpecialSolutions />
             <Services />
-            <Contact />
           </>
         )}
         {activeView === 'team' && (
           <>
             <Leadership />
-            <Contact />
           </>
         )}
       </main>

@@ -638,17 +638,7 @@ export default function Leadership() {
                     </div>
                   </div>
 
-                  {/* Footer Modal Info */}
-                  <div className="flex gap-4 pt-6 border-t border-gray-100 mt-6 w-full justify-start items-center">
-                    <span className="text-xs text-gray-400">{t.leadership.modalContact}:</span>
-                    <a
-                      href={`mailto:${selectedPerson.email}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary transition-colors"
-                    >
-                      <Mail className="w-4 h-4" />
-                      <span>{selectedPerson.email}</span>
-                    </a>
-                  </div>
+
                 </div>
               </motion.div>
             </motion.div>

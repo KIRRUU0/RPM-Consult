@@ -509,7 +509,7 @@ export default function Leadership() {
                 {/* Profile Details */}
                 <div className="p-5 flex-grow flex flex-col justify-between">
                   <div className="space-y-1">
-                    <h3 className="font-extrabold text-base md:text-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300">
+                    <h3 className="font-extrabold text-base md:text-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300 min-h-[4.5rem] md:min-h-[5rem]">
                       {person.name.split(',')[0]}
                       {person.name.includes(',') && (
                         <span className="text-xs md:text-sm font-semibold text-gray-500 block sm:inline">

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Phone } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
 import { translations } from '../utils/translations';
+import heroBgImg from '../assets/hero/PHOTO-2026-02-20-13-20-03.jpg';
 
 export default function Hero({ navigateTo }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -29,7 +30,7 @@ export default function Hero({ navigateTo }) {
           transition={{ duration: 1.8, ease: 'easeOut' }}
           alt="Modern Business District"
           className="w-full h-full object-cover"
-          src="src/assets/hero/PHOTO-2026-02-20-13-20-03.jpg"
+          src={heroBgImg}
           onError={(e) => { 
             e.target.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0HOISwjyTZd1P04JQYd9QVk2loYnDxxFt8Tdq6kwD7whbGYA5WVAWVt7udp9SasLkYFjQ6_gThJjk6H0vfJ5-rLrQurr035yEhY2De5zy6HF7saYjPjfw6KcUxVSlNKzqSPmZV-oeNHjZ3EPQy-Xli0-FVTWfdKWktqWzrZlsTVyBmMF29LHB8n_4cKLOv0CcA0eXgio2lx2B9RrdEx1MBOizYveSRkPbhRNeTR6RLYW2b-Wx9xXKPERTlGzEy1CUemm_LoZ7qrw'; 
           }}

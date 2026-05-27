@@ -26,10 +26,9 @@ export default function Footer({ activeView, navigateTo }) {
 
   return (
     <footer className="bg-on-background text-white pt-20 pb-8 px-4 md:px-margin-desktop border-t border-white/5 relative z-10">
-      <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        
-        {/* Column 1: Info & Brand */}
-        <div className="space-y-6">
+      <div className="max-w-container-max mx-auto">
+        {/* Logo row */}
+        <div className="mb-8 border-b border-white/5 pb-8">
           <a
             href="#"
             onClick={(e) => {
@@ -44,9 +43,14 @@ export default function Footer({ activeView, navigateTo }) {
               src={logoImg}
             />
           </a>
-          <p className="text-white/60 text-sm leading-relaxed">
-            {t.footer.desc}
-          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Column 1: Info & Brand */}
+          <div className="space-y-6">
+            <p className="text-white/60 text-sm leading-relaxed">
+              {t.footer.desc}
+            </p>
           <div className="text-white/70 text-sm space-y-2 pt-2">
             <p><strong>Email:</strong> <a href="mailto:raka_pm@rpm-consult.com" className="hover:text-white transition-colors">raka_pm@rpm-consult.com</a></p>
             <p><strong>Telepon:</strong> <a href="tel:+6281286866654" className="hover:text-white transition-colors">0812 8686 6654</a></p>
@@ -175,8 +179,8 @@ export default function Footer({ activeView, navigateTo }) {
             )}
           </div>
         </div>
-
       </div>
+    </div>
 
       {/* Footer Bottom copyright */}
       <div className="max-w-container-max mx-auto mt-16 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">

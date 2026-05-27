@@ -606,10 +606,7 @@ export default function Leadership() {
                 <div className="w-full md:w-3/5 p-6 md:p-8 overflow-y-auto max-h-[60vh] md:max-h-[85vh] space-y-6 flex flex-col justify-between">
                   <div className="space-y-4">
                     <div>
-                      <span className="text-[10px] bg-secondary/15 text-secondary px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                        {categories.find(c => c.id === selectedPerson.category)?.name}
-                      </span>
-                      <h3 className="font-extrabold text-2xl text-primary mt-2 leading-tight">
+                      <h3 className="font-extrabold text-2xl text-primary leading-tight">
                         {selectedPerson.name}
                       </h3>
                       <p className="text-secondary font-bold text-sm uppercase tracking-wider mt-1">

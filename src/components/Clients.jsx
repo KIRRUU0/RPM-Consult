@@ -169,22 +169,22 @@ export default function Clients() {
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
           />
         </div>
       </div>

@@ -218,6 +218,10 @@ html.lenis body {
   will-change: transform;
 }
 
+.clients-marquee-strip img {
+  max-width: none !important;
+}
+
 .clients-marquee-strip:hover {
   animation-play-state: paused;
 }

@@ -1,0 +1,189 @@
+[
+  {
+    "id": 1,
+    "name": "Agus Priyatna, S.E., M.M., CFRM",
+    "role": "Tax Director",
+    "category": "directors",
+    "degree": "STAN Jakarta (Taxation Diploma), S.E., Master of Management (M.M.)",
+    "credentials": ["CFRM", "Former DJP (16 Yrs)", "Ex Tax Partner WiN Partners"],
+    "bio": "Graduated from Taxation Diploma-STAN Jakarta and earned a Master of Management degree, Agus has over 28 years of experience in taxation and accounting. After 16 years of career at the Directorate General of Taxes (DJP), Agus continued his professional career as a Tax Manager at RSM Indonesia, then became a Tax Partner at Enforce Tax Advisory, Deputy Director at CITA, and founder & Tax Partner at WiN Partners.\n\nAs the founder and Tax Director at RPM Consult, he focuses on delivering the best services in Tax Compliance, Tax Audit, Tax Advisory, Tax Planning, Tax Litigation, Tax Objections, Tax Appeals, and Judicial Reviews at the Tax Court.",
+    "img": "agusImg",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 2,
+    "name": "Jason Lathianza, S.H., M.Kn.",
+    "role": "Legal Director",
+    "category": "directors",
+    "degree": "Universitas Pelita Harapan (S.H., M.Kn.)",
+    "credentials": ["Foreign Investment (PMA)", "Regulatory Strategy", "Corporate Law"],
+    "bio": "Legal Director at PT Raka Pradipta Mahawira, widely known for his business acumen and strong legal expertise, as well as his extensive experience in providing legal and regulatory consultation for both national and international business affairs.\n\nHe also specializes in foreign investment strategy (PMA), ensuring comprehensive protection for client interests and shielding them from losses of financial or physical assets. With a solid background and well-established long-term relations with law enforcement, security authorities, and community leaders, he is capable of analyzing situations and potential risks in a highly specific and detailed manner.",
+    "img": "jasonImg",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 3,
+    "name": "Indriyanto Widhi Nugroho, S.E., Ak., CA, Asean CPA, MM, BKP",
+    "role": "Senior Tax Advisor",
+    "category": "advisors",
+    "degree": "STAN Jakarta, Universitas Indonesia (S.E. Ak.), Prasetiya Mulya Business School (M.M.)",
+    "credentials": ["Asean CPA", "Aust. CPA", "BKP", "Managing Partner Bejana Consulting"],
+    "bio": "Graduated from Accountancy Diploma-STAN Jakarta, UI (B.S. in Accounting), and Master of Management from Prasetiya Mulya. Indriyanto has over 29 years of experience in taxation and accounting.\n\nAfter 4 years of career at the Ministry of Finance, he continued his professional career at several MNCs (semiconductors, pharmaceuticals, mining, food industry, fertilizers). He established Bejana Consulting accounting firm in 2022. At RPM Consult, he shares his expertise in Tax Compliance, Tax Audit, Tax Advisory, Tax Planning, Objections/Appeals, Judicial Review, Accounting Services, and Agreed-Upon Procedures (AUP).",
+    "img": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 4,
+    "name": "Tri Sulistyawaty, S.H., M.H.",
+    "role": "Senior Advocate & Legal Advisor",
+    "category": "advisors",
+    "degree": "Trisakti University (Master of Business Law)",
+    "credentials": ["PERADI (Since 2007)", "Ex RSM Indonesia", "Corporate Law Specialist"],
+    "bio": "Graduated with a Master of Business Law from Trisakti University, Tri has held an advocate license from PERADI since 2007. Tri has over 21 years of experience in Civil Law, Private Law, and specializes in Corporate Law.\n\nAfter working at ANR Law Firm, PT Fuji Staff Indonesia (Business Consulting), and corporate secretariat services at RSM Indonesia, she founded her own law office in 2019. Now, Tri shares her professional expertise as a Senior Legal & Corporate Secretary Advisor at RPM Consult, focusing as a Corporate Lawyer.",
+    "img": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 5,
+    "name": "Rodo Parasian Hutagalung, S.E., M.M",
+    "role": "Tax Management Advisor",
+    "category": "advisors",
+    "degree": "STAN Jakarta, Universitas Lampung (S.E.), Universitas Tarumanagara (M.M.)",
+    "credentials": ["Former DJP (25 Yrs)", "Transfer Pricing Specialist", "Ex Tax Manager WiN Partners"],
+    "bio": "Graduated from STAN Jakarta and earned a Master of Management, Rodo began his career at KPP Bandar Lampung in 1997. In 2006, he served as an Objection Reviewer at Kanwil DJP Riau & Kepri (known for Transfer Pricing), Account Representative (AR) at KPP Pratama Cengkareng, Cikupa, and Cilegon.\n\nWith 25 years of experience at DJP, he joined WiN Partners as Tax Manager after retiring. In 2025, Rodo shared his professional expertise as a Tax Management Advisor at RPM Consult, focusing on Tax Compliance, Tax Review, Tax Advisory, Tax Planning, Tax Audits, Objections, Appeals, and Judicial Reviews.",
+    "img": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 6,
+    "name": "Steven Andrian Candy, S.E, BKP",
+    "role": "Tax Manager",
+    "category": "advisors",
+    "degree": "Tarumanagara University (S.E.)",
+    "credentials": ["BKP (Tax Consultant)", "Founder Mitra Consulting", "Ex Supervisor WiN Partners"],
+    "bio": "A Management graduate from Tarumanagara University, Steven is an experienced tax professional with over six years of proven experience in delivering high-quality taxation solutions.\n\nBeginning his career at WiN Partners and progressing to Supervisor Consultant, he served foreign investment companies, SMEs, and individual taxpayers. In February 2023, Steven founded Mitra Consulting. In 2024, he shared his expertise at RPM Consult, spanning Tax Compliance, Tax Review, Tax Advisory, Tax Planning, Tax Audits, Objections, Appeals, and Judicial Reviews.",
+    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 7,
+    "name": "Stela Halim, S.Ak.",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Bina Nusantara University (S.Ak.)",
+    "credentials": ["Brevet A, B, C", "Ex Senior Tax WiN Partners", "Ex FAT Supervisor Titan Group"],
+    "bio": "Graduated from Bina Nusantara University majoring in Accounting, Stela is a seasoned professional with over seven years of experience in finance, bookkeeping, and taxation across various industries. She holds Tax Brevet A, B, and C certifications.\n\nShe began her career in finance and accounting roles before advancing as a Senior Tax Consultant at WiN Partners. She later broadened her expertise as a FAT Supervisor at Titan Group, leading consolidated financial reporting, budgeting, and regulatory compliance. She has handled clients from construction, manufacturing, mining, oil & gas, retail, F&B, etc.",
+    "img": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 8,
+    "name": "Elieta Vranciska, S.Ak.",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Buddhi Dharma University (S.Ak.)",
+    "credentials": ["Brevet C", "Palm Oil & IT Specialist", "Ex Senior Tax WiN Partners"],
+    "bio": "Graduated from University of Buddhi Dharma with a bachelor degree in Accounting, Elieta has over six years of experience. She has built extensive expertise in taxation, including compliance, review, advisory, transfer pricing, audit assistance, objections, appeals, and judicial reviews. Elieta holds a C-level Tax Brevet certification.\n\nShe began her career at WiN Partners in November 2019 and progressed from Junior to Senior Tax Consultant, serving a diverse portfolio of clients, especially in the palm oil plantation and IT sectors.",
+    "img": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 9,
+    "name": "Husnul Fadhil, SST.Pa, BKP",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Indonesian Taxation College (SST.Pa)",
+    "credentials": ["BKP (Tax Consultant)", "Ex Triputra Group", "Ex Saratoga Group", "Ex Djarum & Wings Group"],
+    "bio": "Graduated from STPI Jakarta and holds a Tax Consultant Certification (BKP) from the Ministry of Finance. Fadhil has over 8 years of experience in taxation.\n\nHe pursued his professional career as a Tax Supervisor at PT Autopedia Sukses Lestari Tbk (Triputra Group), PT Agro Maju Raya (Saratoga Group), and PT Pratama Nusantara Sakti (Djarum & Wings Group). His expertise spans Tax Compliance, Tax Review, Tax Advisory, Tax Planning, Audits, Appeals, and Judicial Reviews.",
+    "img": "https://images.unsplash.com/photo-1628157582853-a796fa650a6a?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 10,
+    "name": "Firman",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Accounting & Taxation",
+    "credentials": ["Brevet C", "Disputes & Audit Specialist", "Ex Junior to Senior WiN Partners"],
+    "bio": "Firman is a dedicated and detail-oriented tax professional with over six years of proven practical experience in tax disputes such as audit assistance, objections, appeals, and judicial reviews. He also has experience in tax review and transfer pricing.\n\nBeginning his career at WiN Partners in June 2019, he progressed to Senior Consultant, serving a diverse portfolio of clients with a strong commitment to delivering accurate tax solutions, including foreign investment companies in the palm oil sector. Firman holds a C-level Tax Brevet certification.",
+    "img": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 11,
+    "name": "Muhammad Basri Sangadji, SST.Pa",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Indonesian Taxation College (SST.Pa)",
+    "credentials": ["Ex PT Indo Straits Tbk", "Ex PT Fajar Baizuri & Brothers", "8+ Years of Experience"],
+    "bio": "Graduated from STPI Jakarta, Basri has over 8 years of experience in taxation.\n\nHe pursued his professional career as Senior Finance Accounting and Tax at PT Indo Straits Tbk, Tax Supervisor at PT Fajar Baizuri & Brothers, and assisted several corporate and individual taxpayers. His core focus is Financial Reporting, Tax Compliance, Tax Review, Tax Advisory, Planning, Audits, Appeals, and Judicial Reviews.",
+    "img": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 12,
+    "name": "Dhimas Andrean Sukoco, S.Ak., BKP",
+    "role": "Senior Consultant",
+    "category": "seniors",
+    "degree": "Diponegoro University (S.Ak.)",
+    "credentials": ["BKP (Tax Consultant)", "Brevet A, B, C", "Ex Toyota Astra Financial", "Ex Adi Sarana Armada"],
+    "bio": "Graduated from Diponegoro University with a Bachelor's degree in Accounting, Dhimas is a Certified Tax Consultant (BKP) with expertise in accounting and taxation, supported by Tax Brevet A, B, and C. He gained experience as an Accounting & Tax Analyst at PT Autopedia Sukses Lestari Tbk, PT Toyota Astra Financial Services, and PT Adi Sarana Armada Tbk.\n\nHe focuses on providing tax advisory, tax dispute assistance, and compliance services. He is skilled in managing accounting processes using systems like SAP, Microsoft Dynamics AX, and Oracle Netsuite.",
+    "img": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 13,
+    "name": "Amila Hasya Sabrina, S.M.",
+    "role": "Junior Consultant",
+    "category": "juniors",
+    "degree": "UPN \"Veteran\" Jakarta (S.M. in Management)",
+    "credentials": ["Brevet A & B", "e-SPT / e-Faktur / DJP Online", "Coretax Indonesia System"],
+    "bio": "Graduated from UPN \"Veteran\" Jakarta with a Bachelor's degree in Management. She started her career in tax consulting in January 2024. Amila is proficient in managing routine administrative tasks, organizing client tax documents, maintaining data records, and assisting in tax returns filing.\n\nShe is familiar with using key Indonesian tax applications like e-SPT, e-Faktur, DJP Online, and Coretax, allowing her to provide competent administrative support for compliance procedures.",
+    "img": "https://images.unsplash.com/photo-1594744803329-e58b31de215f?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 14,
+    "name": "Putri Salsa Nabila, S.H.",
+    "role": "Junior Consultant",
+    "category": "juniors",
+    "degree": "Serang Raya University (S.H.)",
+    "credentials": ["Legal Drafting", "Regulatory Compliance", "Ex Government Intern"],
+    "bio": "A Law graduate from Universitas Serang Raya, enthusiastic about starting a career in the legal and compliance field. She has internship experience in a government institution with skills in drafting and managing legal documents.\n\nKnown as a detail-oriented, fast learner, and highly motivated individual to grow in a dynamic professional environment, helping minimize legal risk, improve efficiency, and build long-term trust.",
+    "img": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 15,
+    "name": "Tiara Putrian Setiawan, S.H.",
+    "role": "Junior Consultant",
+    "category": "juniors",
+    "degree": "Bina Nusantara University (S.H. Business Law)",
+    "credentials": ["BINUS Outstanding Student 2024", "WIPO Academy Certified", "Ex ESDM Ministry Junior Legal"],
+    "bio": "Tiara is a law graduate from Bina Nusantara University, majoring in Business Law. She has professional experience in commercial, regulatory, and intellectual property law, having worked with the Ministry of Energy and Mineral Resources, AGRA Advocate & Legal Counsel, and currently serves as Junior Legal Officer at RPM Consult.\n\nCertified by the WIPO Academy and recognized as the Most Outstanding Student of Business Law at BINUS University in 2024.",
+    "img": "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 16,
+    "name": "Melva Juliana Nainggolan",
+    "role": "Administration",
+    "category": "support",
+    "degree": "Mercu Buana University (S.I.Kom. in Communication)",
+    "credentials": ["15+ Years Experience", "General Affairs Specialist", "Operations Management"],
+    "bio": "Melva is a highly dedicated and detail-oriented General Affairs (GA) professional with over 15 years of comprehensive experience supporting multinational companies.\n\nShe has a proven track record of high integrity, exceptional focus, and managing complex operational activities. A graduate in Communication from Universitas Mercu Buana, Melva possesses strong organizational skills and a commitment to ensuring smooth and efficient company operations.",
+    "img": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  },
+  {
+    "id": 17,
+    "name": "Wahyuri",
+    "role": "Technical Support",
+    "category": "support",
+    "degree": "Information Technology & Systems Operations",
+    "credentials": ["IT Infrastructure Maintenance", "System Troubleshooting", "Workflow Optimization"],
+    "bio": "As a Technical Support professional, Wahyuri provides broad technical assistance across various fields to ensure smooth, efficient, and reliable operations.\n\nHis work goes beyond just solving technical problems — it's about understanding the systems, processes, and people behind them. He supports both clients and internal teams by identifying challenges, offering practical solutions, and ensuring all tools, equipment, and workflows function optimally.",
+    "img": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=400&auto=format&fit=crop",
+    "email": "raka_pm@rpm-consult.com"
+  }
+]

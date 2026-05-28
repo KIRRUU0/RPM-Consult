@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { ArrowUp } from 'lucide-react';
-import { LanguageProvider } from './utils/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -50,15 +50,23 @@ function MainApp() {
         setTimeout(() => {
           const element = document.getElementById(elementId);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.lenis) {
+              window.lenis.scrollTo(element, { offset: -80 });
+            } else {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           }
-        }, 300);
+        }, 400); // Wait slightly longer for initial render
       }
     }
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.lenis) {
+      window.lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const navigateTo = (view, elementId) => {
@@ -69,24 +77,40 @@ function MainApp() {
         if (elementId) {
           const element = document.getElementById(elementId);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.lenis) {
+              window.lenis.scrollTo(element, { offset: -80 });
+            } else {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
             window.history.pushState(null, null, `#${elementId}`);
             return;
           }
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.lenis) {
+          window.lenis.scrollTo(0, { immediate: true });
+        } else {
+          window.scrollTo({ top: 0 });
+        }
         window.history.pushState(null, null, ' ');
-      }, 100);
+      }, 350); // Sync with Framer Motion fade-out duration
     } else {
       if (elementId) {
         const element = document.getElementById(elementId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.lenis) {
+            window.lenis.scrollTo(element, { offset: -80 });
+          } else {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
           window.history.pushState(null, null, `#${elementId}`);
           return;
         }
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.lenis) {
+        window.lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       window.history.pushState(null, null, ' ');
     }
   };
@@ -94,32 +118,58 @@ function MainApp() {
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <Header activeView={activeView} navigateTo={navigateTo} />
-      <main className="flex-grow pt-20">
-        {activeView === 'home' && (
-          <>
-            <Hero navigateTo={navigateTo} />
-            <Values />
-            <Clients />
-            <Contact />
-          </>
-        )}
-        {activeView === 'about' && (
-          <>
-            <About />
-            <VisionMission />
-          </>
-        )}
-        {activeView === 'services' && (
-          <>
-            <SpecialSolutions />
-            <Services />
-          </>
-        )}
-        {activeView === 'team' && (
-          <>
-            <Leadership />
-          </>
-        )}
+      <main className="flex-grow pt-20 overflow-hidden">
+        <AnimatePresence mode="wait">
+          {activeView === 'home' && (
+            <motion.div
+              key="home"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <Hero navigateTo={navigateTo} />
+              <Values />
+              <Clients />
+              <Contact />
+            </motion.div>
+          )}
+          {activeView === 'about' && (
+            <motion.div
+              key="about"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <About />
+              <VisionMission />
+            </motion.div>
+          )}
+          {activeView === 'services' && (
+            <motion.div
+              key="services"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <SpecialSolutions />
+              <Services />
+            </motion.div>
+          )}
+          {activeView === 'team' && (
+            <motion.div
+              key="team"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
+              <Leadership />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
       <Footer activeView={activeView} navigateTo={navigateTo} />
 
@@ -148,6 +198,8 @@ function App() {
       wheelMultiplier: 1.0,
     });
 
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -157,13 +209,12 @@ function App() {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 
   return (
-    <LanguageProvider>
-      <MainApp />
-    </LanguageProvider>
+    <MainApp />
   );
 }
 

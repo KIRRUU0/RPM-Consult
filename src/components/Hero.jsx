@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Phone } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 import heroBgImg from '../assets/hero/PHOTO-2026-02-20-13-20-03.jpg';
 
 export default function Hero({ navigateTo }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const { language } = useLanguage();
-  const t = translations[language];
-
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 30; // max 15px shift
@@ -78,7 +73,7 @@ export default function Hero({ navigateTo }) {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-on-secondary font-bold text-xs md:text-sm shadow-lg shadow-secondary/15 hover:bg-opacity-95"
           >
             <ShieldCheck className="w-4.5 h-4.5 text-white" />
-            <span>{t.hero.badge}</span>
+            <span>Professional Legal, Tax & Business Solutions</span>
           </motion.div>
 
           {/* Heading */}
@@ -89,8 +84,8 @@ export default function Hero({ navigateTo }) {
             }}
             className="font-extrabold text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight"
           >
-            {t.hero.title1} <br />
-            <span className="text-primary-fixed block lg:inline-block mt-2 lg:mt-0">{t.hero.title2}</span>
+            Trusted Tax & <br />
+            <span className="text-primary-fixed block lg:inline-block mt-2 lg:mt-0">Business Solutions</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -101,7 +96,7 @@ export default function Hero({ navigateTo }) {
             }}
             className="text-base md:text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed"
           >
-            {t.hero.subtitle}
+            Empowering organizations through precise financial leadership and strategic legal oversight. We deliver confidence through real experience and technology.
           </motion.p>
 
           {/* CTAs */}
@@ -122,7 +117,7 @@ export default function Hero({ navigateTo }) {
               }}
               className="uiverse-btn"
             >
-              {t.hero.btnSolutions}
+              Our Solutions
             </a>
             <a
               href="#contact"
@@ -135,7 +130,7 @@ export default function Hero({ navigateTo }) {
               className="flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 hover:scale-[1.03] active:scale-98 transition-all duration-300"
             >
               <Phone className="w-4.5 h-4.5" />
-              {t.hero.btnContact}
+              Contact Expert
             </a>
           </motion.div>
 
@@ -149,7 +144,7 @@ export default function Hero({ navigateTo }) {
             className="pt-8 border-t border-white/10"
           >
             <p className="italic text-xl md:text-2xl text-secondary-container font-semibold tracking-wide">
-              &quot;{t.hero.slogan}&quot;
+              &quot;For better future, for all&quot;
             </p>
           </motion.div>
         </motion.div>

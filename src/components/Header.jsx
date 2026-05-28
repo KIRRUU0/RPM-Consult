@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Monitor, Mail, MailQuestion, ExternalLink } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
 export default function Header({ activeView, navigateTo }) {
@@ -12,8 +10,12 @@ export default function Header({ activeView, navigateTo }) {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const { language } = useLanguage();
-  const t = translations[language];
+  const handleDropdownBlur = (e) => {
+    // Keep open if focus moves to an element inside this dropdown container
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setActiveDropdown(null);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,9 +96,13 @@ export default function Header({ activeView, navigateTo }) {
                   className="py-2"
                   onMouseEnter={() => setActiveDropdown(link.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
+                  onBlur={handleDropdownBlur}
                 >
                   <button
                     onClick={() => navigateTo(link.viewId, null)}
+                    onFocus={() => setActiveDropdown(link.name)}
+                    aria-haspopup="true"
+                    aria-expanded={activeDropdown === link.name}
                     className={`flex items-center gap-1 font-bold text-[11px] xl:text-xs 2xl:text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
                       activeView === link.viewId ? 'text-primary' : 'text-gray-600 hover:text-primary'
                     }`}
@@ -104,6 +110,91 @@ export default function Header({ activeView, navigateTo }) {
                     <span>{link.name}</span>
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 text-gray-400 group-hover:text-primary ${activeDropdown === link.name ? 'rotate-180 text-primary' : ''}`} />
                   </button>
+
+                  {/* Mega Menu Dropdown nested inside container for proper onBlur focus tracking */}
+                  <AnimatePresence>
+                    {activeDropdown === link.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 12 }}
+                        transition={{ duration: 0.18, ease: 'easeOut' }}
+                        className="absolute left-4 right-4 md:left-20 md:right-20 top-full mt-6 bg-white border border-gray-100 rounded-2xl shadow-2xl p-8 z-50 grid grid-cols-2 gap-12 text-left"
+                      >
+                        {/* Left Column: Special Solutions */}
+                        <div className="space-y-4">
+                          <div className="space-y-1.5">
+                            <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
+                              Special Solutions
+                            </h4>
+                            <p className="text-xs text-gray-400 leading-relaxed font-normal">
+                              Tax disputes litigation, objections, tax appeals, and audits for preliminary evidence to safeguard your business interests.
+                            </p>
+                          </div>
+                          <div className="h-px bg-gray-100 w-full" />
+                          <div className="space-y-1.5">
+                            <a
+                              href="#special-solutions"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 1)}
+                              className="megamenu-item"
+                            >
+                              Tax Litigation
+                            </a>
+                            <a
+                              href="#special-solutions"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 2)}
+                              className="megamenu-item"
+                            >
+                              Audit For Preliminary Evidence
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Right Column: Comprehensive Solutions */}
+                        <div className="space-y-4">
+                          <div className="space-y-1.5">
+                            <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
+                              Comprehensive Solutions
+                            </h4>
+                            <p className="text-xs text-gray-400 leading-relaxed font-normal">
+                              All-in-one corporate solutions covering tax compliance, legal advisory, accounting, and HR consulting services.
+                            </p>
+                          </div>
+                          <div className="h-px bg-gray-100 w-full" />
+                          <div className="grid grid-cols-2 gap-2">
+                            <a
+                              href="#services"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'services', 1)}
+                              className="megamenu-item"
+                            >
+                              Tax Services
+                            </a>
+                            <a
+                              href="#services"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'services', 2)}
+                              className="megamenu-item"
+                            >
+                              Legal Services
+                            </a>
+                            <a
+                              href="#services"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'services', 3)}
+                              className="megamenu-item"
+                            >
+                              Accounting Services
+                            </a>
+                            <a
+                              href="#services"
+                              onClick={(e) => handleSubItemClick(e, 'services', 'services', 4)}
+                              className="megamenu-item"
+                            >
+                              HR Consulting
+                            </a>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               );
             }
@@ -132,7 +223,7 @@ export default function Header({ activeView, navigateTo }) {
               onBlur={() => setTimeout(() => setPortalOpen(false), 200)}
               className="flex items-center gap-1.5 px-3 py-2 border border-primary/20 rounded-md font-semibold text-xs xl:text-sm text-primary hover:bg-primary/5 transition-all cursor-pointer whitespace-nowrap shrink-0"
             >
-              {t.nav.portal}
+              Staff Portal
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${portalOpen ? 'rotate-180' : ''}`} />
             </button>
 
@@ -176,7 +267,7 @@ export default function Header({ activeView, navigateTo }) {
             }}
             className="bg-primary text-white px-4 xl:px-6 py-2 rounded-md font-semibold text-xs xl:text-sm hover:bg-primary-container hover:scale-[1.03] active:scale-95 transition-all shadow-md shadow-primary/10 whitespace-nowrap shrink-0"
           >
-            {t.nav.contact}
+            Contact Us
           </a>
         </div>
 
@@ -190,92 +281,6 @@ export default function Header({ activeView, navigateTo }) {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-        {/* Mega Menu Dropdown */}
-        <AnimatePresence>
-          {activeDropdown === 'Services' && (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 12 }}
-              transition={{ duration: 0.18, ease: 'easeOut' }}
-              onMouseEnter={() => setActiveDropdown('Services')}
-              onMouseLeave={() => setActiveDropdown(null)}
-              className="absolute left-4 right-4 md:left-20 md:right-20 top-full mt-6 bg-white border border-gray-100 rounded-2xl shadow-2xl p-8 z-50 grid grid-cols-2 gap-12 text-left"
-            >
-              {/* Left Column: Special Solutions */}
-              <div className="space-y-4">
-                <div className="space-y-1.5">
-                  <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
-                    Special Solutions
-                  </h4>
-                  <p className="text-xs text-gray-400 leading-relaxed font-normal">
-                    Tax disputes litigation, objections, tax appeals, and audits for preliminary evidence to safeguard your business interests.
-                  </p>
-                </div>
-                <div className="h-px bg-gray-100 w-full" />
-                <div className="space-y-1.5">
-                  <a
-                    href="#special-solutions"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 1)}
-                    className="megamenu-item"
-                  >
-                    Tax Litigation
-                  </a>
-                  <a
-                    href="#special-solutions"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'special-solutions', 2)}
-                    className="megamenu-item"
-                  >
-                    Audit For Preliminary Evidence
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: Comprehensive Solutions */}
-              <div className="space-y-4">
-                <div className="space-y-1.5">
-                  <h4 className="font-extrabold text-sm text-primary uppercase tracking-wider">
-                    Comprehensive Solutions
-                  </h4>
-                  <p className="text-xs text-gray-400 leading-relaxed font-normal">
-                    All-in-one corporate solutions covering tax compliance, legal advisory, accounting, and HR consulting services.
-                  </p>
-                </div>
-                <div className="h-px bg-gray-100 w-full" />
-                <div className="grid grid-cols-2 gap-2">
-                  <a
-                    href="#services"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 1)}
-                    className="megamenu-item"
-                  >
-                    Tax Services
-                  </a>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 2)}
-                    className="megamenu-item"
-                  >
-                    Legal Services
-                  </a>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 3)}
-                    className="megamenu-item"
-                  >
-                    Accounting Services
-                  </a>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleSubItemClick(e, 'services', 'services', 4)}
-                    className="megamenu-item"
-                  >
-                    HR Consulting
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
 
       {/* Mobile Menu Drawer */}
@@ -394,7 +399,7 @@ export default function Header({ activeView, navigateTo }) {
             <hr className="border-gray-100" />
 
             <div className="space-y-3">
-              <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest">{t.nav.portal}</span>
+              <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest">Staff Portal</span>
               <div className="grid grid-cols-1 gap-2">
                 {portalLinks.map((item) => (
                   <a
@@ -421,7 +426,7 @@ export default function Header({ activeView, navigateTo }) {
                 }}
                 className="block text-center bg-primary text-white py-3 rounded-md font-semibold text-sm shadow-md hover:bg-primary-container transition-colors"
               >
-                {t.nav.contact}
+                Contact Us
               </a>
             </div>
           </motion.div>

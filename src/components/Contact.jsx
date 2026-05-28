@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Building2, Mail, Phone, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 
 export default function Contact() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const services = [
+    'Tax Service',
+    'Legal Service',
+    'Accounting Service',
+    'HR Consulting'
+  ];
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: t.services.list[0].title,
+    service: services[0],
     message: '',
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  const services = t.services.list.map(s => s.title);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,13 +30,13 @@ export default function Contact() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = t.contact.formErrors.name;
+    if (!formData.name.trim()) newErrors.name = 'Full name is required';
     if (!formData.email.trim()) {
-      newErrors.email = t.contact.formErrors.emailRequired;
+      newErrors.email = 'Email address is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = t.contact.formErrors.emailInvalid;
+      newErrors.email = 'Please enter a valid email';
     }
-    if (!formData.message.trim()) newErrors.message = t.contact.formErrors.message;
+    if (!formData.message.trim()) newErrors.message = 'Message cannot be empty';
     return newErrors;
   };
 
@@ -57,7 +57,7 @@ export default function Contact() {
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
-        setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
+        setFormData({ name: '', email: '', service: services[0], message: '' });
         setTimeout(() => setIsSuccess(false), 5000);
       }, 1500);
       return;
@@ -74,7 +74,7 @@ export default function Contact() {
 
       if (response.ok) {
         setIsSuccess(true);
-        setFormData({ name: '', email: '', service: t.services.list[0].title, message: '' });
+        setFormData({ name: '', email: '', service: services[0], message: '' });
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
         let errorMsg = '';
@@ -84,15 +84,11 @@ export default function Contact() {
         } catch (e) {}
 
         const details = `(Status: ${response.status}${errorMsg ? ' - ' + errorMsg : ''})`;
-        alert(
-          language === 'id'
-            ? `Gagal mengirim pesan. ${details}. Silakan coba lagi nanti.`
-            : `Failed to send message. ${details}. Please try again later.`
-        );
+        alert(`Failed to send message. ${details}. Please try again later.`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert(language === 'id' ? 'Terjadi kesalahan koneksi. Silakan coba lagi.' : 'A connection error occurred. Please try again.');
+      alert('A connection error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -111,13 +107,13 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-12"
           >
-            <div className="space-y-4">
+            <div className="space-y-4 text-center lg:text-left">
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl">
-                {t.contact.title}
+                Contact Us
               </h2>
-              <div className="h-1.5 w-24 bg-secondary rounded-full" />
-              <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed pt-2">
-                {t.contact.desc}
+              <div className="h-1.5 w-24 bg-secondary rounded-full mx-auto lg:mx-0" />
+              <p className="text-gray-600 max-w-md mx-auto lg:mx-0 text-sm md:text-base leading-relaxed pt-2">
+                Our doors are always open for strategic conversations. Reach out to our team of experts today for consultation.
               </p>
             </div>
 
@@ -128,7 +124,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary text-lg">{t.footer.office1}</h4>
+                  <h4 className="font-bold text-primary text-lg">PIK 2 Office (Headquarters)</h4>
                   <p className="text-gray-600 text-sm leading-relaxed mt-1">
                     PIK 2 Soho Manhattan Hoek No. 5, Lt. 3 Salembaran Jati, Kosambi, Tangerang, Banten 15214
                   </p>
@@ -141,7 +137,7 @@ export default function Contact() {
                   <Building2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary text-lg">{t.footer.office2}</h4>
+                  <h4 className="font-bold text-primary text-lg">Alam Sutera Office</h4>
                   <p className="text-gray-600 text-sm leading-relaxed mt-1">
                     Ruko The Prominence Blok 38D No. 49-50, Jl. Jalur Sutera Boulevard - Alam Sutera, Tangerang, Banten 15143
                   </p>
@@ -154,7 +150,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary text-lg">{t.contact.directCall}</h4>
+                  <h4 className="font-bold text-primary text-lg">Direct Communication</h4>
                   <a
                     href="mailto:raka_pm@rpm-consult.com"
                     className="block text-gray-600 hover:text-primary text-sm mt-1 transition-colors font-medium"
@@ -196,9 +192,9 @@ export default function Contact() {
                   >
                     <CheckCircle2 className="w-16 h-16 text-primary mb-4" />
                   </motion.div>
-                  <h3 className="text-2xl font-extrabold text-primary mb-2">{t.contact.formSuccessTitle}</h3>
+                  <h3 className="text-2xl font-extrabold text-primary mb-2">Thank You!</h3>
                   <p className="text-gray-500 text-sm max-w-sm">
-                    {t.contact.formSuccessDesc}
+                    Your inquiry has been successfully sent. A consultant from RPM Consult will follow up with you within 24 hours.
                   </p>
                 </motion.div>
               )}
@@ -217,10 +213,10 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder=" "
-                      className={`custom-input ${errors.name ? 'border-error' : ''}`}
+                      className={`custom-input ${errors.name ? 'is-invalid' : ''}`}
                       autoComplete="off"
                     />
-                    <label className="user-label">{t.contact.formLabels.name}</label>
+                    <label className="user-label">Full Name</label>
                   </div>
                   {errors.name && <p className="text-xs text-error font-medium pl-1">{errors.name}</p>}
                 </div>
@@ -235,10 +231,10 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder=" "
-                      className={`custom-input ${errors.email ? 'border-error' : ''}`}
+                      className={`custom-input ${errors.email ? 'is-invalid' : ''}`}
                       autoComplete="off"
                     />
-                    <label className="user-label">{t.contact.formLabels.email}</label>
+                    <label className="user-label">Email Address</label>
                   </div>
                   {errors.email && <p className="text-xs text-error font-medium pl-1">{errors.email}</p>}
                 </div>
@@ -248,7 +244,7 @@ export default function Contact() {
               {/* Service Selection */}
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 pl-1">
-                  {t.contact.formLabels.service}
+                  Service Category
                 </label>
                 <select
                   name="service"
@@ -274,9 +270,9 @@ export default function Contact() {
                     onChange={handleInputChange}
                     rows="4"
                     placeholder=" "
-                    className={`custom-input resize-none h-32 ${errors.message ? 'border-error' : ''}`}
+                    className={`custom-input resize-none h-32 ${errors.message ? 'is-invalid' : ''}`}
                   />
-                  <label className="user-label">{t.contact.formLabels.message}</label>
+                  <label className="user-label">Your Message</label>
                 </div>
                 {errors.message && <p className="text-xs text-error font-medium pl-1">{errors.message}</p>}
               </div>
@@ -290,12 +286,12 @@ export default function Contact() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>{t.contact.formSubmitting}</span>
+                    <span>Processing Inquiry...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-4.5 h-4.5" />
-                    <span>{t.contact.formSubmit}</span>
+                    <span>Send Inquiry</span>
                   </>
                 )}
               </button>

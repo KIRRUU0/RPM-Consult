@@ -103,7 +103,7 @@ export default function Clients() {
       <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col mb-12 gap-6">
+        <div className="flex flex-col mb-12 gap-6 text-center lg:text-left">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ export default function Clients() {
               <h2 className="font-extrabold text-4xl md:text-5xl lg:text-6xl text-primary leading-tight tracking-tight mb-4">
                 {title}
               </h2>
-              <div className="h-1.5 w-24 bg-secondary rounded-full" />
+              <div className="h-1.5 w-24 bg-secondary rounded-full mx-auto lg:mx-0" />
             </motion.div>
           </div>
 
@@ -123,7 +123,7 @@ export default function Clients() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="max-w-2xl font-normal"
+            className="max-w-2xl font-normal mx-auto lg:mx-0"
           >
             <p className="text-xl md:text-2xl font-extrabold text-on-background mb-3">
               {subtitle}
@@ -169,12 +169,22 @@ export default function Clients() {
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[90px] md:h-[108px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
-            className="h-[90px] md:h-[108px] w-auto object-contain shrink-0 crisp-image"
+            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+          />
+          <img
+            src={clientsStripImg}
+            alt="Clients Logos Strip"
+            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
+          />
+          <img
+            src={clientsStripImg}
+            alt="Clients Logos Strip"
+            className="h-[160px] md:h-[220px] w-auto object-contain shrink-0 crisp-image"
           />
         </div>
       </div>

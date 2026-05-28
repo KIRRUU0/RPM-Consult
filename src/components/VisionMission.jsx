@@ -1,16 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Target } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 
 export default function VisionMission() {
-  const { language } = useLanguage();
-  const t = translations[language];
-
-  // Menggunakan fallback jika key belum ada di file translations.js
-  const visionText = t.about?.vision || "To be the best partner to stakeholders by rendering professional services for comprehensive legal, tax and business solutions, while providing enjoyable working environment to empower positive contribution";
-  const missionText = t.about?.mission || [
+  const visionText = "To be the best partner to stakeholders by rendering professional services for comprehensive legal, tax and business solutions, while providing enjoyable working environment to empower positive contribution";
+  const missionText = [
     "Committed in giving best efforts for desired results.",
     "Strive excellence in our strategic thinking, qualified and personalized service.",
     "Enhance collaborative efforts and uniqueness in providing services.",
@@ -54,7 +48,7 @@ export default function VisionMission() {
               <Eye className="w-7 h-7 text-primary" />
             </div>
             <h3 className="font-extrabold text-primary text-2xl lg:text-3xl">
-              {language === 'id' ? 'Visi Kami' : 'Our Vision'}
+              Our Vision
             </h3>
             <div className="h-1 w-16 bg-secondary rounded-full" />
             <p className="text-gray-600 leading-relaxed text-base pt-2">
@@ -74,21 +68,17 @@ export default function VisionMission() {
               <Target className="w-7 h-7 text-secondary" />
             </div>
             <h3 className="font-extrabold text-primary text-2xl lg:text-3xl">
-              {language === 'id' ? 'Misi Kami' : 'Our Mission'}
+              Our Mission
             </h3>
             <div className="h-1 w-16 bg-secondary rounded-full" />
             
             <ul className="space-y-3 text-gray-600 leading-relaxed text-base pt-2">
-              {Array.isArray(missionText) ? (
-                missionText.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))
-              ) : (
-                <p>{missionText}</p>
-              )}
+              {missionText.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-secondary mt-2.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </motion.div>
 

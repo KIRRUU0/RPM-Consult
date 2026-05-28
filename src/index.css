@@ -101,14 +101,17 @@
   transition: all 0.7s;
 }
 
-.uiverse-btn:hover {
-  color: #ffffff;
-  border-color: #006b2c; /* Matches filled background */
-}
+@media (hover: hover) {
+  .uiverse-btn:hover {
+    color: #ffffff;
+    border-color: #006b2c; /* Matches filled background */
+    transform: scale(1.03);
+  }
 
-.uiverse-btn:hover:before {
-  top: -80px;
-  left: -30px;
+  .uiverse-btn:hover:before {
+    top: -80px;
+    left: -30px;
+  }
 }
 
 .uiverse-btn:active:before {
@@ -116,9 +119,6 @@
   transition: background 0s;
 }
 
-.uiverse-btn:hover {
-  transform: scale(1.03);
-}
 
 .uiverse-btn:active {
   transform: scale(0.98);
@@ -188,6 +188,21 @@ html.lenis body {
   font-weight: 700;
 }
 
+/* Error State for Floating Label Inputs */
+.custom-input.is-invalid {
+  border-color: #ba1a1a !important; /* Theme error red */
+}
+
+.custom-input.is-invalid ~ .user-label {
+  color: #ba1a1a !important;
+}
+
+.custom-input.is-invalid:focus ~ .user-label,
+.custom-input.is-invalid:not(:placeholder-shown) ~ .user-label {
+  color: #ba1a1a !important;
+}
+
+
 /* ============================
    Clients Marquee Animations (Continuous Logo Strip)
    ============================ */
@@ -199,7 +214,7 @@ html.lenis body {
 .clients-marquee-strip {
   display: flex;
   width: max-content;
-  animation: marquee-strip 40s linear infinite;
+  animation: marquee-strip 80s linear infinite;
   will-change: transform;
 }
 
@@ -242,12 +257,14 @@ html.lenis body {
   z-index: -1;
 }
 
-.megamenu-item:hover::before {
-  width: 100%;
-}
+@media (hover: hover) {
+  .megamenu-item:hover::before {
+    width: 100%;
+  }
 
-.megamenu-item:hover {
-  color: #ffffff !important;
+  .megamenu-item:hover {
+    color: #ffffff !important;
+  }
 }
 
 

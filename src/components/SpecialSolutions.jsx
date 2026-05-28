@@ -111,14 +111,15 @@ export default function SpecialSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
             >
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight uppercase mb-4">
                 Our Special Solutions
               </h2>
-              <div className="h-1.5 w-24 bg-secondary rounded-full mb-6" />
+              <div className="h-1.5 w-24 bg-secondary rounded-full mx-auto lg:mx-0 mb-6" />
 
               {/* Intro paragraph */}
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed text-left">
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed text-center lg:text-left">
                 As a Taxpayer, there might be a risk in fulfilling tax obligations, that is Tax Disputes. Tax dispute could be end up in Tax Court, District Court or even in Supreme Court. In RPM Consult, we will provide best efforts in defending Client's position in Tax Disputes and best results for the Stakeholders.
               </p>
             </motion.div>

@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 import { Award, ArrowRight } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 import aboutImg from '../assets/about/Mikha.imageworks_1828.jpg';
 
 function Counter({ from = 0, to, duration = 2 }) {
@@ -25,8 +23,6 @@ function Counter({ from = 0, to, duration = 2 }) {
 }
 
 export default function About() {
-  const { language } = useLanguage();
-  const t = translations[language];
 
   return (
     <section className="py-24 bg-surface-container-low overflow-hidden scroll-mt-20" id="about">
@@ -67,7 +63,7 @@ export default function About() {
                     <p className="text-primary font-extrabold text-2xl leading-none">
                       <Counter from={0} to={28} />+
                     </p>
-                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mt-1">{t.about.yearsBadge}</p>
+                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mt-1">Years of Experience</p>
                   </div>
                 </div>
               </motion.div>
@@ -86,25 +82,25 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7 space-y-8"
           >
-            <div className="space-y-4">
+            <div className="space-y-4 text-center lg:text-left">
               <h2 className="font-extrabold text-primary text-3xl md:text-4xl lg:text-5xl leading-tight">
                 About Us
               </h2>
-              <div className="h-1.5 w-24 bg-secondary rounded-full" />
+              <div className="h-1.5 w-24 bg-secondary rounded-full mx-auto lg:mx-0" />
             </div>
 
             <div className="space-y-5 font-normal">
               <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                {t.about.philosophy}
+                Philosophically, &quot;Raka&quot; signifies persistence, wisdom, influence, and strength, &quot;Pradipta&quot; represents a bright light, and &quot;Mahawira&quot; means a great hero.
               </p>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                {t.about.desc1}
+                PT Raka Pradipta Mahawira (&quot;RPM Consult&quot;) was established by individuals driven by chivalrous values, positive influence, creativity, innovation, and a noble vision to deliver a positive impact to all stakeholders as a trusted Legal, Tax & Business partner.
               </p>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                {t.about.desc2}
+                We provide integrated services across Law, Tax, Accounting, and HR Consulting — designed to help clients navigate the complexities of modern business regulations with precise, efficient, and ethical solutions.
               </p>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                {t.about.desc3}
+                With an experienced team of professionals and an unwavering commitment to excellence, RPM Consult is ready to be a long-term strategic partner that delivers real value to every stakeholder.
               </p>
             </div>
 
@@ -122,7 +118,7 @@ export default function About() {
               <div className="flex items-center gap-2">
                 <span className="text-4xl md:text-5xl lg:text-6xl leading-none font-serif text-secondary select-none">&ldquo;</span>
                 <p className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gradient italic leading-snug text-center">
-                  {t.about.slogan}
+                  For a better future, for all
                 </p>
                 <span className="text-4xl md:text-5xl lg:text-6xl leading-none font-serif text-secondary select-none">&rdquo;</span>
               </div>
@@ -133,7 +129,7 @@ export default function About() {
                 href="#leadership"
                 className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
               >
-                {t.about.learnMore}
+                Learn More About Our Team
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>

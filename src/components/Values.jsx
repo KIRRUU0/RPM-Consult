@@ -1,12 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Handshake, Star, TrendingUp } from 'lucide-react';
-import { useLanguage } from '../utils/LanguageContext';
-import { translations } from '../utils/translations';
 
 export default function Values() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const valuesData = [
+    {
+      title: 'Integrity',
+      points: [
+        'Reliable and accountable.',
+        'Transparent and trustworthy.',
+        'Business ethics in actions.',
+      ]
+    },
+    {
+      title: 'Respect',
+      points: [
+        'Trust and mutual respect.',
+        'Being considerate of differences.',
+        'Understanding each other, positive outlook, and fairness.',
+      ]
+    },
+    {
+      title: 'Excellence',
+      points: [
+        'Continuously focus on quality.',
+        "Timely and effective in service's deliverables.",
+        'Best efforts for desired solutions.',
+      ]
+    },
+    {
+      title: 'Succeed',
+      points: [
+        'Collaboration for strong relationship.',
+        'Professional achievements.',
+        'Embrace for success.',
+      ]
+    }
+  ];
 
   const icons = [
     <ShieldCheck className="w-7 h-7 text-primary" />,
@@ -15,7 +45,7 @@ export default function Values() {
     <TrendingUp className="w-7 h-7 text-primary" />,
   ];
 
-  const valuesList = t.values.list.map((val, idx) => ({
+  const valuesList = valuesData.map((val, idx) => ({
     ...val,
     icon: icons[idx],
   }));
@@ -44,7 +74,7 @@ export default function Values() {
             viewport={{ once: true }}
             className="font-extrabold text-white text-3xl md:text-4xl lg:text-5xl"
           >
-            {t.values.title}
+            Our Core Values
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
@@ -106,7 +136,7 @@ export default function Values() {
           className="mt-20 flex justify-center"
         >
           <p className="text-xl md:text-2xl italic font-semibold text-secondary-container tracking-wide leading-relaxed text-center max-w-3xl">
-            &quot;{t.values.slogan}&quot;
+            &quot;Proven result speaks louder than words&quot;
           </p>
         </motion.div>
 

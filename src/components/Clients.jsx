@@ -16,6 +16,7 @@ function AnimatedCounter({ value }) {
 
     const targetNum = parseInt(numericMatch[0], 10);
     const suffix = value.replace(numericMatch[0], '');
+    let rafId = null;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,12 +35,12 @@ function AnimatedCounter({ value }) {
               const displayNum = Math.max(0, Math.min(targetNum - 1, currentCount + randomOffset));
               
               setDisplayValue(`${displayNum}${suffix}`);
-              requestAnimationFrame(step);
+              rafId = requestAnimationFrame(step);
             } else {
               setDisplayValue(value);
             }
           };
-          requestAnimationFrame(step);
+          rafId = requestAnimationFrame(step);
         }
       },
       { threshold: 0.1 }
@@ -49,7 +50,12 @@ function AnimatedCounter({ value }) {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, [value]);
 
   return <span ref={containerRef}>{displayValue}</span>;
@@ -170,21 +176,25 @@ export default function Clients() {
             src={clientsStripImg}
             alt="Clients Logos Strip"
             className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
+            loading="lazy"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
             className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
+            loading="lazy"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
             className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
+            loading="lazy"
           />
           <img
             src={clientsStripImg}
             alt="Clients Logos Strip"
             className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
+            loading="lazy"
           />
         </div>
       </div>

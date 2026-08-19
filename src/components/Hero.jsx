@@ -26,6 +26,8 @@ export default function Hero({ navigateTo }) {
           alt="Modern Business District"
           className="w-full h-full object-cover"
           src={heroBgImg}
+          loading="eager"
+          fetchPriority="high"
           onError={(e) => { 
             e.target.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0HOISwjyTZd1P04JQYd9QVk2loYnDxxFt8Tdq6kwD7whbGYA5WVAWVt7udp9SasLkYFjQ6_gThJjk6H0vfJ5-rLrQurr035yEhY2De5zy6HF7saYjPjfw6KcUxVSlNKzqSPmZV-oeNHjZ3EPQy-Xli0-FVTWfdKWktqWzrZlsTVyBmMF29LHB8n_4cKLOv0CcA0eXgio2lx2B9RrdEx1MBOizYveSRkPbhRNeTR6RLYW2b-Wx9xXKPERTlGzEy1CUemm_LoZ7qrw'; 
           }}

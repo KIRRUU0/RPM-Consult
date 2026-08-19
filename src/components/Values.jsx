@@ -5,14 +5,6 @@ import { ShieldCheck, Handshake, Star, TrendingUp } from 'lucide-react';
 export default function Values() {
   const valuesData = [
     {
-      title: 'Integrity',
-      points: [
-        'Reliable and accountable.',
-        'Transparent and trustworthy.',
-        'Business ethics in actions.',
-      ]
-    },
-    {
       title: 'Respect',
       points: [
         'Trust and mutual respect.',
@@ -21,28 +13,36 @@ export default function Values() {
       ]
     },
     {
-      title: 'Excellence',
+      title: 'Integrity',
       points: [
-        'Continuously focus on quality.',
-        "Timely and effective in service's deliverables.",
-        'Best efforts for desired solutions.',
+        'Reliable and accountable.',
+        'Transparent and trustworthy.',
+        'Business ethics in actions.',
       ]
     },
     {
       title: 'Succeed',
       points: [
-        'Collaboration for strong relationship.',
+        'Collaboration for stronger relationships.',
         'Professional achievements.',
-        'Embrace for success.',
+        'Embrace opportunities for success.',
+      ]
+    },
+    {
+      title: 'Excellence',
+      points: [
+        'Continuously focus on quality.',
+        'Timely and effective service delivery.',
+        'Delivering the best solutions for our clients.',
       ]
     }
   ];
 
   const icons = [
-    <ShieldCheck className="w-7 h-7 text-primary" />,
     <Handshake className="w-7 h-7 text-primary" />,
-    <Star className="w-7 h-7 text-primary" />,
+    <ShieldCheck className="w-7 h-7 text-primary" />,
     <TrendingUp className="w-7 h-7 text-primary" />,
+    <Star className="w-7 h-7 text-primary" />,
   ];
 
   const valuesList = valuesData.map((val, idx) => ({
@@ -53,7 +53,7 @@ export default function Values() {
   return (
     <section className="py-24 bg-primary relative overflow-hidden text-white scroll-mt-20" id="values">
       {/* Background SVG Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
@@ -86,7 +86,7 @@ export default function Values() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {valuesList.map((val, idx) => (
             <motion.div
               key={idx}
@@ -95,7 +95,7 @@ export default function Values() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: idx * 0.1, ease: 'easeOut' }}
               whileHover={{ scale: 1.02 }}
-              className="flex flex-col bg-white border border-white/20 rounded-2xl p-7 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default"
+              className="flex flex-col h-full bg-white border border-white/20 rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 cursor-default"
             >
               {/* Icon */}
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/15 rounded-xl">
@@ -136,7 +136,7 @@ export default function Values() {
           className="mt-20 flex justify-center"
         >
           <p className="text-xl md:text-2xl italic font-semibold text-secondary-container tracking-wide leading-relaxed text-center max-w-3xl">
-            &quot;Proven result speaks louder than words&quot;
+            &quot;Proven results speak louder than words.&quot;
           </p>
         </motion.div>
 

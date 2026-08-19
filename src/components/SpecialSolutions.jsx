@@ -150,6 +150,7 @@ export default function SpecialSolutions() {
               src={specialBgImg}
               alt="Our Special Solutions Graphic" 
               className="rounded-2xl w-full h-[400px] md:h-[480px] object-cover shadow-xl border border-primary/10"
+              loading="lazy"
             />
           </motion.div>
 

@@ -42,6 +42,7 @@ export default function About() {
                 alt="Professional Office Environment"
                 className="rounded-xl shadow-2xl w-full h-[450px] md:h-[550px] object-cover border border-primary/10"
                 src={aboutImg}
+                loading="lazy"
                 onError={(e) => { 
                   e.target.src = 'https://lh3.googleusercontent.com/aida/ADBb0ugfbNml8ljVCIUuKgzC-fqi3eoL6EspAlf2zpuMlMQV4UjxJpeSfEBhNzqnGvnP-dMyj1dHTbD-LwMdjI74wNTiOsUZhDalz2nw0cbNibZTBscrV1GuV9QUnGGxQX5sselptp5KDdUneME83-jpa5vMFgk-1mkbTQS2jNzO1L4sDuj7nAaQkYZib9GRXHgljfmjrYGCG_kaZNVDjFTd3TK0gj3vqL64qzRCZiCEEM8M6XubEaQxRag-H9Y'; 
                 }}

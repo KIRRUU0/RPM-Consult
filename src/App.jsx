@@ -199,17 +199,21 @@ function App() {
     });
 
     window.lenis = lenis;
+    let rafId = null;
 
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
       window.lenis = null;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 

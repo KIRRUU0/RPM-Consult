@@ -14,12 +14,6 @@ export default function Footer({ activeView, navigateTo }) {
     setTimeout(() => setSubscribed(false), 4000);
   };
 
-  const portalLinks = [
-    { name: 'Control Panel (cPanel)', href: 'http://www.rakapradiptamahawira.com/cpanel' },
-    { name: 'WebMail Portal (IP)', href: 'http://103.229.73.24/webmail/' },
-    { name: 'WebMail Portal (Domain)', href: 'http://www.rakapradiptamahawira.com/webmail/' },
-  ];
-
   return (
     <footer className="bg-on-background text-white pt-20 pb-8 px-4 md:px-margin-desktop border-t border-white/5 relative z-10">
       <div className="max-w-container-max mx-auto">
@@ -41,9 +35,9 @@ export default function Footer({ activeView, navigateTo }) {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
           {/* Column 1: Info & Brand */}
-          <div className="space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             <p className="text-white/60 text-sm leading-relaxed">
               PT Raka Pradipta Mahawira (RPM Consult) provides professional integrated Legal, Tax & Business Solutions.
             </p>
@@ -77,7 +71,7 @@ export default function Footer({ activeView, navigateTo }) {
           </div>
 
           {/* Column 2: Kantor Kami (Our Offices) */}
-          <div className="space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
               Our Offices
             </h4>
@@ -97,25 +91,24 @@ export default function Footer({ activeView, navigateTo }) {
             </div>
           </div>
 
-          {/* Column 3: Portals & cPanel */}
-          <div className="space-y-6">
+          {/* Column 3: Quick Links */}
+          <div className="lg:col-span-2 space-y-6">
             <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
-              Staff Portals &amp; Domains
+              Quick Links
             </h4>
             <ul className="space-y-3.5 text-white/70 text-sm">
-              {portalLinks.map((portal) => (
-                <li key={portal.name}>
-                  <a
-                    href={portal.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors flex items-center gap-1.5"
-                  >
-                    <span>{portal.name}</span>
-                  </a>
-                </li>
-              ))}
-              <li className="pt-2 border-t border-white/5 mt-2">
+              <li>
+                <a
+                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo('home', 'hero');
+                  }}
+                >
+                  Home
+                </a>
+              </li>
+              <li>
                 <a
                   className="hover:text-white transition-colors cursor-pointer"
                   onClick={(e) => {
@@ -131,17 +124,39 @@ export default function Footer({ activeView, navigateTo }) {
                   className="hover:text-white transition-colors cursor-pointer"
                   onClick={(e) => {
                     e.preventDefault();
+                    navigateTo('services', 'services');
+                  }}
+                >
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
                     navigateTo('team', 'leadership');
                   }}
                 >
                   Our Team
                 </a>
               </li>
+              <li>
+                <a
+                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo('home', 'contact');
+                  }}
+                >
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Column 4: Newsletter */}
-          <div className="space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
               Newsletter
             </h4>

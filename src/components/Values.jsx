@@ -94,8 +94,7 @@ export default function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: idx * 0.1, ease: 'easeOut' }}
-              whileHover={{ scale: 1.02 }}
-              className="flex flex-col h-full bg-white border border-white/20 rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 cursor-default"
+              className="flex flex-col h-full bg-white border border-white/20 rounded-2xl p-7 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-default"
             >
               {/* Icon */}
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/15 rounded-xl">

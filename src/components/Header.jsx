@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Monitor, Mail, MailQuestion, ExternalLink } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
 export default function Header({ activeView, navigateTo }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [portalOpen, setPortalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -61,11 +60,6 @@ export default function Header({ activeView, navigateTo }) {
     }
   };
 
-  const portalLinks = [
-    { name: 'Control Panel', href: 'http://www.rakapradiptamahawira.com/cpanel', icon: <Monitor className="w-4 h-4 text-secondary" /> },
-    { name: 'WebMail 1 (IP)', href: 'http://103.229.73.24/webmail/', icon: <Mail className="w-4 h-4 text-primary" /> },
-    { name: 'WebMail 2 (Domain)', href: 'http://www.rakapradiptamahawira.com/webmail/', icon: <MailQuestion className="w-4 h-4 text-primary-container" /> },
-  ];
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2.5' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-primary/5`}>
@@ -213,52 +207,8 @@ export default function Header({ activeView, navigateTo }) {
           })}
         </div>
 
-        {/* Action Buttons (Portal Dropdown, Language Switcher, Contact button) */}
+        {/* Action Buttons (Language Switcher, Contact button) */}
         <div className="hidden xl:flex items-center gap-3 xl:gap-4 relative shrink-0">
-          
-          {/* Staff Portal Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setPortalOpen(!portalOpen)}
-              onBlur={() => setTimeout(() => setPortalOpen(false), 200)}
-              className="flex items-center gap-1.5 px-3 py-2 border border-primary/20 rounded-md font-semibold text-xs xl:text-sm text-primary hover:bg-primary/5 transition-all cursor-pointer whitespace-nowrap shrink-0"
-            >
-              Staff Portal
-              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${portalOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            <AnimatePresence>
-              {portalOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50"
-                >
-                  <div className="px-4 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-wider border-b border-gray-100 pb-1.5 mb-1.5">
-                    Internal Resources
-                  </div>
-                  {portalLinks.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors"
-                    >
-                      <div className="flex items-center gap-2">
-                        {item.icon}
-                        <span>{item.name}</span>
-                      </div>
-                      <ExternalLink className="w-3.5 h-3.5 opacity-40" />
-                    </a>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           <a
             href="#contact"
             onClick={(e) => {
@@ -398,23 +348,6 @@ export default function Header({ activeView, navigateTo }) {
 
             <hr className="border-gray-100" />
 
-            <div className="space-y-3">
-              <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest">Staff Portal</span>
-              <div className="grid grid-cols-1 gap-2">
-                {portalLinks.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-50 border border-gray-100 transition-all text-sm font-semibold text-gray-700"
-                  >
-                    {item.icon}
-                    <span>{item.name}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
 
             <div className="pt-2">
               <a

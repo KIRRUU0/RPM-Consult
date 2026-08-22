@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Handshake, Star, TrendingUp, ClipboardCheck } from 'lucide-react';
+import { ShieldCheck, Handshake, Star, TrendingUp } from 'lucide-react';
 
 export default function Values() {
   const valuesData = [
@@ -51,7 +51,6 @@ export default function Values() {
   }));
 
   return (
-    <>
     <section className="py-24 bg-primary relative overflow-hidden text-white scroll-mt-20" id="values">
       {/* Background SVG Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0">
@@ -95,7 +94,7 @@ export default function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: idx * 0.1, ease: 'easeOut' }}
-              className="flex flex-col h-full bg-white border border-white/20 rounded-2xl p-7 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-default"
+              className="flex flex-col h-full bg-white border border-white/20 rounded-2xl p-7 shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
               {/* Icon */}
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/15 rounded-xl">
@@ -142,118 +141,5 @@ export default function Values() {
 
       </div>
     </section>
-
-    {/* Summary of Changes Section */}
-    <section className="py-16 bg-background border-t border-surface-variant/30">
-      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
-        
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-10">
-          <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
-            <ClipboardCheck className="w-6 h-6 text-primary" />
-          </div>
-          <h2 className="text-xl md:text-2xl font-extrabold text-primary uppercase tracking-wide">
-            Summary of Changes
-          </h2>
-        </div>
-
-        {/* Changes List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
-          {/* Vertical Divider Line on Desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 -translate-x-1/2"></div>
-          
-          {/* Left Column */}
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                1
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Urutan Core Values diubah menjadi: <span className="font-semibold text-primary">Respect – Integrity – Succeed – Excellence.</span>
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                2
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Warna hijau background diubah menjadi <span className="font-semibold text-primary">#087A3E</span> (lebih sedikit gelap dari sebelumnya untuk tampilan lebih seimbang).
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                3
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                <span className="font-semibold italic text-primary">Grammar</span> dan <span className="font-semibold italic text-primary">wording</span> diperbaiki agar lebih profesional dan natural.
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                4
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Tinggi keempat <span className="font-semibold italic text-primary">card</span> disamakan agar tampilan rapi dan konsisten.
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                5
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Grid background dibuat lebih subtle (opacity lebih rendah).
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                6
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Card diberi <span className="font-semibold italic text-primary">shadow</span> halus untuk memberikan <span className="font-semibold italic text-primary">depth</span>.
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                7
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Jarak antar card disesuaikan agar lebih proporsional (tidak terlalu lebar).
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                8
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Quote di bagian bawah diperbaiki menjadi:<br className="hidden md:block" />
-                <span className="font-semibold italic text-primary">"Proven results speak louder than words."</span>
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                9
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                Ikon dan bullet checklist diseragamkan untuk konsistensi visual.
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                10
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                <span className="font-semibold text-primary">Mobile responsive:</span> pastikan pada layar kecil, card tersusun vertical dengan spacing yang nyaman.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    </>
   );
 }

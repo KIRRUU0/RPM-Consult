@@ -142,7 +142,7 @@ function MainApp() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              <About />
+              <About navigateTo={navigateTo} />
               <VisionMission />
             </motion.div>
           )}

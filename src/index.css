@@ -214,8 +214,12 @@ html.lenis body {
 .clients-marquee-strip {
   display: flex;
   width: max-content;
-  animation: marquee-strip 80s linear infinite;
+  animation: marquee-strip 50s linear infinite;
   will-change: transform;
+}
+
+.clients-marquee-strip.reverse {
+  animation-direction: reverse;
 }
 
 .clients-marquee-strip img {

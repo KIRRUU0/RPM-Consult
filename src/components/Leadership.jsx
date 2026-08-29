@@ -2,12 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Mail, X, Briefcase, GraduationCap } from 'lucide-react';
 import teamData from '../data/team.json';
-import agusImg from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
-import jasonImg from '../assets/leadership/Jason Lathianza S.H., M.Kn..jpg';
+import img1 from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
+import img2 from '../assets/leadership/Jason Lathianza, S.H., M.Kn..jpg';
+import img7 from '../assets/leadership/Stela Halim, S.Ak..png';
+import img8 from '../assets/leadership/Elieta Vranciska, S.Ak..png';
+import img10 from '../assets/leadership/Firman.png';
+import img11 from '../assets/leadership/Muhammad Basri Sangadji, SST.Pa.png';
+import img12 from '../assets/leadership/Dhimas Andrean Sukoco, S.Ak., BKP.png';
+import img13 from '../assets/leadership/Amila Hasya Sabrina, S.M..png';
+import img15 from '../assets/leadership/Tiara Putrian Setiawan, S.H..png';
+import img16 from '../assets/leadership/Melva Juliana Nainggolan.png';
+import img17 from '../assets/leadership/Wahyuri.png';
+import img18 from '../assets/leadership/Vira Putri Ginanti.png';
+import img19 from '../assets/leadership/Iqbal Fauzi.png';
 
 const localImages = {
-  agusImg,
-  jasonImg,
+  "Agus Priyatna, S.E., M.M., CFRM.jpg": img1,
+  "Jason Lathianza, S.H., M.Kn..jpg": img2,
+  "Stela Halim, S.Ak..png": img7,
+  "Elieta Vranciska, S.Ak..png": img8,
+  "Firman.png": img10,
+  "Muhammad Basri Sangadji, SST.Pa.png": img11,
+  "Dhimas Andrean Sukoco, S.Ak., BKP.png": img12,
+  "Amila Hasya Sabrina, S.M..png": img13,
+  "Tiara Putrian Setiawan, S.H..png": img15,
+  "Melva Juliana Nainggolan.png": img16,
+  "Wahyuri.png": img17,
+  "Vira Putri Ginanti.png": img18,
+  "Iqbal Fauzi.png": img19,
 };
 
 export default function Leadership() {
@@ -105,7 +127,7 @@ export default function Leadership() {
                   <img
                     alt={person.name}
                     src={person.img}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
                       const male = [1, 2, 3, 5, 6, 9, 10, 12, 17];
                       if (male.includes(person.id)) {
@@ -201,7 +223,7 @@ export default function Leadership() {
                   <img
                     alt={selectedPerson.name}
                     src={selectedPerson.img}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
                     onError={(e) => {
                       const male = [1, 2, 3, 5, 6, 9, 10, 12, 17];
                       if (male.includes(selectedPerson.id)) {

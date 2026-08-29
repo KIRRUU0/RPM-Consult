@@ -1,6 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import clientsStripImg from '../assets/clients_strip.png';
+
+const clientImagesRaw = import.meta.glob('../assets/client/*.{png,jpeg,jpg}', { eager: true });
+const allImages = Object.values(clientImagesRaw).map(module => module.default);
+const row1 = [...allImages];
+const row2 = [...allImages.slice(5), ...allImages.slice(0, 5)];
+const row3 = [...allImages.slice(10), ...allImages.slice(0, 10)];
+
+const MarqueeRow = ({ images, reverse }) => (
+  <div className="relative w-full overflow-hidden flex items-center mb-6 md:mb-10 last:mb-0">
+    <div className={`clients-marquee-strip flex items-center gap-8 md:gap-16 px-4 md:px-8 ${reverse ? 'reverse' : ''}`}>
+       <div className="flex items-center gap-8 md:gap-16 shrink-0">
+         {images.map((img, i) => (
+           <img key={`a-${i}`} src={img} alt="Client Logo" className="h-10 md:h-16 lg:h-20 w-auto max-w-[160px] md:max-w-[240px] object-contain transition-all duration-300 crisp-image" loading="lazy" />
+         ))}
+       </div>
+       <div className="flex items-center gap-8 md:gap-16 shrink-0">
+         {images.map((img, i) => (
+           <img key={`b-${i}`} src={img} alt="Client Logo" className="h-10 md:h-16 lg:h-20 w-auto max-w-[160px] md:max-w-[240px] object-contain transition-all duration-300 crisp-image" loading="lazy" />
+         ))}
+       </div>
+    </div>
+  </div>
+);
 
 function AnimatedCounter({ value }) {
   const [displayValue, setDisplayValue] = useState('0');
@@ -164,39 +186,16 @@ export default function Clients() {
       </div>
 
       {/* Infinite Scrolling Logo Strip Marquee — full bleed */}
-      <div className="relative w-full overflow-hidden mt-6 mb-16 py-6 border-y border-primary/5 bg-white flex items-center">
+      <div className="relative w-full overflow-hidden mt-6 mb-16 py-10 md:py-16 border-y border-primary/5 bg-white flex flex-col items-center">
         {/* Fade masks on left & right */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, white, transparent)' }} />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to left, white, transparent)' }} />
 
-        <div className="clients-marquee-strip flex items-center">
-          <img
-            src={clientsStripImg}
-            alt="Clients Logos Strip"
-            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
-            loading="lazy"
-          />
-          <img
-            src={clientsStripImg}
-            alt="Clients Logos Strip"
-            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
-            loading="lazy"
-          />
-          <img
-            src={clientsStripImg}
-            alt="Clients Logos Strip"
-            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
-            loading="lazy"
-          />
-          <img
-            src={clientsStripImg}
-            alt="Clients Logos Strip"
-            className="h-[140px] md:h-[220px] w-auto max-w-none object-contain shrink-0 crisp-image"
-            loading="lazy"
-          />
-        </div>
+        <MarqueeRow images={row1} />
+        <MarqueeRow images={row2} reverse />
+        <MarqueeRow images={row3} />
       </div>
 
       {/* Bottom tagline */}

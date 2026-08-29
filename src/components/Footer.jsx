@@ -1,18 +1,7 @@
-import React, { useState } from 'react';
-import { Linkedin, Globe, Shield, Send, Check } from 'lucide-react';
+import React from 'react';
 import logoImg from '../assets/Logo RPM/Logo RPM Consult.png';
 
 export default function Footer({ activeView, navigateTo }) {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (!email || !/\S+@\S+\.\S+/.test(email)) return;
-    setSubscribed(true);
-    setEmail('');
-    setTimeout(() => setSubscribed(false), 4000);
-  };
 
   return (
     <footer className="bg-on-background text-white pt-20 pb-8 px-4 md:px-margin-desktop border-t border-white/5 relative z-10">
@@ -37,7 +26,7 @@ export default function Footer({ activeView, navigateTo }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
           {/* Column 1: Info & Brand */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             <p className="text-white/60 text-sm leading-relaxed">
               PT Raka Pradipta Mahawira (RPM Consult) provides professional integrated Legal, Tax & Business Solutions.
             </p>
@@ -45,33 +34,10 @@ export default function Footer({ activeView, navigateTo }) {
               <p><strong>Email:</strong> <a href="mailto:raka_pm@rpm-consult.com" className="hover:text-white transition-colors">raka_pm@rpm-consult.com</a></p>
               <p><strong>Phone:</strong> <a href="tel:+6281286866654" className="hover:text-white transition-colors">0812 8686 6654</a></p>
             </div>
-            <div className="flex gap-4 pt-2">
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-105"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-105"
-                aria-label="Website"
-              >
-                <Globe className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-105"
-                aria-label="Certifications"
-              >
-                <Shield className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Column 2: Kantor Kami (Our Offices) */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
               Our Offices
             </h4>
@@ -92,7 +58,7 @@ export default function Footer({ activeView, navigateTo }) {
           </div>
 
           {/* Column 3: Quick Links */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
               Quick Links
             </h4>
@@ -153,42 +119,6 @@ export default function Footer({ activeView, navigateTo }) {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Column 4: Newsletter */}
-          <div className="lg:col-span-3 space-y-6">
-            <h4 className="font-bold text-secondary-container uppercase tracking-widest text-xs">
-              Newsletter
-            </h4>
-            <div className="space-y-4">
-              <p className="text-white/60 text-sm leading-relaxed">
-                Subscribe to receive tax regulation updates and consulting news digests.
-              </p>
-              
-              <form onSubmit={handleSubscribe} className="flex relative">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={subscribed}
-                  className="bg-white/5 border border-white/10 rounded-l-md px-4 py-3 text-sm w-full outline-none focus:border-primary transition-colors text-white disabled:opacity-50"
-                  placeholder="Email Address"
-                />
-                <button
-                  type="submit"
-                  disabled={subscribed}
-                  className="bg-primary hover:bg-primary-container disabled:bg-primary/55 px-4 rounded-r-md transition-all flex items-center justify-center shrink-0 w-12 text-white cursor-pointer"
-                >
-                  {subscribed ? <Check className="w-5 h-5 text-white" /> : <Send className="w-4.5 h-4.5" />}
-                </button>
-              </form>
-              {subscribed && (
-                <p className="text-xs text-secondary-container font-semibold animate-pulse">
-                  Subscribed successfully! Thank you.
-                </p>
-              )}
-            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ function Counter({ from = 0, to, duration = 2 }) {
   return <span ref={ref}>{count}</span>;
 }
 
-export default function About() {
+export default function About({ navigateTo }) {
 
   return (
     <section className="py-24 bg-surface-container-low overflow-hidden scroll-mt-20" id="about">
@@ -126,13 +126,13 @@ export default function About() {
             </motion.div>
 
             <div className="pt-2">
-              <a
-                href="#leadership"
+              <button
+                onClick={() => navigateTo('team', 'leadership')}
                 className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
               >
                 Learn More About Our Team
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
             </div>
           </motion.div>
 

@@ -9,13 +9,13 @@ const row3 = [...allImages.slice(10), ...allImages.slice(0, 10)];
 
 const MarqueeRow = ({ images, reverse }) => (
   <div className="relative w-full overflow-hidden flex items-center mb-6 md:mb-10 last:mb-0">
-    <div className={`clients-marquee-strip flex items-center gap-8 md:gap-16 px-4 md:px-8 ${reverse ? 'reverse' : ''}`}>
-       <div className="flex items-center gap-8 md:gap-16 shrink-0">
+    <div className={`clients-marquee-strip flex items-center ${reverse ? 'reverse' : ''}`}>
+       <div className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16 shrink-0">
          {images.map((img, i) => (
            <img key={`a-${i}`} src={img} alt="Client Logo" className="h-10 md:h-16 lg:h-20 w-auto max-w-[160px] md:max-w-[240px] object-contain transition-all duration-300 crisp-image" loading="lazy" />
          ))}
        </div>
-       <div className="flex items-center gap-8 md:gap-16 shrink-0">
+       <div className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16 shrink-0">
          {images.map((img, i) => (
            <img key={`b-${i}`} src={img} alt="Client Logo" className="h-10 md:h-16 lg:h-20 w-auto max-w-[160px] md:max-w-[240px] object-contain transition-all duration-300 crisp-image" loading="lazy" />
          ))}
@@ -86,7 +86,7 @@ function AnimatedCounter({ value }) {
 export default function Clients() {
   const stats = [
     { value: '60+', label: 'Clients Served' },
-    { value: '10+', label: 'Years of Experience' },
+    { value: '28+', label: 'Years of Experience' },
     { value: '98%', label: 'Client Satisfaction Rate' },
   ];
 
@@ -211,7 +211,9 @@ export default function Clients() {
             {tagline}
           </p>
           <a
-            href="#contact"
+            href="https://wa.me/6281286866654"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-none bg-primary text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-primary-container transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap"
           >
             {cta}

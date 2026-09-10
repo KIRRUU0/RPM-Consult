@@ -6,13 +6,25 @@ import heroBgImg from '../assets/hero/PHOTO-2026-02-20-13-20-03.jpg';
 export default function Hero({ navigateTo }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useEffect(() => {
+    let ticking = false;
+    let rafId = null;
+
     const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30; // max 15px shift
-      const y = (e.clientY / window.innerHeight - 0.5) * 30;
-      setMousePos({ x, y });
+      if (!ticking) {
+        ticking = true;
+        rafId = requestAnimationFrame(() => {
+          const x = (e.clientX / window.innerWidth - 0.5) * 30; // max 15px shift
+          const y = (e.clientY / window.innerHeight - 0.5) * 30;
+          setMousePos({ x, y });
+          ticking = false;
+        });
+      }
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (

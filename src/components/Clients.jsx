@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-const clientImagesRaw = import.meta.glob('../assets/client/*.{png,jpeg,jpg}', { eager: true });
-const allImages = Object.values(clientImagesRaw).map(module => module.default);
-const row1 = [...allImages];
-const row2 = [...allImages.slice(5), ...allImages.slice(0, 5)];
-const row3 = [...allImages.slice(10), ...allImages.slice(0, 10)];
+const clientImagesRaw = import.meta.glob('../assets/client/*.{png,jpeg,jpg,webp,PNG,JPEG,JPG,WEBP}', { eager: true });
+const sortedEntries = Object.entries(clientImagesRaw).sort(([pathA], [pathB]) => {
+  const numA = parseInt(pathA.match(/(\d+)\./)?.[1] || '999', 10);
+  const numB = parseInt(pathB.match(/(\d+)\./)?.[1] || '999', 10);
+  return numA - numB;
+});
+const allImages = sortedEntries.map(([, module]) => module.default);
+
+const chunkSize = Math.ceil(allImages.length / 3);
+const row1 = allImages.slice(0, chunkSize);
+const row2 = allImages.slice(chunkSize, chunkSize * 2);
+const row3 = allImages.slice(chunkSize * 2);
 
 const MarqueeRow = ({ images, reverse }) => (
   <div className="relative w-full overflow-hidden flex items-center mb-6 md:mb-10 last:mb-0">

@@ -4,8 +4,13 @@ import { Linkedin, Mail, X, Briefcase, GraduationCap } from 'lucide-react';
 import teamData from '../data/team.json';
 import img1 from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
 import img2 from '../assets/leadership/Jason Lathianza, S.H., M.Kn..jpg';
+import img3 from '../assets/leadership/Indriyanto Widhi Nugroho.jpeg';
+import img4 from '../assets/leadership/Tri Sulistyawaty.jpeg';
+import img5 from '../assets/leadership/Rodo Parasian.jpeg';
+import img6 from '../assets/leadership/Steven Andrian.jpeg';
 import img7 from '../assets/leadership/Stela Halim, S.Ak..png';
 import img8 from '../assets/leadership/Elieta Vranciska, S.Ak..png';
+import img9 from '../assets/leadership/Husnul Fadhil.jpeg';
 import img10 from '../assets/leadership/Firman.png';
 import img11 from '../assets/leadership/Muhammad Basri Sangadji, SST.Pa.png';
 import img12 from '../assets/leadership/Dhimas Andrean Sukoco, S.Ak., BKP.png';
@@ -19,8 +24,13 @@ import img19 from '../assets/leadership/Iqbal Fauzi.png';
 const localImages = {
   "Agus Priyatna, S.E., M.M., CFRM.jpg": img1,
   "Jason Lathianza, S.H., M.Kn..jpg": img2,
+  "Indriyanto Widhi Nugroho.jpeg": img3,
+  "Tri Sulistyawaty.jpeg": img4,
+  "Rodo Parasian.jpeg": img5,
+  "Steven Andrian.jpeg": img6,
   "Stela Halim, S.Ak..png": img7,
   "Elieta Vranciska, S.Ak..png": img8,
+  "Husnul Fadhil.jpeg": img9,
   "Firman.png": img10,
   "Muhammad Basri Sangadji, SST.Pa.png": img11,
   "Dhimas Andrean Sukoco, S.Ak., BKP.png": img12,

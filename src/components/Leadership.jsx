@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Mail, X, Briefcase, GraduationCap, Award, Eye } from 'lucide-react';
 import teamData from '../data/team.json';
-import img1 from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
+import img1 from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpeg';
 import img2 from '../assets/leadership/Jason Lathianza, S.H., M.Kn..jpg';
 import img3 from '../assets/leadership/Indriyanto Widhi Nugroho.jpeg';
 import img4 from '../assets/leadership/Tri Sulistyawaty.jpeg';
@@ -22,7 +22,7 @@ import img18 from '../assets/leadership/Vira Putri Ginanti.png';
 import img19 from '../assets/leadership/Iqbal Fauzi.png';
 
 const localImages = {
-  "Agus Priyatna, S.E., M.M., CFRM.jpg": img1,
+  "Agus Priyatna, S.E., M.M., CFRM.jpeg": img1,
   "Jason Lathianza, S.H., M.Kn..jpg": img2,
   "Indriyanto Widhi Nugroho.jpeg": img3,
   "Tri Sulistyawaty.jpeg": img4,

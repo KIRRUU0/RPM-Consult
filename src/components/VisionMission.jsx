@@ -51,7 +51,7 @@ export default function VisionMission() {
               Our Vision
             </h3>
             <div className="h-1 w-16 bg-secondary rounded-full" />
-            <p className="text-gray-600 leading-relaxed text-base pt-2">
+            <p className="text-gray-600 leading-relaxed text-base pt-2 text-left">
               {visionText}
             </p>
           </motion.div>

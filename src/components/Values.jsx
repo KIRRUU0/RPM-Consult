@@ -72,7 +72,7 @@ export default function Values() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-extrabold text-white text-3xl md:text-4xl lg:text-5xl"
+            className="font-extrabold text-white text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight"
           >
             Our Core Values
           </motion.h2>

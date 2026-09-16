@@ -97,7 +97,7 @@ export default function Clients() {
     { value: '98%', label: 'Client Satisfaction Rate' },
   ];
 
-  const title = 'OUR SATISFIED CLIENTS';
+  const title = 'Our Satisfied Clients';
   const subtitle = 'Hard Facts. Clear Solutions.';
   const desc = 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax issues.';
   const tagline = 'Ready to join our growing list of trusted partners?';

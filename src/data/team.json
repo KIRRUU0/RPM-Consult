@@ -148,10 +148,20 @@
     "role": "Junior Consultant",
     "category": "juniors",
     "degree": "Bina Nusantara University (S.H. Business Law)",
-    "credentials": ["BINUS Outstanding Student 2024", "WIPO Academy Certified", "Ex ESDM Ministry Junior Legal"],
-    "bio": "Tiara is a law graduate from Bina Nusantara University, majoring in Business Law. She has professional experience in commercial, regulatory, and intellectual property law, having worked with the Ministry of Energy and Mineral Resources, AGRA Advocate & Legal Counsel, and currently serves as Junior Legal Officer at RPM Consult.\n\nCertified by the WIPO Academy and recognized as the Most Outstanding Student of Business Law at BINUS University in 2024.",
+    "credentials": ["PKPA PERADI Certified", "BINUS Outstanding Student 2024", "WIPO Academy Certified", "Ex ESDM Ministry Junior Legal"],
+    "bio": "Tiara is a law graduate from Bina Nusantara University, majoring in Business Law. She has professional experience in commercial, regulatory, and intellectual property law, having worked with the Ministry of Energy and Mineral Resources, AGRA Advocate & Legal Counsel, and currently serves as Junior Legal Officer at RPM Consult.\n\nCertified by the WIPO Academy, completed the Special Education for Advocate Profession (PKPA) by PERADI, and recognized as the Most Outstanding Student of Business Law at BINUS University in 2024.",
     "img": "Tiara Putrian Setiawan, S.H..png",
-    "email": "raka_pm@rpm-consult.com"
+    "email": "raka_pm@rpm-consult.com",
+    "certificates": [
+      {
+        "title": "Sertifikat PKPA PERADI (Hal. 1)",
+        "file": "Sertifikat PKPA Peradi - Tiara Putrian Setiawan_0001_page-0001.jpg"
+      },
+      {
+        "title": "Kurikulum PKPA PERADI (Hal. 2)",
+        "file": "Sertifikat PKPA Peradi - Tiara Putrian Setiawan_0001_page-0002.jpg"
+      }
+    ]
   },
   {
     "id": 16,

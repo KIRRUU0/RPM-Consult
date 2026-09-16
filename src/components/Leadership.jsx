@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Linkedin, Mail, X, Briefcase, GraduationCap } from 'lucide-react';
+import { Linkedin, Mail, X, Briefcase, GraduationCap, Award, Eye } from 'lucide-react';
 import teamData from '../data/team.json';
 import img1 from '../assets/leadership/Agus Priyatna, S.E., M.M., CFRM.jpg';
 import img2 from '../assets/leadership/Jason Lathianza, S.H., M.Kn..jpg';
@@ -42,14 +42,22 @@ const localImages = {
   "Iqbal Fauzi.png": img19,
 };
 
+const certModules = import.meta.glob('../assets/sertifikat/*.{jpg,jpeg,png,JPG,JPEG,PNG}', { eager: true });
+const certMap = {};
+for (const [path, mod] of Object.entries(certModules)) {
+  const filename = path.split('/').pop();
+  certMap[filename] = mod.default;
+}
+
 export default function Leadership() {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
   const [expanded, setExpanded] = useState(false);
+  const [viewingCertificate, setViewingCertificate] = useState(null);
 
-  // Disable background scrolling when modal is open
+  // Disable background scrolling when modal or certificate is open
   useEffect(() => {
-    if (selectedPerson) {
+    if (selectedPerson || viewingCertificate) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -57,7 +65,7 @@ export default function Leadership() {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [selectedPerson]);
+  }, [selectedPerson, viewingCertificate]);
 
   const categories = [
     { id: 'all', name: "All" },
@@ -134,6 +142,12 @@ export default function Leadership() {
               >
                 {/* Photo Area */}
                 <div className="relative pt-[100%] w-full bg-gray-100 overflow-hidden border-b border-primary/5">
+                  {person.certificates && person.certificates.length > 0 && (
+                    <div className="absolute top-2.5 left-2.5 z-10 bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md backdrop-blur-xs">
+                      <Award className="w-3.5 h-3.5 text-secondary" />
+                      <span>Certified</span>
+                    </div>
+                  )}
                   <img
                     alt={person.name}
                     src={person.img}
@@ -277,8 +291,78 @@ export default function Leadership() {
                     <div className="text-gray-600 text-sm leading-relaxed whitespace-pre-line font-normal">
                       {selectedPerson.bio}
                     </div>
+
+                    {selectedPerson.certificates && selectedPerson.certificates.length > 0 && (
+                      <div className="pt-4 border-t border-gray-100">
+                        <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                          <Award className="w-4 h-4 text-secondary" />
+                          Official Certificates
+                        </h4>
+                        <div className="grid grid-cols-2 gap-3">
+                          {selectedPerson.certificates.map((cert, idx) => {
+                            const certSrc = certMap[cert.file] || cert.file;
+                            return (
+                              <div
+                                key={idx}
+                                onClick={() => setViewingCertificate(certSrc)}
+                                className="group relative rounded-xl border border-primary/15 overflow-hidden bg-gray-50 hover:border-primary/40 transition-all cursor-pointer shadow-sm hover:shadow-md"
+                              >
+                                <div className="aspect-[4/3] w-full overflow-hidden bg-gray-100 relative">
+                                  <img
+                                    src={certSrc}
+                                    alt={cert.title}
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                  <div className="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span className="bg-white text-primary text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1">
+                                      <Eye className="w-3 h-3" /> View
+                                    </span>
+                                  </div>
+                                </div>
+                                <p className="p-2 text-[11px] font-semibold text-gray-700 truncate text-center">{cert.title}</p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Fullscreen Certificate Lightbox */}
+        <AnimatePresence>
+          {viewingCertificate && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              data-lenis-prevent
+              className="fixed inset-0 bg-black/90 z-[70] flex items-center justify-center p-4 backdrop-blur-sm"
+              onClick={() => setViewingCertificate(null)}
+            >
+              <button
+                onClick={() => setViewingCertificate(null)}
+                className="absolute top-5 right-5 p-2.5 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all cursor-pointer shadow-lg z-10"
+                aria-label="Tutup Sertifikat"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <motion.div
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.9 }}
+                className="max-w-4xl max-h-[90vh] overflow-auto rounded-xl shadow-2xl bg-white p-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={viewingCertificate}
+                  alt="Certificate Preview"
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg mx-auto"
+                />
               </motion.div>
             </motion.div>
           )}

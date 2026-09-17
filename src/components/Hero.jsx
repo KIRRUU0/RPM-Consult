@@ -99,7 +99,7 @@ export default function Hero({ navigateTo }) {
             className="font-extrabold text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight"
           >
             Trusted Tax & <br />
-            <span className="text-primary-fixed block lg:inline-block mt-2 lg:mt-0">Business Solutions</span>
+            <span className="text-primary block lg:inline-block mt-2 lg:mt-0">Business Solutions</span>
           </motion.h1>
 
           {/* Subtitle */}

@@ -158,10 +158,14 @@ export default function Contact() {
                     raka_pm@rpm-consult.com
                   </a>
                   <a
-                    href="tel:+6281286866654"
+                    href={`https://wa.me/6281286866654?text=${encodeURIComponent(
+                      'Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊'
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block text-gray-600 hover:text-primary text-sm transition-colors font-medium"
                   >
-                    0812 8686 6654
+                    0812 8686 6654 (WhatsApp)
                   </a>
                 </div>
               </div>

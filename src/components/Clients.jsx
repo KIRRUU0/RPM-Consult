@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 
 const clientImagesRaw = import.meta.glob('../assets/client/*.{png,jpeg,jpg,webp,PNG,JPEG,JPG,WEBP}', { eager: true });
 const sortedEntries = Object.entries(clientImagesRaw).sort(([pathA], [pathB]) => {
-  const numA = parseInt(pathA.match(/(\d+)\./)?.[1] || '999', 10);
-  const numB = parseInt(pathB.match(/(\d+)\./)?.[1] || '999', 10);
-  return numA - numB;
+  const matchA = pathA.match(/(\d+)\./);
+  const matchB = pathB.match(/(\d+)\./);
+  const numA = matchA ? parseInt(matchA[1], 10) : 999;
+  const numB = matchB ? parseInt(matchB[1], 10) : 999;
+  if (numA !== numB) return numA - numB;
+  return pathA.localeCompare(pathB);
 });
 const allImages = sortedEntries.map(([, module]) => module.default);
 
@@ -102,6 +105,9 @@ export default function Clients() {
   const desc = 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax issues.';
   const tagline = 'Ready to join our growing list of trusted partners?';
   const cta = 'Start a Conversation';
+  const whatsappUrl = `https://wa.me/6281286866654?text=${encodeURIComponent(
+    'Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊'
+  )}`;
 
   return (
     <section className="py-24 bg-white relative overflow-hidden scroll-mt-20" id="clients">
@@ -218,7 +224,7 @@ export default function Clients() {
             {tagline}
           </p>
           <a
-            href="https://wa.me/6281286866654"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-none bg-primary text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-primary-container transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap"

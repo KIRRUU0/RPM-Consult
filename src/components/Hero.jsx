@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Phone } from 'lucide-react';
-import heroBgImg from '../assets/hero/PHOTO-2026-02-20-13-20-03.jpg';
+import heroBgImg from '../assets/hero/050fe649-17b3-4271-a603-d5b00104a0a3.jpg';
 
 export default function Hero({ navigateTo }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });

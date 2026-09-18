@@ -19,7 +19,7 @@ import img15 from '../assets/leadership/Tiara Putrian Setiawan, S.H..png';
 import img16 from '../assets/leadership/Melva Juliana Nainggolan.png';
 import img17 from '../assets/leadership/Wahyuri.png';
 import img18 from '../assets/leadership/Vira Putri Ginanti.png';
-import img19 from '../assets/leadership/Iqbal Fauzi.png';
+import img19 from '../assets/leadership/Iqbal Fauzi.jpeg';
 
 const localImages = {
   "Agus Priyatna, S.E., M.M., CFRM.jpeg": img1,
@@ -39,7 +39,7 @@ const localImages = {
   "Melva Juliana Nainggolan.png": img16,
   "Wahyuri.png": img17,
   "Vira Putri Ginanti.png": img18,
-  "Iqbal Fauzi.png": img19,
+  "Iqbal Fauzi.jpeg": img19,
 };
 
 const certModules = import.meta.glob('../assets/sertifikat/*.{jpg,jpeg,png,JPG,JPEG,PNG}', { eager: true });

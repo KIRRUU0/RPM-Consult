@@ -32,7 +32,7 @@ export default function Footer({ activeView, navigateTo }) {
             </p>
             <div className="text-white/70 text-sm space-y-2 pt-2">
               <p><strong>Email:</strong> <a href="mailto:raka_pm@rpm-consult.com" className="hover:text-white transition-colors">raka_pm@rpm-consult.com</a></p>
-              <p><strong>Phone / WhatsApp:</strong> <a href={`https://wa.me/6281286866654?text=${encodeURIComponent('Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊')}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">0812 8686 6654</a></p>
+              <p><strong>Phone / WhatsApp:</strong> <a href={`https://api.whatsapp.com/send?phone=6281286866654&text=${encodeURIComponent('Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊')}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">0812 8686 6654</a></p>
             </div>
           </div>
 

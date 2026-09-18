@@ -105,7 +105,7 @@ export default function Clients() {
   const desc = 'The Clients need to know the fact to see the issues clearly. We provide best advice based on our comprehensive knowledge to help the client to manage their tax issues.';
   const tagline = 'Ready to join our growing list of trusted partners?';
   const cta = 'Start a Conversation';
-  const whatsappUrl = `https://wa.me/6281286866654?text=${encodeURIComponent(
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=6281286866654&text=${encodeURIComponent(
     'Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊'
   )}`;
 

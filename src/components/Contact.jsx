@@ -158,7 +158,7 @@ export default function Contact() {
                     raka_pm@rpm-consult.com
                   </a>
                   <a
-                    href={`https://wa.me/6281286866654?text=${encodeURIComponent(
+                    href={`https://api.whatsapp.com/send?phone=6281286866654&text=${encodeURIComponent(
                       'Halo RPM Consult 👋\nSaya ingin berkonsultasi mengenai kebutuhan bisnis yang sedang saya hadapi.\nMohon dibantu informasi terkait solusi dan layanan yang tersedia dari tim RPM Consult.\nTerima kasih 😊'
                     )}`}
                     target="_blank"
